@@ -25,11 +25,14 @@ function DownloadPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        <SectionTitle eyebrow="Download" title="Get the latest SION Media release" />
+        <SectionTitle eyebrow="Download" title="Dapatkan rilis SION Media terbaru" />
+        <p className="mt-4 max-w-3xl text-slate-300">
+          Situs ini membaca `latest-version.json` sebagai sumber kebenaran rilis. Gunakan halaman rilis untuk aset installer dan biarkan klien desktop membandingkan versi secara otomatis.
+        </p>
 
-        {status === 'loading' && <LoadingState text="Loading release data..." />}
+        {status === 'loading' && <LoadingState text="Memuat data rilis..." />}
         {status === 'error' && (
-          <EmptyState title="Release data unavailable" message="Unable to load the latest release information right now." />
+          <EmptyState title="Data rilis tidak tersedia" message="Tidak dapat memuat informasi rilis terbaru saat ini." />
         )}
 
         {status === 'success' && latestVersion && (

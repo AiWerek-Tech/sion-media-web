@@ -8,7 +8,7 @@ function DocsPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        <SectionTitle eyebrow="Documentation" title="Quick start and support guides" />
+        <SectionTitle eyebrow="Docs" title="Panduan awal dan dukungan" />
         <div className="mt-10 space-y-8">
           {docsSections.map((section) => (
             <section key={section.title} className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8 shadow-[0_25px_60px_-45px_rgba(15,23,42,0.8)]">

@@ -4,21 +4,21 @@ export const changelogEntries: ChangelogEntry[] = [
   {
     version: '1.0.0',
     date: '2026-05-14',
-    type: 'Initial Release',
+    type: 'Rilis Awal',
     notes: [
-      'Foundation website launched on GitHub Pages.',
-      'Public statistics page for aggregated Firestore metrics.',
-      'Download portal powered by latest-version.json.',
-      'Changelog timeline and onboarding documentation.',
+      'Website dasar diluncurkan di GitHub Pages.',
+      'Halaman statistik publik untuk metrik Firestore teragregasi.',
+      'Portal unduhan didukung oleh latest-version.json.',
+      'Timeline catatan rilis dan dokumentasi onboarding tersedia.',
     ],
   },
   {
     version: '1.0.1',
     date: '2026-05-21',
-    type: 'Performance Update',
+    type: 'Pembaruan Kinerja',
     notes: [
-      'Improved static asset delivery and page load performance.',
-      'Added more responsive layout support for tablet and ultrawide.',
+      'Meningkatkan pengiriman aset statis dan performa pemuatan halaman.',
+      'Menambahkan dukungan layout yang lebih responsif untuk tablet dan layar lebar.',
     ],
   },
 ]

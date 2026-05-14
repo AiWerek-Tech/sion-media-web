@@ -11,22 +11,41 @@ function DownloadCard({ data }: DownloadCardProps) {
         <div>
           <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Latest release</p>
           <h1 className="mt-3 text-4xl font-semibold text-white">SION Media {data.version}</h1>
-          <p className="mt-4 max-w-2xl text-slate-300">Release date: <span className="font-semibold text-white">{data.releaseDate}</span></p>
+          <p className="mt-4 max-w-2xl text-slate-300">
+            Release date: <span className="font-semibold text-white">{data.releaseDate}</span>
+            {data.mandatory ? (
+              <span className="ml-3 inline-flex rounded-full bg-rose-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-rose-300">
+                Pembaruan wajib
+              </span>
+            ) : null}
+          </p>
         </div>
-        <a
-          href={data.downloadUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
-        >
-          Download release
-        </a>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <a
+            href={data.downloadUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+          >
+            Download release
+          </a>
+          <a
+            href={data.downloadUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-slate-800 bg-slate-950/90 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-500 hover:text-white"
+          >
+            Open GitHub release
+          </a>
+        </div>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-5">
-          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Installer size</p>
-          <p className="mt-3 text-xl font-semibold text-white">~80 MB</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Update metadata</p>
+          <p className="mt-3 text-sm leading-6 text-slate-300">
+            Halaman ini didukung oleh <span className="font-semibold text-white">latest-version.json</span>, sehingga klien desktop dapat memverifikasi rilis terbaru.
+          </p>
         </div>
         <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-5">
           <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Platform</p>
@@ -35,7 +54,7 @@ function DownloadCard({ data }: DownloadCardProps) {
       </div>
 
       <div className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Release notes</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Changelog</p>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
           {data.notes.map((note) => (
             <li key={note}>{note}</li>

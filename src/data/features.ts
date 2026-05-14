@@ -1,32 +1,32 @@
 export const features = [
   {
-    title: 'Release portal',
-    description: 'Direct access to installer downloads and release metadata for the SION Media desktop app.',
-    tag: 'Download',
+    title: 'Portal rilis',
+    description: 'Akses langsung ke unduhan installer dan metadata rilis untuk aplikasi desktop SION Media.',
+    tag: 'Unduhan',
   },
   {
-    title: 'Changelog timeline',
-    description: 'Clean, versioned release history so teams can track updates and improvements with confidence.',
-    tag: 'Updates',
+    title: 'Timeline catatan rilis',
+    description: 'Riwayat rilis yang rapi dan bernomor sehingga tim dapat melacak pembaruan dengan percaya diri.',
+    tag: 'Pembaruan',
   },
   {
-    title: 'Public analytics',
-    description: 'Aggregated Firestore metrics that display adoption without exposing private user data.',
-    tag: 'Analytics',
+    title: 'Analitik publik',
+    description: 'Metrik Firestore teragregasi yang menampilkan adopsi tanpa mengekspos data pengguna pribadi.',
+    tag: 'Analitik',
   },
   {
-    title: 'GitHub Pages ready',
-    description: 'Static-friendly architecture crafted for fast deployment and reliable hosting.',
+    title: 'Siap GitHub Pages',
+    description: 'Arsitektur ramah statis dibuat untuk deployment cepat dan hosting andal.',
     tag: 'Hosting',
   },
   {
-    title: 'Firebase integration',
-    description: 'Modular Firebase setup for authentication and public Firestore reads.',
+    title: 'Integrasi Firebase',
+    description: 'Setup Firebase modular untuk autentikasi dan pembacaan Firestore publik.',
     tag: 'Cloud',
   },
   {
-    title: 'Desktop update support',
-    description: 'Built-in `latest-version.json` metadata provider for Electron release automation.',
-    tag: 'Update',
+    title: 'Dukungan pembaruan desktop',
+    description: 'Penyedia metadata `latest-version.json` bawaan untuk otomasi rilis desktop.',
+    tag: 'Pembaruan',
   },
 ]

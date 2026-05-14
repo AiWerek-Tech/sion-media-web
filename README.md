@@ -7,6 +7,7 @@ Official website for SION Media desktop application. Built with Vite + React + T
 ### Prerequisites
 - Node.js 18+
 - npm or yarn
+- Firebase project (for full functionality)
 
 ### Local Development
 ```bash
@@ -16,6 +17,12 @@ cd sion-media-web
 
 # Install dependencies
 npm install
+
+# Copy environment template
+cp .env.template .env
+
+# Fill in Firebase configuration in .env
+# See FIREBASE_SETUP.md for detailed instructions
 
 # Start development server
 npm run dev
@@ -99,12 +106,16 @@ src/
 
 ## 🎯 Features
 
-- **Landing Page**: Professional software landing page
+- **Landing Page**: Professional software landing page with branding
+- **Authentication**: Google sign-in integration with Firebase Auth
+- **Admin Panel**: Statistics management for authenticated users
 - **Download Portal**: Direct installer downloads from GitHub Releases
 - **Changelog**: Version history and release notes
-- **Statistics**: Public analytics from Firestore
+- **Statistics**: Public analytics from Firestore with real-time updates
 - **Documentation**: Quick start guides and troubleshooting
-- **Update System**: `latest-version.json` for desktop app updates
+- **Update System**: `latest-version.json` metadata for desktop app updates
+- **Firebase Integration**: Complete backend setup with Auth and Firestore
+- **API Ready**: JSON endpoints for desktop app consumption
 
 ## 🔗 Integration Points
 
@@ -112,11 +123,19 @@ src/
 - Fetches update metadata from `public/latest-version.json`
 - Downloads installers from GitHub Releases
 - Updates public statistics in Firestore
+- Operates independently from website (separate project)
+
+### Release Workflow
+- Keep `public/latest-version.json` aligned with GitHub Releases
+- The website reads this file as the source of truth for the latest desktop release
+- Desktop clients compare their current version and prompt users when a newer release is available
 
 ### Firebase
-- **Auth**: User authentication (desktop app)
-- **Firestore**: Public statistics and analytics
-- **Security**: Read-only access for website
+- **Auth**: User authentication with Google sign-in
+- **Firestore**: Public statistics, user data, and analytics
+- **Admin Panel**: Authenticated users can update statistics
+- **Security**: Configurable read/write permissions
+- **Status Monitoring**: Connection status indicator in footer
 
 ### GitHub
 - **Pages**: Website hosting
@@ -146,6 +165,34 @@ npm run deploy
 - Never commit `.dev-docs/` to GitHub
 - Environment variables are required for Firebase integration
 - Use `HashRouter` for GitHub Pages compatibility
+- See `FIREBASE_SETUP.md` for complete Firebase configuration guide
+
+## 🔧 Firebase Setup
+
+For full functionality, set up Firebase following the detailed guide:
+
+```bash
+# Read the setup guide
+cat FIREBASE_SETUP.md
+```
+
+Key components:
+- Firebase project creation
+- Authentication configuration
+- Firestore database setup
+- Security rules configuration
+- Environment variables setup
+
+## 🖥️ Desktop Application
+
+The separate Electron desktop application (`D:\my_dev\SION-Media`) integrates with this website:
+
+- **Checks for Updates**: Fetches `public/latest-version.json` for latest version info
+- **Downloads Installers**: Links to GitHub Releases for Windows, macOS, Linux
+- **Reports Statistics**: Sends usage data to Firebase (managed by this website)
+- **Reads Documentation**: Can pull guides and changelog from website APIs
+
+See `DESKTOP_APP_INTEGRATION.md` for detailed integration guide.
 
 ## 🤝 Contributing
 

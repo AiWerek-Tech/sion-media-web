@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { fetchPublicStats } from '../firebase/firestore'
 import type { PublicStats } from '../types'
 
@@ -7,14 +7,22 @@ export function usePublicStats() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
-  useEffect(() => {
-    fetchPublicStats()
-      .then((data) => {
-        setStats(data)
-      })
-      .catch(() => setError(true))
-      .finally(() => setLoading(false))
+  const refetch = useCallback(async () => {
+    setLoading(true)
+    setError(false)
+    try {
+      const data = await fetchPublicStats()
+      setStats(data)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }, [])
 
-  return { stats, loading, error }
+  useEffect(() => {
+    refetch()
+  }, [refetch])
+
+  return { stats, loading, error, refetch }
 }
