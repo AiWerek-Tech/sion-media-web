@@ -25,9 +25,9 @@ function DownloadPage() {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        <SectionTitle eyebrow="Download" title="Dapatkan rilis SION Media terbaru" />
+        <SectionTitle eyebrow="Download" title="Dapatkan rilis desktop SION Media terbaru" />
         <p className="mt-4 max-w-3xl text-slate-300">
-          Situs ini membaca `latest-version.json` sebagai sumber kebenaran rilis. Gunakan halaman rilis untuk aset installer dan biarkan klien desktop membandingkan versi secara otomatis.
+          Situs ini membaca `latest-version.json` sebagai sumber kebenaran rilis untuk aplikasi desktop. Installer Windows, macOS, dan Linux tersedia melalui GitHub Releases, sementara klien desktop memeriksa metadata ini secara otomatis.
         </p>
 
         {status === 'loading' && <LoadingState text="Memuat data rilis..." />}

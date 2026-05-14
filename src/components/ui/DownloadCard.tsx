@@ -49,17 +49,8 @@ function DownloadCard({ data }: DownloadCardProps) {
         </div>
         <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-5">
           <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Platform</p>
-          <p className="mt-3 text-xl font-semibold text-white">Windows • macOS</p>
+          <p className="mt-3 text-xl font-semibold text-white">Windows • macOS • Linux</p>
         </div>
-      </div>
-
-      <div className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Changelog</p>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-300">
-          {data.notes.map((note) => (
-            <li key={note}>{note}</li>
-          ))}
-        </ul>
       </div>
     </section>
   )

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useEffect, useState, type ReactNode } from 'react'
 import { onAuthStateChanged, type User } from 'firebase/auth'
 import { initializeApp, getApps, getApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
@@ -13,14 +13,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export function useAuth() {
-  const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
-  return context
-}
-
 interface AuthProviderProps {
   children: ReactNode
 }
@@ -31,7 +23,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   useEffect(() => {
     if (!isFirebaseConfigured) {
-      setLoading(false)
+      // If Firebase is not configured, set loading to false immediately
+      setLoading(false) // eslint-disable-line react-hooks/set-state-in-effect
       return
     }
 

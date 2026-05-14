@@ -1,6 +1,6 @@
 # SION Media Website
 
-Official website for SION Media desktop application. Built with Vite + React + TypeScript, deployed on GitHub Pages.
+Official website for the SION Media desktop application. This repository hosts the landing page, download portal, changelog, and public release metadata for the desktop app built in `D:\my_dev\SION-Media`.
 
 ## 🚀 Quick Start
 
@@ -89,23 +89,31 @@ src/
 ├── components/      # Reusable UI components
 │   ├── common/      # Shared components
 │   ├── layout/      # Layout components (Navbar, Footer)
-│   ├── sections/    # Page sections
+│   ├── sections/    # Page sections (Hero, Features, Screenshots)
 │   ├── statistics/  # Stats-related components
-│   └── ui/          # UI primitives
+│   └── ui/          # UI primitives (DownloadCard, AdminPanel)
 ├── data/            # Static data and mock data
+│   ├── features.ts  # Desktop app feature descriptions
+│   └── docsSections.ts # Documentation content
 ├── firebase/        # Firebase configuration and services
 ├── hooks/           # Custom React hooks
 ├── layouts/         # Page layout templates
-├── pages/           # Page components
+├── pages/           # Page components (Home, Download, Docs, etc.)
 ├── router/          # Routing configuration
 ├── services/        # API services and utilities
+│   └── updateService.ts # latest-version.json handling
 ├── styles/          # Global styles and CSS
 ├── types/           # TypeScript type definitions
 └── utils/           # Utility functions
 ```
 
+### Related Projects
+- **Desktop App**: `D:\my_dev\SION-Media` - Electron app with React/TypeScript
+- **Documentation**: `D:\my_dev\SION-Media\.docs` - Comprehensive app documentation
+
 ## 🎯 Features
 
+### Website Features
 - **Landing Page**: Professional software landing page with branding
 - **Authentication**: Google sign-in integration with Firebase Auth
 - **Admin Panel**: Statistics management for authenticated users
@@ -117,31 +125,78 @@ src/
 - **Firebase Integration**: Complete backend setup with Auth and Firestore
 - **API Ready**: JSON endpoints for desktop app consumption
 
+### Desktop App Features (SION Media)
+- **Broadcast-style Workflow**: Cue → Take → Program for safe live production
+- **Multi-Hymnal Library**: Support for multiple hymnals with FTS5 search (default: 525 Lagu Sion)
+- **Projection Mode**: Full-screen lyric and Bible verse projection with background media
+- **Stage Display**: Dedicated screen for musicians with lyrics, chords, and timer
+- **Bible Module**: Integrated Bible verse lookup and slide generation
+- **Playlist Management**: Drag-drop playlist builder with mixed-hymnal support
+- **Import/Export**: JSON/Excel import with conflict resolution, backup/restore
+- **Multi-Monitor Support**: Preview/Program monitors and stage display
+- **Theme System**: Dark mode with design tokens
+- **Crash Recovery**: Auto-save session state
+- **Virtualized Lists**: High-performance UI for large song libraries
+
 ## 🔗 Integration Points
 
-### Desktop App (Electron)
-- Fetches update metadata from `public/latest-version.json`
-- Downloads installers from GitHub Releases
-- Updates public statistics in Firestore
-- Operates independently from website (separate project)
+### Desktop App (SION Media - Electron)
+- **Update Metadata**: Fetches version info from `public/latest-version.json`
+- **Installer Downloads**: Links to GitHub Releases for Windows/macOS/Linux installers
+- **Public Statistics**: Updates usage metrics in Firestore
+- **Independent Operation**: Separate project from website, operates standalone
+- **Multi-Hymnal Support**: Built on SQLite database with 525 Lagu Sion default
+- **Broadcast Workflow**: Cue/Program decks for safe live worship production
+- **Stage Display**: Dedicated musician screen with lyrics/chords/timer
+- **Bible Integration**: Verse lookup and projection capabilities
 
 ### Release Workflow
-- Keep `public/latest-version.json` aligned with GitHub Releases
-- The website reads this file as the source of truth for the latest desktop release
-- Desktop clients compare their current version and prompt users when a newer release is available
+- Keep `public/latest-version.json` synchronized with GitHub Releases
+- Desktop clients compare versions and prompt for updates
+- Supports mandatory updates and release notes
+- Installer assets hosted on GitHub Releases
 
-### Firebase
-- **Auth**: User authentication with Google sign-in
+### Firebase Integration
+- **Auth**: Google sign-in for admin panel access
 - **Firestore**: Public statistics, user data, and analytics
 - **Admin Panel**: Authenticated users can update statistics
 - **Security**: Configurable read/write permissions
 - **Status Monitoring**: Connection status indicator in footer
 
-### GitHub
-- **Pages**: Website hosting
-- **Releases**: Desktop app distribution
+### GitHub Ecosystem
+- **Pages**: Website hosting at `https://aiwerek-tech.github.io/sion-media-web`
+- **Releases**: Desktop app distribution (Windows/macOS/Linux installers)
+- **Repository**: Separate repos for website (`sion-media-web`) and desktop app (`SION-Media`)
 
-## 📋 Development Guidelines
+## �️ SION Media Desktop App
+
+This website serves as the official portal for **SION Media**, a professional worship presentation system built with Electron. The desktop app provides comprehensive tools for church operators to manage live worship services with broadcast-quality workflows.
+
+### Core Capabilities
+- **Broadcast-Style Production**: Cue/Program deck system for safe live switching
+- **Multi-Hymnal Database**: SQLite-powered library with FTS5 search supporting multiple hymnals
+- **Projection & Display**: Full-screen lyric projection, stage display for musicians, and preview monitors
+- **Bible Integration**: Built-in verse lookup and slide generation
+- **Playlist Management**: Drag-drop interface with mixed-hymnal support
+- **Import/Export**: JSON/Excel import with conflict resolution and backup/restore
+- **Multi-Monitor Setup**: Dedicated screens for preview, program, and stage display
+- **Theme System**: Dark mode with consistent design tokens
+- **Performance**: Virtualized lists for large song libraries, crash recovery
+
+### Technical Stack
+- **Framework**: Electron 39.2.6 with React 19.2.1 + TypeScript
+- **Database**: SQLite with better-sqlite3 and WAL mode
+- **Search**: FTS5 full-text search for hymnals
+- **State Management**: Zustand for application state
+- **Styling**: TailwindCSS with custom design tokens
+- **Build**: Vite for development, Electron Builder for distribution
+
+### Distribution
+- **Platforms**: Windows (NSIS installer), macOS (DMG), Linux (AppImage)
+- **Updates**: Automatic update system via `latest-version.json`
+- **Repository**: `https://github.com/aiwerek-tech/SION-Media`
+
+## �📋 Development Guidelines
 
 ### Code Quality
 - Strict TypeScript configuration

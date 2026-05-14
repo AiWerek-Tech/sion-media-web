@@ -21,8 +21,10 @@ export function usePublicStats() {
   }, [])
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     refetch()
-  }, [refetch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return { stats, loading, error, refetch }
 }

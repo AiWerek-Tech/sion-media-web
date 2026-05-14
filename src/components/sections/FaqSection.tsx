@@ -3,15 +3,19 @@ import SectionTitle from '../common/SectionTitle'
 const faqItems = [
   {
     question: 'Bagaimana aplikasi desktop mengetahui ada rilis baru?',
-    answer: 'Klien desktop membaca `latest-version.json` dan membandingkan versi saat ini dengan metadata versi terbaru. Jika aplikasi sudah usang, ia dapat meminta pengguna mengunduh rilis terbaru.',
+    answer: 'Klien desktop membaca `latest-version.json` dan membandingkan versi saat ini dengan metadata terbaru. Jika diperlukan, aplikasi menjelaskan bahwa ada versi baru dan mengarahkan ke GitHub Releases.',
   },
   {
-    question: 'Mengapa menggunakan GitHub Releases dan `latest-version.json` bersama?',
-    answer: 'GitHub Releases menampung file installer dan catatan rilis, sedangkan `latest-version.json` menyediakan endpoint metadata statis untuk pengecekan versi dan alur pembaruan ringan.',
+    question: 'Bisakah SION Media menampilkan lirik dan ayat Alkitab secara langsung?',
+    answer: 'Ya. Aplikasi desktop mendukung mode proyeksi lirik penuh serta pemilihan bacaan Alkitab yang dapat dikirim ke layar presentasi.',
   },
   {
-    question: 'Apakah website memerlukan server backend?',
-    answer: 'Tidak. Website dihosting statis di GitHub Pages dan hanya menggunakan Firebase untuk statistik publik dan autentikasi opsional, bukan sebagai backend penuh.',
+    question: 'Bagaimana cara impor data lagu dan playlist?',
+    answer: 'Aplikasi desktop mendukung impor file JSON dan Excel, mendeteksi duplikat, serta menampilkan opsi gabung atau lewati saat konflik terjadi.',
+  },
+  {
+    question: 'Bagaimana website terkait dengan aplikasi desktop?',
+    answer: 'Website menyediakan portal unduhan, metadata update, changelog, dan statistik publik yang digunakan oleh aplikasi desktop dan tim media.',
   },
 ]
 

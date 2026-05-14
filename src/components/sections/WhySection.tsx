@@ -2,16 +2,16 @@ import SectionTitle from '../common/SectionTitle'
 
 const reasons = [
   {
-    title: 'Alur ibadah terfokus',
-    description: 'Dirancang untuk tim media gereja dengan manajemen lagu, alur pelayanan, dan dukungan presentasi.',
+    title: 'Broadcast console workflow',
+    description: 'Workflow Cue → Take → Program dirancang untuk operasi proyeksi live secara profesional, bukan sekadar tampilan biasa.',
   },
   {
-    title: 'Mudah bagi operator',
-    description: 'UI ringan dan sinyal rilis yang jelas membantu relawan dan pemimpin ibadah tetap percaya diri setiap pelayanan.',
+    title: 'Dukungan multi-monitor',
+    description: 'Preview dan program monitor plus stage display membantu tim media menjaga alur ibadah tetap sinkron.',
   },
   {
-    title: 'Siap pembaruan dan tangguh',
-    description: 'Hosting statis ditambah `latest-version.json` menghadirkan sistem pembaruan desktop andal tanpa kompleksitas backend.',
+    title: 'Library ikhtisar lengkap',
+    description: 'Database multi-hymnal dengan pencarian FTS5 dan 525 lagu Lagu Sion default membuat persiapan lebih cepat.',
   },
 ]
 

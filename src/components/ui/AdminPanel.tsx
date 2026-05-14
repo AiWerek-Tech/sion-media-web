@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { doc, updateDoc } from 'firebase/firestore'
 import { db } from '../../firebase/init'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../hooks/useAuth'
 import { brandingUtils } from '../../utils/brandingUtils'
 import type { PublicStats } from '../../types'
 

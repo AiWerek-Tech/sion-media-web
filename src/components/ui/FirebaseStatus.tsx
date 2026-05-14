@@ -1,5 +1,5 @@
 import { isFirebaseConfigured } from '../../firebase/config'
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../hooks/useAuth'
 
 interface FirebaseStatusProps {
   className?: string

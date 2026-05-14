@@ -32,9 +32,9 @@ function ReleaseHighlight() {
             ) : null}
           </div>
           <p className="mt-4 text-sm uppercase tracking-[0.35em] text-cyan-300">Sorotan rilis</p>
-          <h3 className="mt-3 text-2xl font-semibold text-white">Rilis desktop terbaru</h3>
-          {status === 'loading' && <p className="mt-2 text-slate-400">Memuat metadata rilis…</p>}
-          {status === 'error' && <p className="mt-2 text-slate-400">Metadata rilis tidak tersedia. Anda masih dapat mengunjungi GitHub Releases langsung.</p>}
+          <h3 className="mt-3 text-2xl font-semibold text-white">Rilis desktop SION Media</h3>
+          {status === 'loading' && <p className="mt-2 text-slate-400">Memuat metadata rilis aplikasi…</p>}
+          {status === 'error' && <p className="mt-2 text-slate-400">Metadata rilis tidak tersedia. Silakan buka GitHub Releases untuk installer terbaru.</p>}
           {release && (
             <p className="mt-2 text-slate-300">
               Versi <span className="font-semibold text-white">{release.version}</span> — dirilis pada <span className="font-semibold text-white">{release.releaseDate}</span>.

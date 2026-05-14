@@ -2,19 +2,19 @@ import SectionTitle from '../common/SectionTitle'
 
 const screenshotCards = [
   {
-    title: 'Song Management',
-    description: 'Atur set ibadah dengan daftar putar seret dan lepaskan, metadata lagu, dan pencarian cepat di perpustakaan Anda.',
-    features: ['Drag & drop reordering', 'Song metadata editor', 'Quick search & filter', 'Set organization'],
+    title: 'Library & Playlist',
+    description: 'Kelola database multi-hymnal, susun playlist layanan, dan atur cue dengan drag-and-drop untuk setiap ibadah.',
+    features: ['Multi-hymnal support', 'Playlist builder', 'Song metadata', 'Quick filters'],
   },
   {
-    title: 'Projection Mode',
-    description: 'Presentasi layar penuh dengan tampilan lirik bersih, latar belakang gambar, dan transisi mulus untuk ibadah.',
-    features: ['Full-screen projection', 'Clean lyrics layout', 'Background images', 'Smooth transitions'],
+    title: 'Projection & Preview',
+    description: 'Mode proyeksi layar penuh dan preview monitor mendukung presentasi lirik dan ayat Alkitab yang mulus.',
+    features: ['Full-screen output', 'Preview/program monitor', 'Background media', 'Live transitions'],
   },
   {
-    title: 'Release & Analytics',
-    description: 'Lacak versi aplikasi, lihat pembaruan changelog, dan pantau metrik adopsi publik melalui antarmuka desktop.',
-    features: ['Version tracking', 'Changelog viewer', 'Public stats', 'Update notifications'],
+    title: 'Stage Display & Bible',
+    description: 'Layar stage khusus untuk musisi plus modul Alkitab yang bisa menampilkan ayat secara langsung.',
+    features: ['Stage display', 'Bible verse lookup', 'Lyric/chord view', 'Import JSON / Excel'],
   },
 ]
 
