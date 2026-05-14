@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { ExternalLink, ArrowRight, Zap, Download } from 'lucide-react'
 import { fetchLatestVersion } from '../../services/updateService'
 import type { LatestVersionData } from '../../types'
+import { Link } from 'react-router-dom'
 
 function ReleaseHighlight() {
   const [release, setRelease] = useState<LatestVersionData | null>(null)
@@ -16,50 +19,66 @@ function ReleaseHighlight() {
   }, [])
 
   return (
-    <section className="mt-10 rounded-[2rem] border border-cyan-500/20 bg-slate-900/80 p-6 text-slate-100 shadow-[0_35px_80px_-50px_rgba(15,23,42,0.8)] sm:p-8 animate-[fade-in_0.7s_ease-out_0.1s_forwards]">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <div className="flex flex-wrap gap-2">
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">
-              <span className="h-2 w-2 rounded-full bg-cyan-400" />
-              Static + update-ready
-            </div>
-            {release?.version === '1.0.0' ? (
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-emerald-200 animate-pulse">
-                <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                First release live
-              </div>
-            ) : null}
+    <motion.section 
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mt-12 rounded-3xl border border-cyan-500/20 bg-cyan-500/5 p-6 backdrop-blur-sm sm:p-8"
+    >
+      <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex items-start gap-5">
+          <div className="hidden h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 sm:flex">
+            <Zap size={28} />
           </div>
-          <p className="mt-4 text-sm uppercase tracking-[0.35em] text-cyan-300">Sorotan rilis</p>
-          <h3 className="mt-3 text-2xl font-semibold text-white">Rilis desktop SION Media</h3>
-          {status === 'loading' && <p className="mt-2 text-slate-400">Memuat metadata rilis aplikasi…</p>}
-          {status === 'error' && <p className="mt-2 text-slate-400">Metadata rilis tidak tersedia. Silakan buka GitHub Releases untuk installer terbaru.</p>}
-          {release && (
-            <p className="mt-2 text-slate-300">
-              Versi <span className="font-semibold text-white">{release.version}</span> — dirilis pada <span className="font-semibold text-white">{release.releaseDate}</span>.
-              {release.mandatory ? ' Pembaruan wajib.' : ''}
-            </p>
-          )}
+          <div>
+            <div className="flex flex-wrap gap-2">
+              <span className="rounded-full bg-cyan-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
+                Release Highlight
+              </span>
+              {release?.version === '1.0.0' && (
+                <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                  First Public Build
+                </span>
+              )}
+            </div>
+            
+            <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+              SION Media Desktop {release ? `v${release.version}` : 'Latest Release'}
+            </h3>
+            
+            {status === 'loading' && <p className="mt-2 text-sm text-slate-500">Checking latest metadata...</p>}
+            {status === 'error' && <p className="mt-2 text-sm text-rose-400">Metadata unavailable. Check GitHub Releases.</p>}
+            {release && (
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                Pembaruan terbaru dirilis pada <span className="text-slate-200">{release.releaseDate}</span>. 
+                Sangat direkomendasikan untuk stabilitas live worship.
+              </p>
+            )}
+          </div>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+
+        <div className="flex flex-wrap gap-3">
+          <Link
+            to="/download"
+            className="flex items-center gap-2 rounded-xl brand-gradient px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-105"
+          >
+            <Download size={18} />
+            Download Now
+          </Link>
           <a
             href="https://github.com/AiWerek-Tech/SION-Media/releases/latest"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+            className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900"
           >
-            Open GitHub Releases
-          </a>
-          <a
-            href="/#/download"
-            className="inline-flex items-center justify-center rounded-full border border-slate-800 bg-slate-950/90 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-500 hover:text-white"
-          >
-            View download page
+            <ExternalLink size={18} />
+            Changelog
+            <ArrowRight size={16} />
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

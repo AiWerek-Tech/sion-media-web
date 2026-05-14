@@ -1,24 +1,64 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Activity, ArrowRight } from 'lucide-react'
 
 function StatsPreviewSection() {
   return (
-    <section className="mt-20 rounded-[2rem] border border-slate-800 bg-slate-900/80 p-10 shadow-[0_35px_80px_-55px_rgba(15,23,42,0.95)]">
-      <div className="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-center">
-        <div>
-          <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Statistics</p>
-          <h2 className="mt-3 text-3xl font-semibold text-white">Metrik adopsi publik, dibuat transparan</h2>
-          <p className="mt-4 text-slate-300">Lihat statistik penggunaan teragregasi yang aman privasi dari ekosistem SION Media.</p>
+    <motion.section 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mt-32 rounded-4xl glass-card overflow-hidden"
+    >
+      <div className="grid gap-0 lg:grid-cols-2 lg:items-center">
+        <div className="p-10 sm:p-16">
+          <div className="flex items-center gap-3 text-cyan-400">
+            <Activity size={20} />
+            <p className="text-xs font-bold uppercase tracking-[0.3em]">Transparency</p>
+          </div>
+          <h2 className="mt-8 text-3xl font-bold leading-tight text-white sm:text-4xl">
+            Metrik adopsi publik, <br />
+            <span className="text-gradient">dibuat transparan</span>
+          </h2>
+          <p className="mt-6 leading-relaxed text-slate-400">
+            Lihat statistik penggunaan teragregasi yang aman privasi dari ekosistem SION Media. 
+            Kami membagikan metrik ini untuk membangun kepercayaan komunitas.
+          </p>
+          <div className="mt-10">
+            <Link 
+              to="/statistics" 
+              className="group inline-flex items-center gap-2 text-sm font-bold text-white transition hover:text-cyan-400"
+            >
+              Explore all statistics
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
-        <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 text-center shadow-[0_25px_60px_-45px_rgba(15,23,42,0.9)]">
-          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Pratinjau langsung</p>
-          <p className="mt-3 text-5xl font-semibold text-white">4.8k</p>
-          <p className="mt-2 text-slate-400">Instalasi terverifikasi di seluruh gereja</p>
-          <Link to="/statistics" className="mt-6 inline-flex rounded-full bg-cyan-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">
-            View statistics
-          </Link>
+
+        <div className="relative h-full bg-slate-900/50 p-10 sm:p-16 flex flex-col items-center justify-center border-l border-slate-800">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(34,211,238,0.1),_transparent_70%)]" />
+          
+          <div className="relative text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-slate-500">Live Adoption</p>
+            <motion.p 
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1 }}
+              className="mt-4 text-7xl font-bold tracking-tighter text-white"
+            >
+              4.8k
+            </motion.p>
+            <p className="mt-4 text-sm font-medium text-slate-400">Verified installations worldwide</p>
+            
+            <div className="mt-10 inline-flex items-center gap-4 rounded-2xl bg-slate-950 p-2 pr-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl brand-gradient text-slate-950">
+                <Activity size={20} />
+              </div>
+              <span className="text-xs font-bold uppercase tracking-widest text-slate-300">Updated Real-time</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,14 +1,29 @@
+import { motion } from 'framer-motion'
+
 type SectionTitleProps = {
   eyebrow: string
   title: string
+  align?: 'left' | 'center'
 }
 
-function SectionTitle({ eyebrow, title }: SectionTitleProps) {
+function SectionTitle({ eyebrow, title, align = 'left' }: SectionTitleProps) {
   return (
-    <div className="max-w-3xl">
-      <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{title}</h2>
-    </div>
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className={`max-w-4xl ${align === 'center' ? 'mx-auto text-center' : ''}`}
+    >
+      <div className={`flex items-center gap-3 ${align === 'center' ? 'justify-center' : ''}`}>
+        <div className="h-px w-8 bg-cyan-500/50" />
+        <span className="text-xs font-bold uppercase tracking-[0.4em] text-cyan-400">
+          {eyebrow}
+        </span>
+      </div>
+      <h2 className="mt-6 text-3xl font-bold text-white sm:text-5xl lg:leading-[1.2]">
+        {title}
+      </h2>
+    </motion.div>
   )
 }
 

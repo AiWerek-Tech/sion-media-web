@@ -1,12 +1,19 @@
+import { Loader2 } from 'lucide-react'
+
 type LoadingStateProps = {
   text?: string
 }
 
 function LoadingState({ text = 'Memuat...' }: LoadingStateProps) {
   return (
-    <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-10 text-center text-slate-300 shadow-[0_10px_40px_-25px_rgba(15,23,42,0.9)]">
-      <div className="mx-auto mb-6 h-16 w-16 animate-spin rounded-full border-4 border-cyan-500 border-t-transparent"></div>
-      <p>{text}</p>
+    <div className="rounded-4xl glass-card flex flex-col items-center justify-center py-20 px-10 text-center">
+      <div className="relative">
+        <Loader2 size={48} className="animate-spin text-cyan-400" />
+        <div className="absolute inset-0 blur-xl bg-cyan-400/20 rounded-full animate-pulse" />
+      </div>
+      <p className="mt-8 text-sm font-bold uppercase tracking-[0.3em] text-slate-500">
+        {text}
+      </p>
     </div>
   )
 }
