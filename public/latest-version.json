@@ -1,1 +1,11 @@
-﻿{"version":"0.0.1","notes":"Initial release"}
+﻿{
+  "version": "1.0.0",
+  "releaseDate": "2026-05-14",
+  "mandatory": false,
+  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases/latest",
+  "notes": [
+    "Initial release",
+    "Website foundation deployed on GitHub Pages",
+    "Public analytics and download portal ready"
+  ]
+}

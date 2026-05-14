@@ -1,0 +1,25 @@
+import Footer from '../components/layout/Footer'
+import Navbar from '../components/layout/Navbar'
+import SectionTitle from '../components/common/SectionTitle'
+import VersionTimeline from '../components/ui/VersionTimeline'
+import { changelogEntries } from '../data/changelog'
+
+function ChangelogPage() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <Navbar />
+      <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <SectionTitle eyebrow="Changelog" title="Release notes and update history" />
+        <p className="max-w-2xl text-slate-400">
+          Track the evolution of SION Media across versions, build notes, and platform improvements.
+        </p>
+        <div className="mt-10 space-y-6">
+          <VersionTimeline entries={changelogEntries} />
+        </div>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default ChangelogPage

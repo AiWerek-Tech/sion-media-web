@@ -1,73 +1,159 @@
-# React + TypeScript + Vite
+# SION Media Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for SION Media desktop application. Built with Vite + React + TypeScript, deployed on GitHub Pages.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-## React Compiler
+### Local Development
+```bash
+# Clone repository
+git clone https://github.com/AiWerek-Tech/sion-media-web.git
+cd sion-media-web
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Install dependencies
+npm install
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Build for Production
+```bash
+npm run build
 ```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## 📦 Deployment
+
+### GitHub Pages Deployment
+```bash
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+This command:
+1. Builds the project (`npm run build`)
+2. Deploys `dist/` folder to `gh-pages` branch using `gh-pages` package
+
+### GitHub Pages Setup
+1. Go to repository Settings → Pages
+2. Select "Deploy from a branch"
+3. Choose `gh-pages` branch and `/ (root)` folder
+4. Save settings
+
+### Production URL
+```
+https://aiwerek-tech.github.io/sion-media-web
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+Copy `.env.example` to `.env` and fill in your Firebase configuration:
+
+```bash
+cp .env.example .env
+```
+
+Required variables:
+- `VITE_FIREBASE_API_KEY`
+- `VITE_FIREBASE_AUTH_DOMAIN`
+- `VITE_FIREBASE_PROJECT_ID`
+- `VITE_FIREBASE_STORAGE_BUCKET`
+- `VITE_FIREBASE_MESSAGING_SENDER_ID`
+- `VITE_FIREBASE_APP_ID`
+
+### Vite Configuration
+The project uses `base: '/sion-media-web/'` in `vite.config.ts` for GitHub Pages compatibility.
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/          # Static assets (images, icons)
+├── components/      # Reusable UI components
+│   ├── common/      # Shared components
+│   ├── layout/      # Layout components (Navbar, Footer)
+│   ├── sections/    # Page sections
+│   ├── statistics/  # Stats-related components
+│   └── ui/          # UI primitives
+├── data/            # Static data and mock data
+├── firebase/        # Firebase configuration and services
+├── hooks/           # Custom React hooks
+├── layouts/         # Page layout templates
+├── pages/           # Page components
+├── router/          # Routing configuration
+├── services/        # API services and utilities
+├── styles/          # Global styles and CSS
+├── types/           # TypeScript type definitions
+└── utils/           # Utility functions
+```
+
+## 🎯 Features
+
+- **Landing Page**: Professional software landing page
+- **Download Portal**: Direct installer downloads from GitHub Releases
+- **Changelog**: Version history and release notes
+- **Statistics**: Public analytics from Firestore
+- **Documentation**: Quick start guides and troubleshooting
+- **Update System**: `latest-version.json` for desktop app updates
+
+## 🔗 Integration Points
+
+### Desktop App (Electron)
+- Fetches update metadata from `public/latest-version.json`
+- Downloads installers from GitHub Releases
+- Updates public statistics in Firestore
+
+### Firebase
+- **Auth**: User authentication (desktop app)
+- **Firestore**: Public statistics and analytics
+- **Security**: Read-only access for website
+
+### GitHub
+- **Pages**: Website hosting
+- **Releases**: Desktop app distribution
+
+## 📋 Development Guidelines
+
+### Code Quality
+- Strict TypeScript configuration
+- ESLint for code linting
+- Modular component architecture
+- Reusable and maintainable code
+
+### Git Workflow
+```bash
+# For code changes
+git add .
+git commit -m "Your commit message"
+git push origin master
+
+# For website updates
+npm run deploy
+```
+
+### Important Notes
+- `.dev-docs/` folder is for local documentation only
+- Never commit `.dev-docs/` to GitHub
+- Environment variables are required for Firebase integration
+- Use `HashRouter` for GitHub Pages compatibility
+
+## 🤝 Contributing
+
+1. Follow the project structure
+2. Use TypeScript strictly
+3. Test builds locally before pushing
+4. Update documentation in `.dev-docs/` (local only)
+
+## 📄 License
+
+This project is part of the SION Media ecosystem.
