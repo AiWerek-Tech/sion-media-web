@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Download, ArrowRight, Code } from 'lucide-react'
+import { recordInstallation } from '../../firebase/firestore'
 
 function DownloadCtaSection() {
   return (
@@ -30,6 +31,7 @@ function DownloadCtaSection() {
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
           <Link 
             to="/download" 
+            onClick={() => recordInstallation()}
             className="group flex items-center gap-2 rounded-full brand-gradient px-10 py-4 text-sm font-bold text-slate-950 transition hover:scale-105"
           >
             Download Latest Release

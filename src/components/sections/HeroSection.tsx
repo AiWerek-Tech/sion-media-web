@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Download, Activity, ArrowRight, Zap, Shield, Layout } from 'lucide-react'
+import { Download, ArrowRight, Zap, Shield, Layout, Monitor, Cpu } from 'lucide-react'
 
 function HeroSection() {
   const containerVariants = {
@@ -32,30 +32,43 @@ function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
-        <motion.div variants={itemVariants} className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-xs font-medium tracking-wider text-cyan-400 uppercase">
-          <Zap size={14} />
-          Ecosystem Presentation System
+        <motion.div variants={itemVariants} className="inline-flex items-center gap-4 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-6 py-2 text-xs font-bold tracking-wider text-cyan-400 uppercase">
+          <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-4">
+            <Monitor size={14} />
+            Windows
+          </div>
+          <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-4">
+            <Cpu size={14} />
+            macOS
+          </div>
+          <div className="flex items-center gap-2">
+            <Layout size={14} />
+            Linux
+          </div>
         </motion.div>
         
         <motion.h1 variants={itemVariants} className="mt-8 text-4xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl">
-          Professional worship <br />
-          <span className="text-gradient">presentation system</span>
+          Unified worship <br />
+          <span className="text-gradient">presentation ecosystem</span>
         </motion.h1>
         
         <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
-          SION Media adalah platform broadcast-style untuk manajemen lirik, 
-          proyeksi multi-monitor, dan sinkronisasi metadata ibadah secara profesional.
+          SION Media adalah platform presentasi ibadah profesional yang menghubungkan 
+          <span className="text-white"> Library</span>, 
+          <span className="text-white"> Projection</span>, 
+          <span className="text-white"> Broadcast</span>, dan 
+          <span className="text-white"> Management</span> dalam satu ekosistem desktop yang stabil.
         </motion.p>
         
         <motion.div variants={itemVariants} className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
           <Link to="/download" className="group flex items-center gap-2 rounded-full brand-gradient px-8 py-4 text-sm font-bold text-slate-950 transition hover:scale-105 active:scale-95">
             <Download size={18} />
-            Download Latest Release
+            Download for Desktop
             <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </Link>
-          <Link to="/statistics" className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-8 py-4 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900">
-            <Activity size={18} />
-            View Public Statistics
+          <Link to="/docs" className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-8 py-4 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900">
+            <Zap size={18} />
+            Learn the 4 Core Modes
           </Link>
         </motion.div>
 
@@ -63,18 +76,18 @@ function HeroSection() {
           {[
             { 
               icon: Layout, 
-              label: 'Desktop-Ready', 
-              value: 'Kontrol proyektor dan live preview dengan UI broadcast-grade.' 
+              label: 'Native Performance', 
+              value: 'Aplikasi desktop asli dengan konsumsi memori rendah dan responsivitas tinggi di semua platform.' 
             },
             { 
               icon: Zap, 
-              label: 'Ultra-Fast', 
-              value: 'Pencarian FTS5 dan rendering virtualized untuk ribuan lagu.' 
+              label: 'Broadcast Workflow', 
+              value: 'Sistem CUE → TAKE → PROGRAM memastikan audience hanya melihat apa yang sudah siap ditayangkan.' 
             },
             { 
               icon: Shield, 
-              label: 'Enterprise-Grade', 
-              value: 'Sistem proteksi runtime dan manajemen metadata terpusat.' 
+              label: 'Production-Grade', 
+              value: 'Didesain untuk keandalan tinggi selama ibadah live dengan fitur crash recovery otomatis.' 
             },
           ].map((item) => (
             <div key={item.label} className="group rounded-3xl border border-slate-800 bg-slate-950/50 p-6 text-left transition hover:border-slate-600 hover:bg-slate-900/80">

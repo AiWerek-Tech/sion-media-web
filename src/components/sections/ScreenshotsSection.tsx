@@ -1,34 +1,59 @@
 import SectionTitle from '../common/SectionTitle'
 import { motion } from 'framer-motion'
-import { Play, SkipBack, SkipForward, Music, Activity } from 'lucide-react'
+import { Monitor, Music, BookOpen, Settings, Zap, PlayCircle } from 'lucide-react'
 
 const screenshotCards = [
   {
     id: 'library',
-    title: 'Library & Playlist',
-    description: 'Kelola database multi-hymnal, susun playlist layanan, dan atur cue dengan drag-and-drop untuk setiap ibadah.',
-    features: ['Multi-hymnal support', 'Playlist builder', 'Song metadata', 'Quick filters'],
+    title: 'Library Mode',
+    image: 'screenshots/library.png',
+    description: 'Pusat manajemen konten ibadah. Cari lagu, kelola database multi-hymnal, dan bangun playlist persiapan dengan cepat.',
+    icon: Music,
+    features: ['Pencarian FTS5', 'Multi-Hymnal', 'Playlist Builder', 'Metadata Editor'],
   },
   {
     id: 'projection',
-    title: 'Projection & Preview',
-    description: 'Mode proyeksi layar penuh dan preview monitor mendukung presentasi lirik dan ayat Alkitab yang mulus.',
-    features: ['Full-screen output', 'Preview/program monitor', 'Background media', 'Live transitions'],
+    title: 'Projection Mode',
+    image: 'screenshots/projection.png',
+    description: 'Antarmuka kontrol live. Audience hanya melihat tayangan yang masuk ke Program Deck melalui transisi yang halus.',
+    icon: Monitor,
+    features: ['Cue-Take System', 'Live Transitions', 'Output States', 'Theme Engine'],
   },
   {
-    id: 'analytics',
-    title: 'Release & Analytics',
-    description: 'Pantau statistik publik dan kelola pembaruan rilis desktop secara otomatis melalui sinkronisasi metadata.',
-    features: ['Auto-update check', 'Public statistics', 'Version metadata', 'Release notes'],
+    id: 'broadcast',
+    title: 'Broadcast Mode',
+    image: 'screenshots/broadcast.png',
+    description: 'Dashboard produksi tingkat lanjut untuk streaming dan integrasi layar LED dengan dukungan monitor multi-output.',
+    icon: Zap,
+    features: ['NDI Output', 'Alpha Keying', 'Multi-Monitor', 'Stage Display Sync'],
   },
+]
+
+const secondaryScreenshots = [
+  {
+    title: 'Management Mode',
+    image: 'screenshots/editor.png',
+    description: 'Pusat kendali ekosistem untuk backup data, impor lagu massal dari Excel/JSON, dan konfigurasi perangkat keras.',
+    icon: Settings
+  },
+  {
+    title: 'Bible Integration',
+    image: 'screenshots/bible.png',
+    description: 'Modul Alkitab terintegrasi untuk pencarian ayat instan dan pembuatan slide Alkitab secara otomatis saat ibadah.',
+    icon: BookOpen
+  }
 ]
 
 function ScreenshotsSection() {
   return (
     <section className="mt-32">
-      <SectionTitle eyebrow="Screenshots" title="Pratinjau antarmuka aplikasi desktop" align="center" />
+      <SectionTitle eyebrow="Integrated Experience" title="Satu aplikasi, empat dimensi pelayanan" align="center" />
+      <p className="mx-auto mt-6 max-w-2xl text-center text-slate-400">
+        SION Media dirancang untuk menangani seluruh spektrum multimedia gereja, mulai dari persiapan konten hingga produksi live profesional.
+      </p>
       
-      <div className="mt-16 grid gap-8 lg:grid-cols-3">
+      {/* Primary Grid */}
+      <div className="mt-20 grid gap-8 lg:grid-cols-3">
         {screenshotCards.map((card, index) => (
           <motion.div 
             key={card.id} 
@@ -36,112 +61,77 @@ function ScreenshotsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="group rounded-4xl glass-card p-2 transition-all hover:border-slate-600"
+            className="group flex flex-col rounded-4xl glass-card overflow-hidden transition-all hover:border-cyan-500/30"
           >
-            <div className="relative overflow-hidden rounded-[calc(2rem-4px)] border border-slate-800 bg-slate-950/90 p-6 shadow-inner">
-              {/* Window Controls */}
-              <div className="mb-6 flex items-center gap-1.5">
-                <div className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
-                <div className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
-                <div className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+            {/* Screenshot Frame */}
+            <div className="relative aspect-video overflow-hidden bg-slate-900 border-b border-slate-800">
+              <img 
+                src={`${import.meta.env.BASE_URL}${card.image}`} 
+                alt={card.title} 
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60" />
+              
+              {/* Play Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 backdrop-blur-md">
+                  <PlayCircle size={32} />
+                </div>
               </div>
 
-              {/* UI Mockup Content */}
-              <div className="min-h-[180px]">
-                {card.id === 'library' && (
-                  <div className="space-y-3">
-                    {[
-                      { name: 'Amazing Grace', type: 'Traditional', color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
-                      { name: 'How Great Thou Art', type: 'Worship', color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
-                    ].map((song) => (
-                      <div key={song.name} className="flex items-center justify-between rounded-xl bg-slate-900/50 p-3 border border-slate-800/50">
-                        <div className="flex items-center gap-3">
-                          <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${song.bg} ${song.color}`}>
-                            <Music size={14} />
-                          </div>
-                          <div>
-                            <p className="text-xs font-bold text-white">{song.name}</p>
-                            <p className="text-[10px] text-slate-500">{song.type}</p>
-                          </div>
-                        </div>
-                        <div className="h-1.5 w-8 rounded-full bg-slate-800" />
-                      </div>
-                    ))}
-                    <div className="flex items-center gap-3 rounded-xl border border-dashed border-slate-800 p-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-slate-600">
-                        <span className="text-lg">+</span>
-                      </div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">Add to Playlist</p>
-                    </div>
-                  </div>
-                )}
-
-                {card.id === 'projection' && (
-                  <div className="flex flex-col items-center">
-                    <div className="relative w-full overflow-hidden rounded-xl border border-slate-800 bg-slate-900 p-4 text-center">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent" />
-                      <div className="relative z-10">
-                        <p className="text-sm font-bold text-white">Amazing Grace</p>
-                        <p className="mt-1 text-[10px] leading-relaxed text-slate-400">
-                          How sweet the sound<br />
-                          That saved a wretch like me
-                        </p>
-                        <div className="mt-4 flex justify-center gap-1.5">
-                          <div className="h-1 w-4 rounded-full bg-cyan-500" />
-                          <div className="h-1 w-1 rounded-full bg-slate-800" />
-                          <div className="h-1 w-1 rounded-full bg-slate-800" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-6 flex gap-3">
-                      <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-slate-500"><SkipBack size={14} /></button>
-                      <button className="flex h-10 w-10 items-center justify-center rounded-full brand-gradient text-slate-950"><Play size={18} fill="currentColor" /></button>
-                      <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-slate-500"><SkipForward size={14} /></button>
-                    </div>
-                  </div>
-                )}
-
-                {card.id === 'analytics' && (
-                  <div className="space-y-3">
-                    <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-3">
-                      <div className="flex items-center justify-between">
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Current Build</p>
-                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400">v1.0.0</span>
-                      </div>
-                      <p className="mt-1 text-[10px] text-slate-400">Latest Stable Release</p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-3 text-center">
-                        <p className="text-lg font-bold text-white">4.8k</p>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Installs</p>
-                      </div>
-                      <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-3 text-center">
-                        <p className="text-lg font-bold text-white">127</p>
-                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Churches</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-3">
-                      <div className="flex items-center gap-2 text-cyan-400">
-                        <Activity size={12} />
-                        <span className="text-[10px] font-bold uppercase tracking-widest">Update Ready</span>
-                      </div>
-                      <span className="text-[10px] font-bold text-white">v1.0.1</span>
-                    </div>
-                  </div>
-                )}
+              {/* Icon Badge */}
+              <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950/80 text-cyan-400 backdrop-blur-md border border-slate-800">
+                <card.icon size={20} />
               </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">{card.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{card.description}</p>
-              <div className="mt-6 flex flex-wrap gap-2">
+            {/* Content */}
+            <div className="p-8">
+              <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                {card.title}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-400">
+                {card.description}
+              </p>
+              
+              <div className="mt-8 flex flex-wrap gap-2">
                 {card.features.map((feature) => (
-                  <span key={feature} className="rounded-lg bg-slate-900 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-slate-800/50">
+                  <span key={feature} className="rounded-lg bg-slate-950 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 border border-slate-800/50">
                     {feature}
                   </span>
                 ))}
               </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Secondary Row */}
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        {secondaryScreenshots.map((card, index) => (
+          <motion.div
+            key={card.title}
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 + index * 0.1 }}
+            className="group relative h-64 overflow-hidden rounded-4xl border border-slate-800 bg-slate-900"
+          >
+            <img 
+              src={`${import.meta.env.BASE_URL}${card.image}`} 
+              alt={card.title} 
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent" />
+            
+            <div className="absolute inset-y-0 left-0 flex w-2/3 flex-col justify-center p-8 sm:p-12">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 mb-6">
+                <card.icon size={20} />
+              </div>
+              <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+              <p className="mt-4 text-sm text-slate-400 line-clamp-2">
+                {card.description}
+              </p>
             </div>
           </motion.div>
         ))}

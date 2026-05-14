@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Globe, Heart, Zap, Code } from 'lucide-react'
+import { Heart, Zap, Code, Monitor, Cpu, Layout } from 'lucide-react'
 import { FirebaseStatus } from '../ui/FirebaseStatus'
 
 function Footer() {
@@ -16,36 +16,34 @@ function Footer() {
               <span className="text-xl font-bold tracking-tight text-white">SION<span className="text-cyan-400">Media</span></span>
             </Link>
             <p className="mt-6 text-sm leading-relaxed text-slate-500">
-              Solusi proyeksi lagu modern yang dirancang untuk mendukung kelancaran ibadah, 
-              live production, dan manajemen konten gereja secara profesional.
+              Ekosistem presentasi ibadah profesional yang menghubungkan persiapan, proyeksi, produksi, dan manajemen dalam satu platform desktop yang stabil.
             </p>
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex gap-3">
               {[
-                { icon: Code, href: 'https://github.com/AiWerek-Tech' },
-                { icon: Globe, href: '#' },
-                { icon: Globe, href: '#' },
-                { icon: Globe, href: '#' },
-              ].map((social, i) => (
-                <a 
+                { icon: Monitor, label: 'Windows' },
+                { icon: Cpu, label: 'macOS' },
+                { icon: Layout, label: 'Linux' },
+              ].map((plat, i) => (
+                <div 
                   key={i}
-                  href={social.href}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-400 transition hover:border-slate-600 hover:text-white"
+                  title={plat.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-500 transition hover:border-cyan-500/50 hover:text-cyan-400"
                 >
-                  <social.icon size={18} />
-                </a>
+                  <plat.icon size={18} />
+                </div>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Project</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Product</h4>
             <ul className="mt-6 space-y-4">
               {[
-                { label: 'Download', path: '/download' },
-                { label: 'Changelog', path: '/changelog' },
-                { label: 'Statistics', path: '/statistics' },
-                { label: 'Documentation', path: '/docs' },
+                { label: 'Download Aurora', path: '/download' },
+                { label: 'Release Notes', path: '/changelog' },
+                { label: 'Public Statistics', path: '/statistics' },
+                { label: 'Operator Guide', path: '/docs' },
               ].map((item) => (
                 <li key={item.path}>
                   <Link to={item.path} className="text-sm text-slate-500 transition hover:text-cyan-400">
@@ -56,26 +54,20 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Core Modes */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest text-white">Resources</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-white">4 Core Modes</h4>
             <ul className="mt-6 space-y-4">
               {[
-                { label: 'GitHub Repository', href: 'https://github.com/AiWerek-Tech/SION-Media' },
-                { label: 'Desktop Integration', path: '/docs' },
-                { label: 'Firebase Setup', path: '/docs' },
-                { label: 'Privacy Policy', path: '/about' },
-              ].map((item) => (
-                <li key={item.label}>
-                  {item.path ? (
-                    <Link to={item.path} className="text-sm text-slate-500 transition hover:text-cyan-400">
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <a href={item.href} target="_blank" rel="noreferrer" className="text-sm text-slate-500 transition hover:text-cyan-400">
-                      {item.label}
-                    </a>
-                  )}
+                'Library Mode',
+                'Projection Mode',
+                'Broadcast Mode',
+                'Management Mode',
+              ].map((mode) => (
+                <li key={mode}>
+                  <Link to="/docs" className="text-sm text-slate-500 transition hover:text-cyan-400">
+                    {mode}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,8 +79,19 @@ function Footer() {
             <div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
               <FirebaseStatus />
               <p className="mt-4 text-[10px] uppercase tracking-widest text-slate-600">
-                Hosted on GitHub Pages
+                Connected Software Ecosystem
               </p>
+            </div>
+            <div className="mt-6">
+              <a 
+                href="https://github.com/AiWerek-Tech/SION-Media"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-slate-500 hover:text-white transition"
+              >
+                <Code size={16} />
+                GitHub Repository
+              </a>
             </div>
           </div>
         </div>

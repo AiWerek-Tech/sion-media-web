@@ -1,5 +1,5 @@
 import { useAuth } from '../../hooks/useAuth'
-import { LogIn, LogOut, User as UserIcon, Loader2 } from 'lucide-react'
+import { LogIn, LogOut, User as UserIcon, Loader2, Church } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface AuthButtonProps {
@@ -7,7 +7,7 @@ interface AuthButtonProps {
 }
 
 export function AuthButton({ variant = 'button' }: AuthButtonProps) {
-  const { user, loading, signIn, signOut } = useAuth()
+  const { user, profile, loading, signIn, signOut } = useAuth()
 
   if (loading) {
     return (
@@ -57,8 +57,15 @@ export function AuthButton({ variant = 'button' }: AuthButtonProps) {
           </div>
         )}
         <div className="flex flex-col">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Authenticated</span>
-          <span className="text-xs font-bold text-white">{user.displayName}</span>
+          <div className="flex items-center gap-1">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">
+              {profile?.churchName ? 'Church Partner' : 'Authenticated'}
+            </span>
+            {profile?.churchName && <Church size={8} className="text-cyan-400" />}
+          </div>
+          <span className="text-xs font-bold text-white truncate max-w-[120px]">
+            {profile?.churchName || user.displayName}
+          </span>
         </div>
         <button
           onClick={signOut}

@@ -5,6 +5,7 @@ import SectionTitle from '../components/common/SectionTitle'
 import DownloadCard from '../components/ui/DownloadCard'
 import LoadingState from '../components/ui/LoadingState'
 import EmptyState from '../components/ui/EmptyState'
+import { RequirementsSection } from '../components/ui/RequirementsSection'
 import { fetchLatestVersion } from '../services/updateService'
 import type { LatestVersionData } from '../types'
 
@@ -38,6 +39,8 @@ function DownloadPage() {
         {status === 'success' && latestVersion && (
           <DownloadCard data={latestVersion} />
         )}
+
+        <RequirementsSection />
       </main>
       <Footer />
     </div>

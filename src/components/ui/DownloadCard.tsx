@@ -1,6 +1,7 @@
 import { Download, ExternalLink, ShieldCheck, Cpu, Terminal, Globe } from 'lucide-react'
 import type { LatestVersionData } from '../../types'
 import { motion } from 'framer-motion'
+import { recordInstallation } from '../../firebase/firestore'
 
 type DownloadCardProps = {
   data: LatestVersionData
@@ -61,6 +62,7 @@ function DownloadCard({ data }: DownloadCardProps) {
             href={data.downloadUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={() => recordInstallation()}
             className="group flex items-center justify-center gap-3 rounded-2xl brand-gradient px-8 py-5 text-sm font-bold text-slate-950 transition hover:scale-105"
           >
             <Download size={20} />
