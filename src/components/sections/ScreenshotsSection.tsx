@@ -21,11 +21,11 @@ const screenshotCards = [
   },
   {
     id: 'broadcast',
-    title: 'Broadcast Mode',
+    title: 'Broadcast Mode Beta',
     image: 'screenshots/broadcast.png',
-    description: 'Dashboard produksi tingkat lanjut untuk streaming dan integrasi layar LED dengan dukungan monitor multi-output.',
+    description: 'Konsep dashboard produksi untuk roadmap streaming. Modul desktop saat ini masih ditandai beta agar ekspektasi pengguna tetap akurat.',
     icon: Zap,
-    features: ['NDI Output', 'Alpha Keying', 'Multi-Monitor', 'Stage Display Sync'],
+    features: ['Roadmap', 'Streaming Prep', 'Multi-Monitor', 'Stage Display'],
   },
 ]
 
@@ -47,9 +47,9 @@ const secondaryScreenshots = [
 function ScreenshotsSection() {
   return (
     <section className="mt-32">
-      <SectionTitle eyebrow="Integrated Experience" title="Satu aplikasi, empat dimensi pelayanan" align="center" />
+      <SectionTitle eyebrow="Integrated Experience" title="Satu aplikasi, alur pelayanan yang jelas" align="center" />
       <p className="mx-auto mt-6 max-w-2xl text-center text-slate-400">
-        SION Media dirancang untuk menangani seluruh spektrum multimedia gereja, mulai dari persiapan konten hingga produksi live profesional.
+        SION Media dirancang dari kebutuhan operator: siapkan konten, pilih lagu, preview tayangan, lalu kirim ke layar live dengan keputusan yang terlihat jelas.
       </p>
       
       {/* Primary Grid */}

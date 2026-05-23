@@ -11,7 +11,7 @@ type FeatureCardProps = {
 
 function FeatureCard({ title, description, tag, iconName }: FeatureCardProps) {
   // Map icon name to Lucide component or fallback to Zap
-  const IconComponent = (iconName && (Icons as any)[iconName]) || Icons.Zap
+  const IconComponent = (iconName && Icons[iconName as keyof typeof Icons]) as LucideIcon || Icons.Zap
   const Icon: LucideIcon = IconComponent
 
   return (

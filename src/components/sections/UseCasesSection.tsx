@@ -15,7 +15,7 @@ const useCases = [
   },
   {
     title: 'Livestream Ministry',
-    desc: 'Integrasi NDI dan Alpha Keying memudahkan pengiriman lirik sebagai overlay ke OBS atau vMix tanpa hardware tambahan.',
+    desc: 'Tim streaming dapat memakai Projection Mode sebagai sumber layar yang stabil sambil mengikuti roadmap Broadcast Mode untuk integrasi lanjutan.',
     icon: Share2,
   },
   {

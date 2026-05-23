@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Download, ArrowRight, Zap, Shield, Layout, Monitor, Cpu } from 'lucide-react'
+import { ArrowRight, Cpu, Download, Layout, Monitor, PlayCircle, Shield } from 'lucide-react'
 
 function HeroSection() {
   const containerVariants = {
@@ -19,85 +19,122 @@ function HeroSection() {
   }
 
   return (
-    <motion.section 
+    <motion.section
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative overflow-hidden rounded-4xl border border-slate-800 bg-slate-900/40 px-6 py-20 shadow-premium sm:px-10 lg:px-16"
+      className="relative overflow-hidden border-b border-slate-800 bg-slate-950 px-6 py-14 sm:px-10 lg:px-16"
     >
-      {/* Background Decor */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 h-[500px] w-[500px] bg-cyan-500/10 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] bg-sky-500/10 blur-[100px] rounded-full translate-x-1/3 translate-y-1/3" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-4xl text-center">
-        <motion.div variants={itemVariants} className="inline-flex items-center gap-4 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-6 py-2 text-xs font-bold tracking-wider text-cyan-400 uppercase">
-          <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-4">
-            <Monitor size={14} />
-            Windows
-          </div>
-          <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-4">
-            <Cpu size={14} />
-            macOS
-          </div>
-          <div className="flex items-center gap-2">
-            <Layout size={14} />
-            Linux
-          </div>
-        </motion.div>
-        
-        <motion.h1 variants={itemVariants} className="mt-8 text-4xl font-bold leading-[1.1] text-white sm:text-6xl lg:text-7xl">
-          Unified worship <br />
-          <span className="text-gradient">presentation ecosystem</span>
-        </motion.h1>
-        
-        <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
-          SION Media adalah platform presentasi ibadah profesional yang menghubungkan 
-          <span className="text-white"> Library</span>, 
-          <span className="text-white"> Projection</span>, 
-          <span className="text-white"> Broadcast</span>, dan 
-          <span className="text-white"> Management</span> dalam satu ekosistem desktop yang stabil.
-        </motion.p>
-        
-        <motion.div variants={itemVariants} className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-          <Link to="/download" className="group flex items-center gap-2 rounded-full brand-gradient px-8 py-4 text-sm font-bold text-slate-950 transition hover:scale-105 active:scale-95">
-            <Download size={18} />
-            Download for Desktop
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-          <Link to="/docs" className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-8 py-4 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900">
-            <Zap size={18} />
-            Learn the 4 Core Modes
-          </Link>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="mt-20 grid gap-6 sm:grid-cols-3">
-          {[
-            { 
-              icon: Layout, 
-              label: 'Native Performance', 
-              value: 'Aplikasi desktop asli dengan konsumsi memori rendah dan responsivitas tinggi di semua platform.' 
-            },
-            { 
-              icon: Zap, 
-              label: 'Broadcast Workflow', 
-              value: 'Sistem CUE → TAKE → PROGRAM memastikan audience hanya melihat apa yang sudah siap ditayangkan.' 
-            },
-            { 
-              icon: Shield, 
-              label: 'Production-Grade', 
-              value: 'Didesain untuk keandalan tinggi selama ibadah live dengan fitur crash recovery otomatis.' 
-            },
-          ].map((item) => (
-            <div key={item.label} className="group rounded-3xl border border-slate-800 bg-slate-950/50 p-6 text-left transition hover:border-slate-600 hover:bg-slate-900/80">
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-800 bg-slate-900 text-cyan-400 transition group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10">
-                <item.icon size={20} />
-              </div>
-              <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">{item.label}</p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">{item.value}</p>
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex flex-wrap items-center gap-3 rounded-full border border-slate-800 bg-slate-900 px-4 py-2 text-xs font-bold uppercase tracking-wider text-cyan-300"
+          >
+            <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-3">
+              <Monitor size={14} />
+              Windows
             </div>
-          ))}
+            <div className="flex items-center gap-2 border-r border-cyan-500/20 pr-3">
+              <Cpu size={14} />
+              macOS
+            </div>
+            <div className="flex items-center gap-2">
+              <Layout size={14} />
+              Linux
+            </div>
+          </motion.div>
+
+          <motion.h1
+            variants={itemVariants}
+            className="mt-8 max-w-3xl text-4xl font-bold leading-[1.05] text-white sm:text-6xl"
+          >
+            SION Media
+            <span className="mt-3 block text-cyan-300">
+              presentasi ibadah yang siap dipakai live
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-400"
+          >
+            Kelola lagu, susun playlist, siapkan Preview, lalu kirim ke layar jemaat melalui alur
+            Cue, Take, dan Program. Fokus utamanya adalah operator gereja yang butuh kontrol jelas,
+            cepat, dan stabil saat ibadah berlangsung.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/download"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl brand-gradient px-6 py-4 text-sm font-bold text-slate-950 transition hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <Download size={18} />
+              Unduh aplikasi desktop
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              to="/docs"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-6 py-4 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-800"
+            >
+              <PlayCircle size={18} />
+              Lihat alur kerja
+            </Link>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="mt-12 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                icon: Layout,
+                label: 'Library',
+                value: 'Cari lagu, pilih buku, dan susun playlist ibadah.'
+              },
+              {
+                icon: Monitor,
+                label: 'Projection',
+                value: 'Preview dulu, Take ketika siap, Program untuk layar jemaat.'
+              },
+              {
+                icon: Shield,
+                label: 'Recovery',
+                value: 'Auto-save dan pemulihan sesi membantu saat produksi live.'
+              }
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="group rounded-xl border border-slate-800 bg-slate-900/70 p-5 text-left transition hover:border-slate-600 hover:bg-slate-900"
+              >
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-cyan-400 transition group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10">
+                  <item.icon size={20} />
+                </div>
+                <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
+                  {item.label}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">{item.value}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div variants={itemVariants} className="relative">
+          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-premium">
+            <img
+              src={`${import.meta.env.BASE_URL}screenshots/projection-mode.png`}
+              alt="Tampilan Projection Mode SION Media"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="mt-4 grid grid-cols-3 gap-3 text-xs font-semibold text-slate-400">
+            <span className="rounded-lg border border-emerald-500/20 bg-emerald-500/10 px-3 py-2 text-emerald-300">
+              Preview siap
+            </span>
+            <span className="rounded-lg border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 text-cyan-300">
+              Take terkontrol
+            </span>
+            <span className="rounded-lg border border-rose-500/20 bg-rose-500/10 px-3 py-2 text-rose-300">
+              Status jelas
+            </span>
+          </div>
         </motion.div>
       </div>
     </motion.section>

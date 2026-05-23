@@ -1,17 +1,18 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code, ExternalLink, Zap } from 'lucide-react'
+import { Menu, X, Code, ExternalLink } from 'lucide-react'
 import { fetchLatestVersion } from '../../services/updateService'
 import type { LatestVersionData } from '../../types'
+import LogoTransparent from '../../assets/logo-transparent.svg?react'
 
 const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Download', path: '/download' },
+  { label: 'Beranda', path: '/' },
+  { label: 'Unduh', path: '/download' },
   { label: 'Changelog', path: '/changelog' },
-  { label: 'Statistics', path: '/statistics' },
-  { label: 'Docs', path: '/docs' },
-  { label: 'About', path: '/about' },
+  { label: 'Statistik', path: '/statistics' },
+  { label: 'Dokumentasi', path: '/docs' },
+  { label: 'Tentang', path: '/about' },
 ]
 
 function Navbar() {
@@ -27,15 +28,16 @@ function Navbar() {
 
   // Close mobile menu when route changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false)
   }, [location.pathname])
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg brand-gradient text-slate-950 transition group-hover:scale-110">
-            <Zap size={18} fill="currentColor" />
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="flex h-9 w-9 items-center justify-center transition group-hover:scale-110">
+            <LogoTransparent className="h-full w-full" />
           </div>
           <span className="text-xl font-bold tracking-tight text-white">SION<span className="text-cyan-400">Media</span></span>
         </Link>
@@ -78,7 +80,7 @@ function Navbar() {
                 : 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300 hover:border-emerald-400 hover:bg-emerald-500/20'
             }`}
           >
-            {latestVersion ? `v${latestVersion.version}` : 'Get Latest'}
+            {latestVersion ? `v${latestVersion.version}` : 'Versi terbaru'}
             <ExternalLink size={14} />
           </a>
         </nav>
@@ -131,7 +133,7 @@ function Navbar() {
                   rel="noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-xl brand-gradient p-3 text-sm font-bold text-slate-950"
                 >
-                  Download
+                  Unduh
                   <ExternalLink size={18} />
                 </a>
               </div>

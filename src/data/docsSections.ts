@@ -25,7 +25,7 @@ export const docsSections = [
     items: [
       { title: '1. Library Mode', detail: 'Pusat organisasi: Cari lagu, edit lirik, dan siapkan daftar lagu (playlist) ibadah.' },
       { title: '2. Projection Mode', detail: 'Live Production: Kontrol apa yang tayang di proyektor melalui sistem Cue & Take yang aman.' },
-      { title: '3. Broadcast Mode', detail: 'Streaming & LED: Integrasi tingkat lanjut dengan NDI dan Alpha Keying untuk overlay video.' },
+      { title: '3. Broadcast Mode Beta', detail: 'Roadmap streaming: jalur persiapan untuk integrasi OBS/vMix, belum menjadi mode produksi utama.' },
       { title: '4. Management Mode', detail: 'Admin & Maintenance: Kelola backup data, impor lagu massal, dan pengaturan sistem.' },
     ],
   },
@@ -35,7 +35,7 @@ export const docsSections = [
     items: [
       { title: 'Persiapan Lagu', detail: 'Gunakan Library Mode untuk mencari lagu dan menambahkannya ke Playlist.' },
       { title: 'Persiapan Alkitab', detail: 'Cari ayat yang diperlukan dan siapkan slide Alkitab dalam hitungan detik.' },
-      { title: 'Kontrol Tayangan', detail: 'Klik pada lirik (CUE) lalu tekan SPACE (TAKE) untuk menayangkannya ke audience (PROGRAM).' },
+      { title: 'Kontrol Tayangan', detail: 'Klik pada lirik untuk Cue, lalu tekan Space untuk Take ke layar Program.' },
       { title: 'Stage Display', detail: 'Aktifkan Stage Display agar musisi dapat melihat lirik dan chord secara sinkron.' },
     ],
   },

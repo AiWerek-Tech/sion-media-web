@@ -40,7 +40,7 @@ export function AdminPanel({ currentStats, onStatsUpdate }: AdminPanelProps) {
     setSuccess(false)
     try {
       const statsRef = doc(db, 'public_stats', 'summary')
-      await updateDoc(statsRef, formData as any)
+      await updateDoc(statsRef, formData as Record<string, unknown>)
       onStatsUpdate()
       setSuccess(true)
       setTimeout(() => setSuccess(false), 3000)
@@ -87,7 +87,7 @@ export function AdminPanel({ currentStats, onStatsUpdate }: AdminPanelProps) {
               </label>
               <input
                 type={field.type}
-                value={(formData as any)[field.key]}
+                value={formData[field.key as keyof PublicStats]}
                 onChange={(e) => handleChange(field.key as keyof PublicStats, field.type === 'number' ? parseInt(e.target.value) || 0 : e.target.value)}
                 placeholder={field.placeholder}
                 className="w-full rounded-2xl border border-slate-800 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-cyan-500/50 focus:ring-4 focus:ring-cyan-500/10"

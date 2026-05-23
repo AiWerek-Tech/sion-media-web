@@ -1,38 +1,44 @@
 export const features = [
   {
     title: 'Library Mode',
-    description: 'Pusat manajemen konten ibadah. Kelola ribuan lagu dari berbagai buku lagu (Hymnal) dengan pencarian instan FTS5.',
-    tag: 'Preparation',
+    description:
+      'Pusat manajemen konten ibadah. Kelola database multi-hymnal, pencarian cepat, metadata lagu, dan playlist persiapan.',
+    tag: 'Persiapan',
     iconName: 'Search'
   },
   {
     title: 'Projection Mode',
-    description: 'Kontrol penuh presentasi lirik dan Alkitab. Audience hanya melihat apa yang Anda tayangkan melalui sistem CUE → TAKE.',
+    description:
+      'Workflow Cue, Take, dan Program memastikan jemaat hanya melihat tayangan yang sudah siap, bukan layar kerja operator.',
     tag: 'Live',
     iconName: 'Monitor'
   },
   {
-    title: 'Broadcast Mode',
-    description: 'Integrasi produksi profesional dengan dukungan NDI, Alpha Keying, dan multi-output untuk streaming dan layar LED.',
-    tag: 'Production',
+    title: 'Broadcast Mode Beta',
+    description:
+      'Fondasi mode broadcast sudah disiapkan untuk integrasi streaming. Fitur produksi penuh ditandai sebagai roadmap sampai modul desktop stabil.',
+    tag: 'Roadmap',
     iconName: 'Zap'
   },
   {
     title: 'Management Mode',
-    description: 'Kendali penuh ekosistem. Kelola backup, restore, impor data Excel/JSON, serta konfigurasi perangkat keras secara terpusat.',
-    tag: 'Ecosystem',
+    description:
+      'Kelola backup, impor lagu Excel/JSON, data SQLite lokal, status konten, dan konfigurasi media dari satu ruang kerja.',
+    tag: 'Operasional',
     iconName: 'Settings'
   },
   {
-    title: 'Multi-Platform',
-    description: 'Aplikasi desktop asli yang berjalan mulus di Windows, macOS, dan Linux dengan performa tinggi dan konsumsi memori rendah.',
-    tag: 'Native',
-    iconName: 'Layout'
+    title: 'Integrasi Alkitab',
+    description:
+      'Modul Alkitab offline terintegrasi untuk pencarian ayat dan penayangan cepat saat ibadah.',
+    tag: 'Firman',
+    iconName: 'Book'
   },
   {
-    title: 'Stage Display',
-    description: 'Layar khusus untuk musisi dan singer yang menampilkan lirik, chord, dan timer koordinasi secara real-time.',
-    tag: 'Stage',
+    title: 'Multi-Monitor Routing',
+    description:
+      'Pisahkan workspace operator, stage display, dan output program agar setiap layar punya peran yang jelas.',
+    tag: 'Perangkat',
     iconName: 'Activity'
-  },
+  }
 ]

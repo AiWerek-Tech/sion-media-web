@@ -4,6 +4,7 @@ import HeroSection from '../components/sections/HeroSection'
 import FeaturesSection from '../components/sections/FeaturesSection'
 import ScreenshotsSection from '../components/sections/ScreenshotsSection'
 import WhySection from '../components/sections/WhySection'
+import FeatureMatrixSection from '../components/sections/FeatureMatrixSection'
 import RoadmapSection from '../components/sections/RoadmapSection'
 import FaqSection from '../components/sections/FaqSection'
 import ReleaseHighlight from '../components/sections/ReleaseHighlight'
@@ -24,6 +25,7 @@ function HomePage() {
         <FeaturesSection />
         <ScreenshotsSection />
         <WhySection />
+        <FeatureMatrixSection />
         <RoadmapSection />
         <FaqSection />
         <StatsPreviewSection />
