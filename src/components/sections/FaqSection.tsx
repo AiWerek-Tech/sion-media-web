@@ -23,26 +23,28 @@ const faqItems = [
 
 function FaqSection() {
   return (
-    <section className="mt-32">
+    <section className="mt-20">
       <SectionTitle eyebrow="FAQ" title="Pertanyaan umum tentang SION Media" align="center" />
       
-      <div className="mt-16 grid gap-6 lg:grid-cols-2">
+      <div className="mt-10 grid gap-5 lg:grid-cols-2">
         {faqItems.map((item, index) => (
           <motion.article 
             key={item.question}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             viewport={{ once: true }}
-            className="group rounded-3xl border border-slate-800 bg-slate-900/40 p-8 transition-all hover:border-slate-700 hover:bg-slate-900/60"
+            className="group rounded-2xl border border-slate-800 bg-slate-900/30 p-5 transition-all hover:border-slate-700 hover:bg-slate-900/50"
           >
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
-                <HelpCircle size={20} />
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors">
+                <HelpCircle size={18} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">{item.question}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors">
+                <h3 className="text-sm font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug">
+                  {item.question}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors">
                   {item.answer}
                 </p>
               </div>
@@ -51,15 +53,15 @@ function FaqSection() {
         ))}
       </div>
 
-      <div className="mt-16 text-center">
+      <div className="mt-10 text-center">
         <a 
           href="https://github.com/AiWerek-Tech/SION-Media/issues" 
           target="_blank" 
           rel="noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 transition hover:text-white"
+          className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 transition hover:text-white"
         >
           Punya pertanyaan lain? Buka diskusi di GitHub
-          <ChevronRight size={16} />
+          <ChevronRight size={14} />
         </a>
       </div>
     </section>

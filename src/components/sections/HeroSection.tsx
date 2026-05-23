@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Cpu, Download, Layout, Monitor, PlayCircle, Shield } from 'lucide-react'
+import { ArrowRight, Cpu, Download, Layout, Monitor, PlayCircle } from 'lucide-react'
 
 function HeroSection() {
   const containerVariants = {
@@ -82,38 +82,6 @@ function HeroSection() {
             </Link>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                icon: Layout,
-                label: 'Library',
-                value: 'Cari lagu, pilih buku, dan susun playlist ibadah.'
-              },
-              {
-                icon: Monitor,
-                label: 'Projection',
-                value: 'Preview dulu, Take ketika siap, Program untuk layar jemaat.'
-              },
-              {
-                icon: Shield,
-                label: 'Recovery',
-                value: 'Auto-save dan pemulihan sesi membantu saat produksi live.'
-              }
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="group rounded-xl border border-slate-800 bg-slate-900/70 p-5 text-left transition hover:border-slate-600 hover:bg-slate-900"
-              >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-cyan-400 transition group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10">
-                  <item.icon size={20} />
-                </div>
-                <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
-                  {item.label}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{item.value}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         <motion.div variants={itemVariants} className="relative">

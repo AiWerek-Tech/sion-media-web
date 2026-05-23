@@ -39,49 +39,44 @@ const steps = [
 
 function WorkflowSection() {
   return (
-    <section className="mt-32">
+    <section className="mt-20">
       <SectionTitle
         eyebrow="Alur Operasional"
         title="Dari persiapan lagu sampai layar live"
         align="center"
       />
-      <p className="mx-auto mt-6 max-w-2xl text-center text-slate-400">
+      <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-slate-400">
         SION Media membagi pekerjaan operator menjadi langkah yang jelas: siapkan konten, preview,
         tayangkan, lalu rawat data setelah ibadah selesai.
       </p>
 
-      <div className="relative mt-20">
-        <div className="absolute top-1/2 left-0 hidden h-0.5 w-full -translate-y-1/2 bg-slate-800 lg:block" />
-
-        <div className="relative z-10 grid gap-8 lg:grid-cols-4">
+      <div className="mt-12">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <motion.div
               key={step.mode}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group relative flex flex-col items-center text-center"
+              className="group relative"
             >
-              <div
-                className={`mb-8 flex h-20 w-20 items-center justify-center rounded-2xl ${step.bg} ${step.color} border border-white/5 shadow-2xl transition-transform group-hover:scale-105`}
-              >
-                <step.icon size={32} />
-              </div>
-
-              <div className="rounded-2xl border border-slate-800 bg-slate-950 p-6 shadow-premium transition hover:border-slate-700">
-                <span className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                  {step.mode}
-                </span>
-                <h3 className="mb-4 text-lg font-bold text-white">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{step.desc}</p>
-              </div>
-
-              {index < steps.length - 1 && (
-                <div className="absolute top-10 -right-4 hidden items-center justify-center text-slate-700 lg:flex">
-                  <ArrowRight size={24} />
+              <div className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/30 p-5 shadow-premium transition hover:border-slate-700 hover:bg-slate-900/50">
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${step.bg} ${step.color} border border-white/5 transition-transform group-hover:scale-105`}
+                  >
+                    <step.icon size={18} />
+                  </div>
+                  <div>
+                    <span className="block text-[9px] font-semibold uppercase tracking-widest text-slate-500">
+                      {step.mode}
+                    </span>
+                    <h3 className="text-sm font-bold text-white leading-tight mt-0.5">{step.title}</h3>
+                  </div>
                 </div>
-              )}
+                <p className="text-xs leading-relaxed text-slate-400">{step.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -91,24 +86,24 @@ function WorkflowSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-16 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-8 lg:p-12"
+        className="mt-10 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-6 lg:p-8"
       >
-        <div className="flex flex-col items-center gap-10 lg:flex-row">
-          <div className="flex-1">
-            <h3 className="text-2xl font-bold text-white">Sistem keamanan produksi: Cue ke Take</h3>
-            <p className="mt-4 leading-relaxed text-slate-400">
+        <div className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+          <div className="flex-1 text-center lg:text-left">
+            <h3 className="text-xl font-bold text-white">Sistem keamanan produksi: Cue ke Take</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">
               Operator menyiapkan konten di area{' '}
               <span className="font-bold text-cyan-400">Preview</span>, lalu mengirimnya ke{' '}
               <span className="font-bold text-rose-400">Program</span> hanya saat sudah siap.
               Alur ini menjaga layar jemaat tetap bersih dari kesalahan operator.
             </p>
           </div>
-          <div className="flex shrink-0 items-center gap-4">
-            <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-3 text-sm font-bold text-emerald-400">
+          <div className="flex shrink-0 items-center gap-3">
+            <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-xs font-bold text-emerald-400">
               PREVIEW
             </div>
-            <ArrowRight className="text-slate-700" />
-            <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 px-6 py-3 text-sm font-bold text-rose-400">
+            <ArrowRight className="text-slate-700" size={16} />
+            <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 px-5 py-2.5 text-xs font-bold text-rose-400">
               PROGRAM
             </div>
           </div>
