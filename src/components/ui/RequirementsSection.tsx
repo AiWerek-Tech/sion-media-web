@@ -9,16 +9,16 @@ const requirements = [
     rec: 'Windows 11',
   },
   {
-    os: 'macOS',
+    os: 'macOS (Planned)',
     icon: Cpu,
-    min: 'macOS 12 (Monterey)',
+    min: 'macOS 12 (Monterey) - Planned',
     rec: 'macOS 14 (Sonoma) - Apple Silicon',
   },
   {
-    os: 'Linux',
+    os: 'Linux (Planned)',
     icon: HardDrive,
-    min: 'Ubuntu 22.04+, Fedora 38+',
-    rec: 'Distribusi dengan AppImage support',
+    min: 'Ubuntu 22.04+, Fedora 38+ - Planned',
+    rec: 'Format AppImage - Planned',
   }
 ]
 
@@ -31,7 +31,7 @@ export function RequirementsSection() {
         </span>
         <h2 className="mt-4 text-3xl font-bold text-white">Minimum Requirements</h2>
         <p className="mt-4 max-w-2xl text-slate-400">
-          SION Media dioptimalkan untuk berjalan pada hardware standar operator multimedia gereja.
+          SION Media dioptimalkan untuk berjalan pada hardware standar operator multimedia gereja. Pada fase beta saat ini, sistem difokuskan sepenuhnya untuk platform Windows.
         </p>
       </div>
 
@@ -64,26 +64,25 @@ export function RequirementsSection() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-4xl border border-emerald-500/10 bg-emerald-500/5 p-8">
+      <div className="mt-12 rounded-4xl border border-cyan-500/10 bg-cyan-500/5 p-8">
         <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400">
             <ShieldCheck size={32} />
           </div>
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-white">Release Stability: "Aurora"</h3>
+            <h3 className="text-xl font-bold text-white">Release Stability: SION Media Beta Candidate</h3>
             <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-              Setiap rilis v3.x telah melalui pengujian internal untuk memastikan stabilitas database SQLite dan performa output Dual-Screen. 
-              Kami merekomendasikan penggunaan versi stabil untuk kebutuhan ibadah live.
+              Setiap rilis beta (seperti v1.0.0-beta.1) telah melalui pengujian internal untuk memastikan stabilitas database SQLite lokal dan performa output Dual-Screen. Kami merekomendasikan penyiapan sistem cadangan selama masa pengujian beta ini.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-[10px] font-bold text-slate-300 border border-slate-800">
-              <CheckCircle2 size={12} className="text-emerald-400" />
-              Verified Build
+              <CheckCircle2 size={12} className="text-cyan-400" />
+              Verified Beta
             </div>
             <div className="flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-[10px] font-bold text-slate-300 border border-slate-800">
-              <CheckCircle2 size={12} className="text-emerald-400" />
-              Production Ready
+              <CheckCircle2 size={12} className="text-cyan-400" />
+              Closed Beta
             </div>
           </div>
         </div>

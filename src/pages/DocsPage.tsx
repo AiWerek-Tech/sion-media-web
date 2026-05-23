@@ -31,7 +31,7 @@ function DocsPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             {[
-              { step: '01', title: 'Unduh & Install', desc: 'Dapatkan installer Aurora v3.0 dari halaman download.' },
+              { step: '01', title: 'Unduh & Install', desc: 'Dapatkan installer SION Media Desktop dari halaman unduhan.' },
               { step: '02', title: 'Siapkan Playlist', desc: 'Gunakan Library Mode untuk menyusun lagu ibadah.' },
               { step: '03', title: 'Mulai Proyeksi', desc: 'Tekan SPACE untuk menayangkan lirik ke audience.' },
             ].map((item) => (

@@ -18,7 +18,7 @@ function DownloadCard({ data }: DownloadCardProps) {
         <div className="flex-1">
           <div className="flex items-center gap-3">
             <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-              Latest Stable Release
+              Closed Beta Candidate
             </span>
             {data.mandatory && (
               <span className="rounded-full bg-rose-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-rose-400">
@@ -38,9 +38,10 @@ function DownloadCard({ data }: DownloadCardProps) {
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-emerald-500" />
-              Verified Build
+              Verified Beta
             </div>
           </div>
+
 
           <div className="mt-8 rounded-2xl border border-slate-800/50 bg-slate-950/50 p-6">
             <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500">Release Notes Summary</h3>
@@ -112,9 +113,10 @@ function DownloadCard({ data }: DownloadCardProps) {
             <h3 className="text-sm font-bold uppercase tracking-widest">OS Compatibility</h3>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">
-            Mendukung Windows 10+, macOS (Intel/Apple Silicon), dan distribusi Linux populer. 
-            Direkomendasikan menggunakan arsitektur x64 untuk performa optimal.
+            Fase beta saat ini difokuskan penuh untuk sistem operasi Windows 10 ke atas (x64). 
+            Dukungan untuk macOS (Apple Silicon/Intel) dan distribusi Linux dijadwalkan hadir pada versi publik mendatang.
           </p>
+
         </div>
       </div>
     </motion.section>

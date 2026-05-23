@@ -1,22 +1,22 @@
 export const docsSections = [
   {
     title: 'A. Panduan Unduhan',
-    description: 'Cara mendapatkan versi terbaru SION Media untuk berbagai platform.',
+    description: 'Cara mendapatkan rilis beta terbaru SION Media.',
     items: [
-      { title: 'Versi Terbaru', detail: 'Unduh rilis terbaru "Aurora" v3.x untuk performa dan fitur paling mutakhir.' },
-      { title: 'Windows (x64)', detail: 'Installer resmi (.exe) atau versi portabel untuk Windows 10 ke atas.' },
-      { title: 'macOS (Universal)', detail: 'Mendukung penuh Mac berbasis Intel maupun Apple Silicon (M1/M2/M3).' },
-      { title: 'Linux (AppImage)', detail: 'Distribusi Linux populer dapat menggunakan format AppImage yang mudah dijalankan.' },
+      { title: 'Versi Terbaru', detail: 'Dapatkan rilis beta terbaru (v1.0.0-beta.1) untuk menguji performa dan stabilitas sistem.' },
+      { title: 'Windows (x64)', detail: 'Installer resmi (.exe) versi beta untuk sistem operasi Windows 10 ke atas.' },
+      { title: 'macOS (Planned)', detail: 'Dukungan untuk macOS (Intel & Apple Silicon) direncanakan untuk rilis publik mendatang.' },
+      { title: 'Linux (Planned)', detail: 'Dukungan untuk distribusi Linux (seperti AppImage) direncanakan untuk rilis publik mendatang.' },
     ],
   },
   {
     title: 'B. Instalasi & Update',
-    description: 'Langkah pertama dalam memasang dan menjaga aplikasi tetap mutakhir.',
+    description: 'Langkah pertama memasang dan menjaga aplikasi tetap mutakhir.',
     items: [
-      { title: 'Proses Instalasi', detail: 'Jalankan installer dan ikuti langkah-langkah mudah untuk memasang di komputer Anda.' },
-      { title: 'Portable Version', detail: 'Cukup ekstrak dan jalankan tanpa perlu instalasi sistem, cocok untuk penggunaan cepat.' },
-      { title: 'Launch Pertama', detail: 'Aplikasi akan otomatis menyiapkan database default berisi 525 lagu Lagu Sion.' },
-      { title: 'Cek Update', detail: 'SION Media akan memberitahu Anda jika ada versi baru saat aplikasi dibuka.' },
+      { title: 'Proses Instalasi', detail: 'Jalankan setup installer (.exe) dan ikuti langkah-langkah wizard untuk memasang di komputer Anda.' },
+      { title: 'Setup Wizard', detail: 'Pemasangan otomatis mendaftarkan shortcut desktop dan opsi pencopotan (uninstall) yang aman.' },
+      { title: 'Launch Pertama', detail: 'Aplikasi desktop offline-first ini otomatis menginisialisasi database SQLite lokal berisi 525 lagu.' },
+      { title: 'Cek Update', detail: 'Klien desktop memeriksa metadata pembaruan terbaru via latest-version.json saat aplikasi dibuka.' },
     ],
   },
   {
@@ -25,7 +25,7 @@ export const docsSections = [
     items: [
       { title: '1. Library Mode', detail: 'Pusat organisasi: Cari lagu, edit lirik, dan siapkan daftar lagu (playlist) ibadah.' },
       { title: '2. Projection Mode', detail: 'Live Production: Kontrol apa yang tayang di proyektor melalui sistem Cue & Take yang aman.' },
-      { title: '3. Broadcast Mode Beta', detail: 'Roadmap streaming: jalur persiapan untuk integrasi OBS/vMix, belum menjadi mode produksi utama.' },
+      { title: '3. Broadcast Mode Beta', detail: 'Roadmap streaming: Jalur persiapan untuk integrasi OBS/vMix (dinonaktifkan sementara di build beta).' },
       { title: '4. Management Mode', detail: 'Admin & Maintenance: Kelola backup data, impor lagu massal, dan pengaturan sistem.' },
     ],
   },
@@ -36,9 +36,10 @@ export const docsSections = [
       { title: 'Persiapan Lagu', detail: 'Gunakan Library Mode untuk mencari lagu dan menambahkannya ke Playlist.' },
       { title: 'Persiapan Alkitab', detail: 'Cari ayat yang diperlukan dan siapkan slide Alkitab dalam hitungan detik.' },
       { title: 'Kontrol Tayangan', detail: 'Klik pada lirik untuk Cue, lalu tekan Space untuk Take ke layar Program.' },
-      { title: 'Stage Display', detail: 'Aktifkan Stage Display agar musisi dapat melihat lirik dan chord secara sinkron.' },
+      { title: 'Stage Display', detail: 'Aktifkan Stage Display agar tim musik/singers dapat melihat lirik dan info lagu secara sinkron.' },
     ],
   },
+
   {
     title: 'E. Pertanyaan Umum (FAQ)',
     description: 'Jawaban atas pertanyaan yang sering diajukan oleh operator gereja.',

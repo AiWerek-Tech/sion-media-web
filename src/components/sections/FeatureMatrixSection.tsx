@@ -20,7 +20,7 @@ function FeatureMatrixSection() {
     <section className="mt-32">
       <SectionTitle eyebrow="Technical Capability Matrix" title="Evaluasi Teknis Sekilas" align="center" />
       <p className="mx-auto mt-6 max-w-2xl text-center text-slate-400">
-        Bandingkan kapabilitas inti SION Media "Aurora" dengan ekosistem presentasi ibadah pada umumnya. Fitur roadmap ditandai tanpa mengklaim status produksi final.
+        Bandingkan kapabilitas inti SION Media dengan ekosistem presentasi ibadah pada umumnya. Fitur roadmap ditandai tanpa mengklaim status produksi final.
       </p>
 
       <motion.div 

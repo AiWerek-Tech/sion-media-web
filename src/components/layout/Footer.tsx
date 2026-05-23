@@ -42,7 +42,7 @@ function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Produk</h4>
             <ul className="mt-4 space-y-2.5">
               {[
-                { label: 'Unduh Aurora', path: '/download' },
+                { label: 'Unduh Aplikasi', path: '/download' },
                 { label: 'Catatan Rilis', path: '/changelog' },
                 { label: 'Statistik Publik', path: '/statistics' },
                 { label: 'Panduan Operator', path: '/docs' }

@@ -99,8 +99,9 @@ function AboutPage() {
               className="flex items-center gap-2 rounded-2xl brand-gradient px-8 py-4 text-sm font-bold text-slate-950 transition hover:scale-105"
             >
               <Monitor size={18} />
-              Try Aurora v3.0
+              Unduh SION Media Beta
             </Link>
+
           </div>
         </section>
       </main>
