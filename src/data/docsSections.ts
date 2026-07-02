@@ -3,7 +3,7 @@ export const docsSections = [
     title: 'A. Panduan Unduhan',
     description: 'Cara mendapatkan rilis beta terbaru SION Media.',
     items: [
-      { title: 'Versi Terbaru', detail: 'Dapatkan rilis beta terbaru (v1.0.0-beta.1) untuk menguji performa dan stabilitas sistem.' },
+      { title: 'Versi Terbaru', detail: 'Dapatkan rilis beta terbaru (v1.0.0-beta.2) untuk menguji performa dan stabilitas sistem.' },
       { title: 'Windows (x64)', detail: 'Installer resmi (.exe) versi beta untuk sistem operasi Windows 10 ke atas.' },
       { title: 'macOS (Planned)', detail: 'Dukungan untuk macOS (Intel & Apple Silicon) direncanakan untuk rilis publik mendatang.' },
       { title: 'Linux (Planned)', detail: 'Dukungan untuk distribusi Linux (seperti AppImage) direncanakan untuk rilis publik mendatang.' },

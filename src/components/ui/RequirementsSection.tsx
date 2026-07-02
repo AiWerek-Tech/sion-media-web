@@ -72,7 +72,7 @@ export function RequirementsSection() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-white">Release Stability: SION Media Beta Candidate</h3>
             <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-              Setiap rilis beta (seperti v1.0.0-beta.1) telah melalui pengujian internal untuk memastikan stabilitas database SQLite lokal dan performa output Dual-Screen. Kami merekomendasikan penyiapan sistem cadangan selama masa pengujian beta ini.
+              Setiap rilis beta (seperti v1.0.0-beta.2) telah melalui pengujian internal untuk memastikan stabilitas database SQLite lokal dan performa output Dual-Screen. Kami merekomendasikan penyiapan sistem cadangan selama masa pengujian beta ini.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">

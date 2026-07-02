@@ -2,10 +2,10 @@ import type { LatestVersionData } from '../types'
 
 const latestVersionUrl = `${import.meta.env.BASE_URL}latest-version.json`
 const fallbackLatestVersion: LatestVersionData = {
-  version: '1.0.0-beta.1',
-  releaseDate: '2026-05-23',
+  version: '1.0.0-beta.2',
+  releaseDate: '2026-07-02',
   mandatory: false,
-  downloadUrl: 'https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.1',
+  downloadUrl: 'https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.2',
   notes: ['Metadata rilis tidak dapat dimuat. Buka GitHub Releases untuk mengunduh installer terbaru.'],
 }
 

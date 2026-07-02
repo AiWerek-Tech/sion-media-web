@@ -7,6 +7,20 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: '1.0.0-beta.2',
+    date: '2026-07-02',
+    type: 'Closed Beta System Release',
+    notes: [
+      'Sistem Bible Content Pack: Arsitektur baru berbasis database SQLite eksternal untuk pengelolaan terjemahan Alkitab secara modular.',
+      'Bible Reader & Study: Panel navigasi Alkitab interaktif, chapter rail, verse cards, catatan ayat, dan highlight warna.',
+      'Mixed Rundown: Playlist yang mendukung item campuran antara lirik lagu dan ayat Alkitab dalam satu rundown.',
+      'Database Default & Bundling: Bundling database default dengan 525 lagu dan hymnal, serta menyertakan Alkitab Terjemahan Baru (TB) secara bawaan.',
+      'Auto-Registrasi Database: Sistem pembaruan path Alkitab dinamis saat startup agar kompatibel di semua perangkat pengguna secara langsung.',
+      'Windows Code Signing: Integrasi infrastruktur penandatanganan kode digital lokal dan halaman panduan bypass Windows SmartScreen di dalam wizard installer.',
+      'Redesain Visual: Tampilan Splash Screen, Welcome Screen, dan Projection Panel yang diperbarui agar terasa lebih premium.'
+    ],
+  },
+  {
     version: '1.0.0-beta.1',
     date: '2026-05-23',
     type: 'Closed Beta Release Candidate',
