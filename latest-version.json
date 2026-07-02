@@ -1,15 +1,15 @@
 {
-  "version": "1.0.0-beta.1",
-  "releaseDate": "2026-05-23",
+  "version": "1.0.0-beta.2",
+  "releaseDate": "2026-07-02",
   "mandatory": false,
-  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.1",
+  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.2",
   "notes": [
-    "First closed beta release",
-    "Professional worship presentation system",
-    "FSM-based projection engine",
-    "Multi-hymnal song management",
-    "Bible/Scripture presentation",
-    "Smart worship navigation",
-    "Crash recovery & safe mode"
+    "Sistem Bible Content Pack dengan database modular SQLite",
+    "Penyertaan default Alkitab Terjemahan Baru (TB)",
+    "Penyertaan database default berisi 525 lagu lengkap",
+    "Mixed Rundown & Playlist (campuran lagu & Alkitab)",
+    "Dynamic Registry Auto-Update untuk pembaruan path Alkitab otomatis",
+    "Integrasi halaman panduan Windows SmartScreen di dalam installer",
+    "Desain ulang Splash Screen, Welcome Screen, dan Projection Panel"
   ]
 }
