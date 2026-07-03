@@ -8,16 +8,16 @@ import type { ChangelogEntry } from '../types'
 export const changelogEntries: ChangelogEntry[] = [
   {
     version: '1.0.0-beta.2',
-    date: '2026-07-02',
+    date: '2026-07-03',
     type: 'Closed Beta System Release',
     notes: [
-      'Sistem Bible Content Pack: Arsitektur baru berbasis database SQLite eksternal untuk pengelolaan terjemahan Alkitab secara modular.',
-      'Bible Reader & Study: Panel navigasi Alkitab interaktif, chapter rail, verse cards, catatan ayat, dan highlight warna.',
-      'Mixed Rundown: Playlist yang mendukung item campuran antara lirik lagu dan ayat Alkitab dalam satu rundown.',
-      'Database Default & Bundling: Bundling database default dengan 525 lagu dan hymnal, serta menyertakan Alkitab Terjemahan Baru (TB) secara bawaan.',
-      'Auto-Registrasi Database: Sistem pembaruan path Alkitab dinamis saat startup agar kompatibel di semua perangkat pengguna secara langsung.',
-      'Windows Code Signing: Integrasi infrastruktur penandatanganan kode digital lokal dan halaman panduan bypass Windows SmartScreen di dalam wizard installer.',
-      'Redesain Visual: Tampilan Splash Screen, Welcome Screen, dan Projection Panel yang diperbarui agar terasa lebih premium.'
+      'Stage Display Redesign: Tipografi Poppins ExtraBold untuk keterbacaan panggung jarak jauh, perbaikan alignment timer header, dan penghitungan counter slide akurat (SLIDE X / Y).',
+      'Dynamic CSS Motion Atmospheres: 22 preset atmosfer visual GPU-accelerated (asap panggung volumetrik, garis laser, neon grid, bokeh/cosmic orbs) tanpa beban file video.',
+      'Pengaturan Sistem Terintegrasi: Audit & penyempurnaan 9 sub-halaman Settings (Display, Hymnals, Bible Pack Manager, Appearance, Theme & Font, Background, Shortcuts, Backup & Restore, About).',
+      'Management Mode Pratinjau: Tombol Pratinjau lagu terhubung langsung ke layar proyeksi, metrik summary dinamis, dan fallback metadata tabel.',
+      'Quick Search Tag Adventis: Tag pencarian cepat lirik lagu Adventis (Pujian, Sabat, Kasih, Pengharapan, Doa, Persepuluhan, Roh Kudus, Syukur).',
+      'Sistem Bible Content Pack: Arsitektur berbasis database SQLite eksternal untuk pengelolaan terjemahan Alkitab secara modular (termasuk TB LAI 1974 bawaan).',
+      'Windows Code Signing & Release Build: Installer NSIS resmi (.exe) versi v1.0.0-beta.2 dengan dukungan penandatanganan digital.'
     ],
   },
   {
