@@ -1,4 +1,4 @@
-import { Download, ExternalLink, ShieldCheck, Cpu, Terminal, Globe } from 'lucide-react'
+import { AlertTriangle, Download, ExternalLink, ShieldCheck, MonitorUp, Globe } from 'lucide-react'
 import type { LatestVersionData } from '../../types'
 import { motion } from 'framer-motion'
 import { recordInstallation } from '../../firebase/firestore'
@@ -18,7 +18,7 @@ function DownloadCard({ data }: DownloadCardProps) {
         <div className="flex-1">
           <div className="flex items-center gap-3">
             <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-              Closed Beta Candidate
+              Beta Testing
             </span>
             {data.mandatory && (
               <span className="rounded-full bg-rose-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-rose-400">
@@ -38,7 +38,7 @@ function DownloadCard({ data }: DownloadCardProps) {
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck size={16} className="text-emerald-500" />
-              Verified Beta
+              Windows x64
             </div>
           </div>
 
@@ -67,7 +67,7 @@ function DownloadCard({ data }: DownloadCardProps) {
             className="group flex items-center justify-center gap-3 rounded-2xl brand-gradient px-8 py-5 text-sm font-bold text-slate-950 transition hover:scale-105"
           >
             <Download size={20} />
-            Download for Windows (x64)
+            Buka unduhan Windows
           </a>
           
           <a
@@ -77,21 +77,12 @@ function DownloadCard({ data }: DownloadCardProps) {
             className="flex items-center justify-center gap-3 rounded-2xl border border-slate-700 bg-slate-950 px-8 py-5 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900"
           >
             <ExternalLink size={20} />
-            View all platforms on GitHub
+            Lihat GitHub Releases
           </a>
 
-          <div className="mt-4 rounded-2xl bg-slate-900/50 p-5 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Other Platforms</p>
-            <div className="mt-3 flex justify-center gap-6 text-slate-400">
-              <div className="flex flex-col items-center gap-1">
-                <div className="rounded-lg bg-slate-950 p-2 text-slate-300"><Terminal size={18} /></div>
-                <span className="text-[10px]">Linux</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="rounded-lg bg-slate-950 p-2 text-slate-300"><Cpu size={18} /></div>
-                <span className="text-[10px]">macOS</span>
-              </div>
-            </div>
+          <div className="mt-4 rounded-2xl border border-amber-400/15 bg-amber-400/[0.06] p-5">
+            <div className="flex items-center gap-2 text-amber-300"><AlertTriangle size={17} /><b className="text-xs">Installer beta belum signed</b></div>
+            <p className="mt-2 text-[11px] leading-relaxed text-slate-400">Windows SmartScreen dapat meminta konfirmasi. Pastikan file berasal dari halaman GitHub resmi AiWerek Tech.</p>
           </div>
         </div>
       </div>
@@ -100,21 +91,19 @@ function DownloadCard({ data }: DownloadCardProps) {
         <div className="group rounded-3xl border border-slate-800 bg-slate-950/40 p-6 transition hover:border-slate-700">
           <div className="flex items-center gap-3 text-cyan-400">
             <ShieldCheck size={20} />
-            <h3 className="text-sm font-bold uppercase tracking-widest">Trust & Security</h3>
+            <h3 className="text-sm font-bold uppercase tracking-widest">Metadata release</h3>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">
-            Metadata rilis dikelola secara terpusat melalui <code className="text-cyan-400">latest-version.json</code>. 
-            Aplikasi desktop memvalidasi checksum dan tanda tangan digital untuk setiap pembaruan.
+            Versi terbaru dikelola melalui <code className="text-cyan-400">latest-version.json</code> dan disinkronkan dengan changelog serta artefak GitHub Releases.
           </p>
         </div>
         <div className="group rounded-3xl border border-slate-800 bg-slate-950/40 p-6 transition hover:border-slate-700">
           <div className="flex items-center gap-3 text-cyan-400">
-            <Terminal size={20} />
-            <h3 className="text-sm font-bold uppercase tracking-widest">OS Compatibility</h3>
+            <MonitorUp size={20} />
+            <h3 className="text-sm font-bold uppercase tracking-widest">Kompatibilitas</h3>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">
-            Fase beta saat ini difokuskan penuh untuk sistem operasi Windows 10 ke atas (x64). 
-            Dukungan untuk macOS (Apple Silicon/Intel) dan distribusi Linux dijadwalkan hadir pada versi publik mendatang.
+            Beta ini ditujukan untuk Windows 10/11 x64. SION Media dan SION Link Desktop perlu berada pada jaringan LAN/Wi-Fi yang sama untuk fitur remote.
           </p>
 
         </div>

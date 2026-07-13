@@ -1,15 +1,15 @@
 {
-  "version": "1.0.0-beta.2",
-  "releaseDate": "2026-07-02",
+  "version": "1.1.0-beta.1",
+  "releaseDate": "2026-07-13",
   "mandatory": false,
-  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.2",
+  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases",
   "notes": [
-    "Sistem Bible Content Pack dengan database modular SQLite",
-    "Penyertaan default Alkitab Terjemahan Baru (TB)",
-    "Penyertaan database default berisi 525 lagu lengkap",
-    "Mixed Rundown & Playlist (campuran lagu & Alkitab)",
-    "Dynamic Registry Auto-Update untuk pembaruan path Alkitab otomatis",
-    "Integrasi halaman panduan Windows SmartScreen di dalam installer",
-    "Desain ulang Splash Screen, Welcome Screen, dan Projection Panel"
+    "SION Link Desktop dengan auto-discovery, smart connection, dan empat role akses",
+    "OBS Network Output berbasis SRT dengan video 1080p dan audio program",
+    "Impor PowerPoint dengan Speaker Notes serta fallback PowerPoint, WPS, dan LibreOffice",
+    "PowerPoint Presentation Bridge menuju Live SION Media",
+    "Stage Display baru dengan current/next cue, notes, chord, timer, dan heartbeat",
+    "Output landscape yang dioptimalkan untuk proyektor dan Interactive Flat Panel",
+    "Perombakan Pengaturan Sistem, keamanan IPC, recovery, dan workflow operator"
   ]
 }

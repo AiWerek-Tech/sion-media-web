@@ -14,31 +14,31 @@ export const features = [
     iconName: 'Monitor'
   },
   {
-    title: 'Broadcast Mode Beta',
+    title: 'OBS Network Output · SRT',
     description:
-      'Fondasi mode broadcast sudah disiapkan untuk integrasi streaming. Fitur produksi penuh ditandai sebagai roadmap sampai modul desktop stabil.',
-    tag: 'Roadmap',
+      'Kirim Program Output 1080p beserta audio melalui jaringan LAN langsung ke Media Source OBS tanpa plugin khusus.',
+    tag: 'Broadcast Beta',
     iconName: 'Zap'
   },
   {
-    title: 'Management Mode',
+    title: 'SION Link Desktop',
     description:
-      'Kelola backup, impor lagu Excel/JSON, data SQLite lokal, status konten, dan konfigurasi media dari satu ruang kerja.',
-    tag: 'Operasional',
+      'Companion native dengan auto-discovery untuk Pemateri, Operator, Live Viewer, Stage Display, dan PowerPoint Bridge.',
+    tag: 'Remote LAN',
     iconName: 'Settings'
   },
   {
-    title: 'Integrasi Alkitab',
+    title: 'PowerPoint + Speaker Notes',
     description:
-      'Modul Alkitab offline terintegrasi untuk pencarian ayat dan penayangan cepat saat ibadah.',
-    tag: 'Firman',
+      'Impor PPTX sambil mempertahankan judul dan catatan pemateri. Mendukung PowerPoint, WPS Presentation, dan LibreOffice.',
+    tag: 'Presentasi',
     iconName: 'Book'
   },
   {
-    title: 'Multi-Monitor Routing',
+    title: 'Stage Display Profesional',
     description:
-      'Pisahkan workspace operator, stage display, dan output program agar setiap layar punya peran yang jelas.',
-    tag: 'Perangkat',
+      'Current dan next cue, notes, chord, timer, heartbeat, status LIVE/FREEZE/BLACK, serta routing monitor khusus panggung.',
+    tag: 'Confidence',
     iconName: 'Activity'
   }
 ]

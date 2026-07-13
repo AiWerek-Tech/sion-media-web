@@ -28,7 +28,7 @@ function DownloadPage() {
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Download" title="Dapatkan rilis desktop SION Media terbaru" />
         <p className="mt-4 max-w-3xl text-slate-300">
-          Situs ini membaca `latest-version.json` sebagai sumber kebenaran rilis untuk aplikasi desktop. Installer Windows, macOS, dan Linux tersedia melalui GitHub Releases, sementara klien desktop memeriksa metadata ini secara otomatis.
+          Rilis beta Windows terdiri dari aplikasi operator SION Media dan companion SION Link Desktop. Metadata versi dibaca dari `latest-version.json`; installer resmi dipublikasikan melalui GitHub Releases.
         </p>
 
         {status === 'loading' && <LoadingState text="Memuat data rilis..." />}
@@ -39,6 +39,19 @@ function DownloadPage() {
         {status === 'success' && latestVersion && (
           <DownloadCard data={latestVersion} />
         )}
+
+        <section className="mt-8 grid gap-5 md:grid-cols-2">
+          <article className="rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.05] p-6">
+            <div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300">Aplikasi utama</div>
+            <h2 className="mt-2 text-xl font-bold text-white">SION Media Desktop</h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC operator: library, projection, Stage Display, PowerPoint import, OBS SRT, database, dan seluruh pengaturan sistem.</p>
+          </article>
+          <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.05] p-6">
+            <div className="text-[10px] font-black uppercase tracking-[.16em] text-indigo-300">Companion jaringan</div>
+            <h2 className="mt-2 text-xl font-bold text-white">SION Link Desktop</h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC pemateri atau operator tambahan: auto-discovery, role access, Live Viewer, Stage, dan PowerPoint Bridge.</p>
+          </article>
+        </section>
 
         <RequirementsSection />
       </main>

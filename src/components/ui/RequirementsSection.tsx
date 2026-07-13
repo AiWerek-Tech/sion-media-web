@@ -1,24 +1,24 @@
-import { Monitor, Cpu, HardDrive, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { Monitor, Network, Presentation, ShieldCheck, CheckCircle2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const requirements = [
   {
-    os: 'Windows',
+    os: 'Komputer operator',
     icon: Monitor,
     min: 'Windows 10 (64-bit)',
     rec: 'Windows 11',
   },
   {
-    os: 'macOS (Planned)',
-    icon: Cpu,
-    min: 'macOS 12 (Monterey) - Planned',
-    rec: 'macOS 14 (Sonoma) - Apple Silicon',
+    os: 'Jaringan lokal',
+    icon: Network,
+    min: 'Wi-Fi/LAN satu jaringan',
+    rec: 'LAN gigabit untuk SRT 1080p',
   },
   {
-    os: 'Linux (Planned)',
-    icon: HardDrive,
-    min: 'Ubuntu 22.04+, Fedora 38+ - Planned',
-    rec: 'Format AppImage - Planned',
+    os: 'Bahan presentasi',
+    icon: Presentation,
+    min: 'PDF, gambar, video, atau PPTX',
+    rec: 'PowerPoint/WPS/LibreOffice untuk konversi terbaik',
   }
 ]
 
@@ -31,7 +31,7 @@ export function RequirementsSection() {
         </span>
         <h2 className="mt-4 text-3xl font-bold text-white">Minimum Requirements</h2>
         <p className="mt-4 max-w-2xl text-slate-400">
-          SION Media dioptimalkan untuk berjalan pada hardware standar operator multimedia gereja. Pada fase beta saat ini, sistem difokuskan sepenuhnya untuk platform Windows.
+          Versi beta saat ini difokuskan untuk Windows x64 dan dapat dipakai sepenuhnya offline setelah aplikasi terpasang.
         </p>
       </div>
 
@@ -72,17 +72,17 @@ export function RequirementsSection() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-white">Release Stability: SION Media Beta Candidate</h3>
             <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-              Setiap rilis beta (seperti v1.0.0-beta.2) telah melalui pengujian internal untuk memastikan stabilitas database SQLite lokal dan performa output Dual-Screen. Kami merekomendasikan penyiapan sistem cadangan selama masa pengujian beta ini.
+              v1.1.0-beta.1 mencakup perubahan besar pada SION Link, Stage Display, impor presentasi, dan output OBS. Gunakan pada kegiatan uji coba dengan salinan cadangan materi sebelum rilis stabil 1.0.0.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-[10px] font-bold text-slate-300 border border-slate-800">
               <CheckCircle2 size={12} className="text-cyan-400" />
-              Verified Beta
+              Public Beta
             </div>
             <div className="flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-[10px] font-bold text-slate-300 border border-slate-800">
               <CheckCircle2 size={12} className="text-cyan-400" />
-              Closed Beta
+              Backup Recommended
             </div>
           </div>
         </div>

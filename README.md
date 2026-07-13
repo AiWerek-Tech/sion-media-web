@@ -142,7 +142,7 @@ src/
 
 ### Desktop App (SION Media - Electron)
 - **Update Metadata**: Fetches version info from `public/latest-version.json`
-- **Installer Downloads**: Links to GitHub Releases for Windows/macOS/Linux installers
+- **Installer Downloads**: Links to the Windows x64 beta installers for SION Media Desktop and SION Link Desktop
 - **Public Statistics**: Updates usage metrics in Firestore
 - **Independent Operation**: Separate project from website, operates standalone
 - **Multi-Hymnal Support**: Built on SQLite database with 525 Lagu Sion default
@@ -165,7 +165,7 @@ src/
 
 ### GitHub Ecosystem
 - **Pages**: Website hosting at `https://aiwerek-tech.github.io/sion-media-web`
-- **Releases**: Desktop app distribution (Windows/macOS/Linux installers)
+- **Releases**: Windows desktop beta distribution and release notes
 - **Repository**: Separate repos for website (`sion-media-web`) and desktop app (`SION-Media`)
 
 ## �️ SION Media Desktop App
@@ -192,7 +192,7 @@ This website serves as the official portal for **SION Media**, a professional wo
 - **Build**: Vite for development, Electron Builder for distribution
 
 ### Distribution
-- **Platforms**: Windows (NSIS installer), macOS (DMG), Linux (AppImage)
+- **Platforms**: Windows 10/11 x64 (NSIS installer) during the beta phase
 - **Updates**: Automatic update system via `latest-version.json`
 - **Repository**: `https://github.com/aiwerek-tech/SION-Media`
 
@@ -243,7 +243,7 @@ Key components:
 The separate Electron desktop application (`D:\my_dev\SION-Media`) integrates with this website:
 
 - **Checks for Updates**: Fetches `public/latest-version.json` for latest version info
-- **Downloads Installers**: Links to GitHub Releases for Windows, macOS, Linux
+- **Downloads Installers**: Links to GitHub Releases for SION Media Desktop and SION Link Desktop on Windows x64
 - **Reports Statistics**: Sends usage data to Firebase (managed by this website)
 - **Reads Documentation**: Can pull guides and changelog from website APIs
 

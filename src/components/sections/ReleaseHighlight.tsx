@@ -35,10 +35,10 @@ function ReleaseHighlight() {
               <span className="rounded-full bg-cyan-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
                 Release Highlight
               </span>
-              {release?.version === '1.0.0' && (
+              {release?.version.includes('beta') && (
                 <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-emerald-400">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-                  First Public Build
+                  Beta testing
                 </span>
               )}
             </div>
@@ -52,7 +52,7 @@ function ReleaseHighlight() {
             {release && (
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 Pembaruan terbaru dirilis pada <span className="text-slate-200">{release.releaseDate}</span>. 
-                Sangat direkomendasikan untuk stabilitas live worship.
+                Release ini ditujukan untuk pengujian operasional sebelum versi stabil.
               </p>
             )}
           </div>
@@ -64,10 +64,10 @@ function ReleaseHighlight() {
             className="flex items-center gap-2 rounded-xl brand-gradient px-6 py-3 text-sm font-bold text-slate-950 transition hover:scale-105"
           >
             <Download size={18} />
-            Download Now
+            Lihat unduhan
           </Link>
           <a
-            href="https://github.com/AiWerek-Tech/SION-Media/releases/latest"
+            href="https://github.com/AiWerek-Tech/SION-Media/releases"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:border-slate-500 hover:bg-slate-900"

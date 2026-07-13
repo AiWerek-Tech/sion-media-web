@@ -7,6 +7,20 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: '1.1.0-beta.1',
+    date: '2026-07-13',
+    type: 'Beta Testing · Connected Production Release',
+    notes: [
+      'SION Link Desktop: auto-discovery LAN/Wi-Fi, smart paste link, reconnect, riwayat perangkat, dan akses role Pemateri, Operator, Live Viewer, serta Stage.',
+      'OBS Network Output berbasis SRT: Program Output 1080p dan audio dapat diterima OBS Studio di PC lain tanpa plugin khusus.',
+      'PowerPoint Package Import: judul dan Speaker Notes dipertahankan dengan provider PowerPoint, WPS Presentation, serta LibreOffice.',
+      'PowerPoint Presentation Bridge: slide aktif dan notes dari PC pemateri dapat dikirim ke Live SION Media menggunakan kode Operator.',
+      'Stage Display profesional: current/next cue, notes, chord, heartbeat, timer, status runtime, auto-fit, dan monitor terpisah.',
+      'SION Link dan Pengaturan Sistem mendapat perombakan UI/UX responsif, onboarding pemula, koneksi otomatis, serta recovery yang lebih jelas.',
+      'Keamanan diperketat melalui sender policy per-window, validasi payload, pembatasan origin, endpoint discovery terverifikasi, dan import transaksional.'
+    ]
+  },
+  {
     version: '1.0.0-beta.2',
     date: '2026-07-03',
     type: 'Closed Beta System Release',
@@ -17,7 +31,7 @@ export const changelogEntries: ChangelogEntry[] = [
       'Management Mode Pratinjau: Tombol Pratinjau lagu terhubung langsung ke layar proyeksi, metrik summary dinamis, dan fallback metadata tabel.',
       'Quick Search Tag Adventis: Tag pencarian cepat lirik lagu Adventis (Pujian, Sabat, Kasih, Pengharapan, Doa, Persepuluhan, Roh Kudus, Syukur).',
       'Sistem Bible Content Pack: Arsitektur berbasis database SQLite eksternal untuk pengelolaan terjemahan Alkitab secara modular (termasuk TB LAI 1974 bawaan).',
-      'Windows Code Signing & Release Build: Installer NSIS resmi (.exe) versi v1.0.0-beta.2 dengan dukungan penandatanganan digital.'
+      'Windows Release Build: Installer NSIS (.exe) versi v1.0.0-beta.2 untuk pengujian distribusi internal.'
     ],
   },
   {

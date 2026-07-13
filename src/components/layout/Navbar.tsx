@@ -71,7 +71,7 @@ function Navbar() {
           </a>
 
           <a
-            href="https://github.com/AiWerek-Tech/SION-Media/releases/latest"
+            href="https://github.com/AiWerek-Tech/SION-Media/releases"
             target="_blank"
             rel="noreferrer"
             className={`ml-2 flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-widest transition ${
@@ -128,7 +128,7 @@ function Navbar() {
                   GitHub
                 </a>
                 <a
-                  href="https://github.com/AiWerek-Tech/SION-Media/releases/latest"
+                  href="https://github.com/AiWerek-Tech/SION-Media/releases"
                   target="_blank"
                   rel="noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-xl brand-gradient p-3 text-sm font-bold text-slate-950"

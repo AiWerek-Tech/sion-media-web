@@ -15,7 +15,7 @@ const useCases = [
   },
   {
     title: 'Livestream Ministry',
-    desc: 'Tim streaming dapat memakai Projection Mode sebagai sumber layar yang stabil sambil mengikuti roadmap Broadcast Mode untuk integrasi lanjutan.',
+    desc: 'Tim streaming dapat menerima Program Output 1080p beserta audio langsung di OBS melalui SRT pada jaringan lokal.',
     icon: Share2,
   },
   {

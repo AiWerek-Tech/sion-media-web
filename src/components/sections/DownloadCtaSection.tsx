@@ -25,7 +25,7 @@ function DownloadCtaSection() {
         </h2>
         
         <p className="mt-3 max-w-2xl text-sm text-slate-400">
-          Unduh SION Media sekarang dan rasakan workflow broadcast-grade yang dirancang khusus untuk operator gereja.
+          Uji SION Media Desktop dan SION Link Desktop bersama tim Anda. Versi ini masih beta dan ditujukan untuk validasi lapangan sebelum rilis stabil.
         </p>
  
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
@@ -34,7 +34,7 @@ function DownloadCtaSection() {
             onClick={() => recordInstallation()}
             className="group flex items-center gap-2 rounded-full brand-gradient px-6 py-3 text-xs font-bold text-slate-950 transition hover:scale-105"
           >
-            Download Latest Release
+            Unduh versi beta
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
           </Link>
           <a 
@@ -44,12 +44,12 @@ function DownloadCtaSection() {
             className="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-950/50 px-6 py-3 text-xs font-bold text-white transition hover:border-slate-500 hover:bg-slate-900"
           >
             <Code size={16} />
-            Source Code
+            Lihat GitHub
           </a>
         </div>
         
         <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-slate-600">
-          Windows 10+ • macOS • Linux
+          Windows 10/11 x64 · SION Media + SION Link · v1.1.0-beta.1
         </p>
       </div>
     </motion.section>

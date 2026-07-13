@@ -17,7 +17,7 @@ function AboutPage() {
     {
       icon: Rocket,
       title: 'Misi Multi-Platform',
-      desc: 'Menghadirkan aplikasi desktop asli untuk Windows, macOS, dan Linux tanpa kompromi performa untuk menjangkau setiap pelayan gereja.',
+      desc: 'Menghadirkan aplikasi desktop Windows yang fokus, cepat, dan dapat diandalkan untuk kebutuhan operator serta pelayan gereja.',
       color: 'text-emerald-400',
       bg: 'bg-emerald-400/10'
     },

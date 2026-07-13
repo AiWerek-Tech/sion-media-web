@@ -3,10 +3,10 @@ export const docsSections = [
     title: 'A. Panduan Unduhan',
     description: 'Cara mendapatkan rilis beta terbaru SION Media.',
     items: [
-      { title: 'Versi Terbaru', detail: 'Dapatkan rilis beta terbaru (v1.0.0-beta.2) untuk menguji performa dan stabilitas sistem.' },
+      { title: 'Versi Terbaru', detail: 'Rilis saat ini adalah v1.1.0-beta.1 untuk pengujian fitur connected production dan stabilitas operasional.' },
       { title: 'Windows (x64)', detail: 'Installer resmi (.exe) versi beta untuk sistem operasi Windows 10 ke atas.' },
-      { title: 'macOS (Planned)', detail: 'Dukungan untuk macOS (Intel & Apple Silicon) direncanakan untuk rilis publik mendatang.' },
-      { title: 'Linux (Planned)', detail: 'Dukungan untuk distribusi Linux (seperti AppImage) direncanakan untuk rilis publik mendatang.' },
+      { title: 'SION Link Desktop', detail: 'Pasang companion Windows pada PC pemateri atau perangkat operator tambahan untuk koneksi LAN otomatis.' },
+      { title: 'Status Beta', detail: 'Installer belum ditandatangani sertifikat publik; Windows SmartScreen dapat meminta konfirmasi tambahan.' },
     ],
   },
   {
@@ -25,7 +25,7 @@ export const docsSections = [
     items: [
       { title: '1. Library Mode', detail: 'Pusat organisasi: Cari lagu, edit lirik, dan siapkan daftar lagu (playlist) ibadah.' },
       { title: '2. Projection Mode', detail: 'Live Production: Kontrol apa yang tayang di proyektor melalui sistem Cue & Take yang aman.' },
-      { title: '3. Broadcast Mode Beta', detail: 'Roadmap streaming: Jalur persiapan untuk integrasi OBS/vMix (dinonaktifkan sementara di build beta).' },
+      { title: '3. Broadcast & SRT', detail: 'Kirim output 1080p dan audio melalui LAN ke OBS Studio pada komputer lain.' },
       { title: '4. Management Mode', detail: 'Admin & Maintenance: Kelola backup data, impor lagu massal, dan pengaturan sistem.' },
     ],
   },
@@ -37,6 +37,8 @@ export const docsSections = [
       { title: 'Persiapan Alkitab', detail: 'Cari ayat yang diperlukan dan siapkan slide Alkitab dalam hitungan detik.' },
       { title: 'Kontrol Tayangan', detail: 'Klik pada lirik untuk Cue, lalu tekan Space untuk Take ke layar Program.' },
       { title: 'Stage Display', detail: 'Aktifkan Stage Display agar tim musik/singers dapat melihat lirik dan info lagu secara sinkron.' },
+      { title: 'SION Link', detail: 'Aktifkan server lokal; perangkat companion akan menemukan IP dan port secara otomatis, lalu pengguna cukup memasukkan kode role.' },
+      { title: 'PowerPoint', detail: 'Impor PPTX untuk rundown atau gunakan PowerPoint Bridge ketika presentasi harus tetap dikendalikan dari komputer pemateri.' },
     ],
   },
 

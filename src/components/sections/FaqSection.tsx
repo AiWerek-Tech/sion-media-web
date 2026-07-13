@@ -17,7 +17,19 @@ const faqItems = [
   },
   {
     question: 'Apakah SION Media membutuhkan koneksi internet?',
-    answer: 'Sebagian besar fitur bekerja secara offline. Internet hanya dibutuhkan untuk memeriksa pembaruan dan menyinkronkan statistik publik ke Cloud.',
+    answer: 'Tidak untuk operasional ibadah. SION Link, Stage Display, PowerPoint Bridge, dan SRT bekerja melalui jaringan lokal. Internet hanya diperlukan untuk pembaruan dan layanan web.',
+  },
+  {
+    question: 'Apakah PowerPoint dan Speaker Notes didukung?',
+    answer: 'Ya. PPTX dapat diimpor bersama judul dan Speaker Notes. Konversi otomatis menggunakan PowerPoint, WPS Presentation, atau LibreOffice yang tersedia.',
+  },
+  {
+    question: 'Apakah perlu plugin khusus untuk OBS Studio?',
+    answer: 'Tidak. Aktifkan OBS Network Output di SION Media, lalu masukkan URL SRT sebagai Media Source di OBS pada komputer lain.',
+  },
+  {
+    question: 'Bagaimana perangkat menemukan server SION Link?',
+    answer: 'SION Link Desktop memindai LAN/Wi-Fi secara otomatis dan memverifikasi identitas server. Pengguna biasanya hanya perlu memilih server dan memasukkan kode role.',
   },
 ]
 

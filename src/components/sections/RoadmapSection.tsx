@@ -2,20 +2,20 @@ import SectionTitle from '../common/SectionTitle'
 
 const roadmapItems = [
   {
-    milestone: 'Peluncuran fondasi',
-    detail: 'Luncurkan pengalaman website, portal unduhan, dan alur metadata rilis untuk pengguna desktop.',
+    milestone: 'Validasi beta lapangan',
+    detail: 'Uji alur operator, pemateri, Stage Display, PPTX, dan OBS pada beragam jaringan serta perangkat gereja.',
   },
   {
-    milestone: 'Penyempurnaan desktop',
-    detail: 'Tambahkan pratinjau aplikasi yang lebih solid, layar fokus presentasi, dan pengalaman operator ibadah ringan.',
+    milestone: 'Keandalan koneksi',
+    detail: 'Perkuat auto-discovery, pemulihan koneksi, diagnostik jaringan, dan preset SRT yang ramah pemula.',
   },
   {
-    milestone: 'Kepercayaan publik',
-    detail: 'Tampilkan metrik adopsi melalui Firestore dan pertahankan transparansi pembaruan dengan riwayat changelog.',
+    milestone: 'Distribusi tepercaya',
+    detail: 'Siapkan code signing Windows, pengujian installer, dokumentasi migrasi, dan kanal pembaruan beta yang aman.',
   },
   {
-    milestone: 'Skala masa depan',
-    detail: 'Siapkan platform untuk dukungan offline lebih baik, sinkron editor, dan adopsi tim gereja yang lebih luas.',
+    milestone: 'Menuju stabil 1.0',
+    detail: 'Tutup temuan kritis, bekukan kontrak data, optimalkan performa, dan terbitkan rilis stabil setelah lolos validasi.',
   },
 ]
 

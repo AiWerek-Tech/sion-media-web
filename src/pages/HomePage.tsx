@@ -6,6 +6,7 @@ import RoadmapSection from '../components/sections/RoadmapSection'
 import FaqSection from '../components/sections/FaqSection'
 import DownloadCtaSection from '../components/sections/DownloadCtaSection'
 import WorkflowSection from '../components/sections/WorkflowSection'
+import ReleaseHighlight from '../components/sections/ReleaseHighlight'
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
         <HeroSection />
+        <ReleaseHighlight />
         <WorkflowSection />
         <FeaturesSection />
         <RoadmapSection />

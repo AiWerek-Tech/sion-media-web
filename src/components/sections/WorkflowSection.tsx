@@ -20,17 +20,17 @@ const steps = [
     bg: 'bg-emerald-400/10'
   },
   {
-    mode: 'Broadcast Beta',
-    title: '3. Persiapan Streaming',
-    desc: 'Mode broadcast disiapkan sebagai roadmap integrasi streaming, sementara workflow live utama tetap berjalan lewat Projection Mode.',
+    mode: 'SION Link + Stage',
+    title: '3. Hubungkan Tim',
+    desc: 'Pemateri, operator tambahan, live viewer, dan tim panggung tersambung otomatis melalui jaringan lokal dengan role yang aman.',
     icon: Zap,
     color: 'text-violet-400',
     bg: 'bg-violet-400/10'
   },
   {
-    mode: 'Management Mode',
-    title: '4. Kontrol Ekosistem',
-    desc: 'Data di-backup, database dipelihara, dan konfigurasi media dikelola dari satu ruang kerja operasional.',
+    mode: 'OBS Network Output',
+    title: '4. Kirim ke Broadcast',
+    desc: 'Program Output 1080p dan audio dikirim melalui SRT ke OBS Studio di komputer produksi lain tanpa plugin khusus.',
     icon: ShieldCheck,
     color: 'text-amber-400',
     bg: 'bg-amber-400/10'
