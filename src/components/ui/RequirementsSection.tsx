@@ -1,4 +1,4 @@
-import { Monitor, Network, Presentation, ShieldCheck, CheckCircle2 } from 'lucide-react'
+import { Monitor, Network, Presentation, ShieldCheck, CheckCircle2, Smartphone } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const requirements = [
@@ -19,6 +19,12 @@ const requirements = [
     icon: Presentation,
     min: 'PDF, gambar, video, atau PPTX',
     rec: 'PowerPoint/WPS/LibreOffice untuk konversi terbaik',
+  },
+  {
+    os: 'SION Link Mobile',
+    icon: Smartphone,
+    min: 'Android 7.0 · ARMv7',
+    rec: 'Android modern · ARM64',
   }
 ]
 
@@ -31,11 +37,11 @@ export function RequirementsSection() {
         </span>
         <h2 className="mt-4 text-3xl font-bold text-white">Minimum Requirements</h2>
         <p className="mt-4 max-w-2xl text-slate-400">
-          Versi beta saat ini difokuskan untuk Windows x64 dan dapat dipakai sepenuhnya offline setelah aplikasi terpasang.
+          SION Media Desktop difokuskan untuk Windows x64; companion mobile alpha mendukung Android 7.0 ke atas. Operasional ibadah dapat berjalan offline melalui jaringan lokal.
         </p>
       </div>
 
-      <div className="mt-16 grid gap-6 md:grid-cols-3">
+      <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {requirements.map((req, index) => (
           <motion.div
             key={req.os}

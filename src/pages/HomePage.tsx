@@ -7,6 +7,7 @@ import FaqSection from '../components/sections/FaqSection'
 import DownloadCtaSection from '../components/sections/DownloadCtaSection'
 import WorkflowSection from '../components/sections/WorkflowSection'
 import ReleaseHighlight from '../components/sections/ReleaseHighlight'
+import MobileCompanionSection from '../components/sections/MobileCompanionSection'
 
 function HomePage() {
   return (
@@ -16,6 +17,7 @@ function HomePage() {
         <HeroSection />
         <ReleaseHighlight />
         <WorkflowSection />
+        <MobileCompanionSection />
         <FeaturesSection />
         <RoadmapSection />
         <FaqSection />

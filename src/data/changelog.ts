@@ -7,6 +7,19 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: 'SION Link Mobile 0.1.0-alpha.1',
+    date: '2026-07-13',
+    type: 'Android Internal Testing · Native Mobile Foundation',
+    notes: [
+      'Aplikasi Android native berbasis React Native dan Expo Development Build, bukan wrapper WebView.',
+      'Empat pengalaman role native: Pemateri, Operator, Live Viewer, dan Stage Display dengan command gating yang kompatibel dengan server SION Media.',
+      'QR pairing sebagai metode utama serta input IP, port, dan kode role sebagai fallback manual yang dipisahkan dengan jelas.',
+      'Animated splash screen, onboarding instalasi pertama, bantuan koneksi, saved-server reconnect card, dan branding resmi SION Media.',
+      'SecureStore untuk pairing, validasi payload Zod, REST timeout, SSE snapshot real-time, reconnect state, serta Viewer/Stage keep-awake.',
+      'APK internal testing mendukung Android 7+, ARM64 dan ARMv7; distribusi publik masih menunggu validasi perangkat fisik dan release signing.'
+    ]
+  },
+  {
     version: '1.1.0-beta.1',
     date: '2026-07-13',
     type: 'Beta Testing · Connected Production Release',

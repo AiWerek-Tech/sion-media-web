@@ -5,6 +5,7 @@
   "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases",
   "notes": [
     "SION Link Desktop dengan auto-discovery, smart connection, dan empat role akses",
+    "SION Link Mobile 0.1.0-alpha.1 untuk Android dengan QR pairing dan UI role native",
     "OBS Network Output berbasis SRT dengan video 1080p dan audio program",
     "Impor PowerPoint dengan Speaker Notes serta fallback PowerPoint, WPS, dan LibreOffice",
     "PowerPoint Presentation Bridge menuju Live SION Media",

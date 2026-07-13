@@ -6,6 +6,7 @@ export const docsSections = [
       { title: 'Versi Terbaru', detail: 'Rilis saat ini adalah v1.1.0-beta.1 untuk pengujian fitur connected production dan stabilitas operasional.' },
       { title: 'Windows (x64)', detail: 'Installer resmi (.exe) versi beta untuk sistem operasi Windows 10 ke atas.' },
       { title: 'SION Link Desktop', detail: 'Pasang companion Windows pada PC pemateri atau perangkat operator tambahan untuk koneksi LAN otomatis.' },
+      { title: 'SION Link Mobile', detail: 'Android alpha 0.1.0 menyediakan aplikasi native untuk Pemateri, Operator, Live Viewer, dan Stage Display. Distribusi saat ini khusus internal testing.' },
       { title: 'Status Beta', detail: 'Installer belum ditandatangani sertifikat publik; Windows SmartScreen dapat meminta konfirmasi tambahan.' },
     ],
   },
@@ -38,6 +39,7 @@ export const docsSections = [
       { title: 'Kontrol Tayangan', detail: 'Klik pada lirik untuk Cue, lalu tekan Space untuk Take ke layar Program.' },
       { title: 'Stage Display', detail: 'Aktifkan Stage Display agar tim musik/singers dapat melihat lirik dan info lagu secara sinkron.' },
       { title: 'SION Link', detail: 'Aktifkan server lokal; perangkat companion akan menemukan IP dan port secara otomatis, lalu pengguna cukup memasukkan kode role.' },
+      { title: 'SION Link Mobile', detail: 'Pada Android, scan QR role adalah metode utama. Input IP, port 41732, dan kode enam digit tersedia sebagai fallback manual.' },
       { title: 'PowerPoint', detail: 'Impor PPTX untuk rundown atau gunakan PowerPoint Bridge ketika presentasi harus tetap dikendalikan dari komputer pemateri.' },
     ],
   },
@@ -50,6 +52,7 @@ export const docsSections = [
       { title: 'Bisa Offline?', detail: 'Tentu saja. Seluruh database dan fitur presentasi bekerja 100% secara offline tanpa internet.' },
       { title: 'Data Aman?', detail: 'Sangat aman. Database berbasis SQLite lokal dan Anda bisa melakukan backup kapan saja.' },
       { title: 'Multiple Display?', detail: 'Mendukung banyak monitor sekaligus: Operator, Audience, dan Stage Display.' },
+      { title: 'Android Minimum?', detail: 'SION Link Mobile alpha mendukung Android 7.0 ke atas dan dioptimalkan untuk perangkat ARM64/ARMv7.' },
     ],
   },
 ]

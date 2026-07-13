@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Code, Heart, Monitor, Network, Radio } from 'lucide-react'
+import { Code, Heart, Monitor, Network, Smartphone } from 'lucide-react'
 import { FirebaseStatus } from '../ui/FirebaseStatus'
 import LogoTransparent from '../../assets/logo-transparent.svg?react'
 
@@ -19,13 +19,13 @@ function Footer() {
             </Link>
             <p className="mt-4 text-xs leading-relaxed text-slate-500">
               Ekosistem presentasi ibadah yang menghubungkan persiapan lagu, proyeksi live,
-              Stage Display, kendali pemateri, serta output OBS dalam satu workflow Windows.
+              Stage Display, kendali pemateri, output OBS, dan companion Android dalam satu workflow lokal.
             </p>
             <div className="mt-4 flex gap-2">
               {[
                 { icon: Monitor, label: 'Windows x64' },
                 { icon: Network, label: 'SION Link' },
-                { icon: Radio, label: 'OBS SRT' }
+                { icon: Smartphone, label: 'Android alpha' }
               ].map((plat) => (
                 <div
                   key={plat.label}

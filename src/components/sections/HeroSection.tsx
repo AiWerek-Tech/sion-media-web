@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, MonitorUp, Radio, Wifi } from 'lucide-react'
+import { ArrowRight, Download, MonitorUp, Radio, Smartphone, Wifi } from 'lucide-react'
 
 const highlights = [
   { icon: Wifi, label: 'SION Link', value: 'Auto-discovery LAN' },
   { icon: Radio, label: 'OBS Output', value: 'SRT + audio' },
-  { icon: MonitorUp, label: 'Stage', value: 'Notes & next cue' }
+  { icon: MonitorUp, label: 'Stage', value: 'Notes & next cue' },
+  { icon: Smartphone, label: 'Mobile', value: 'Android native alpha' }
 ]
 
 function HeroSection() {
@@ -22,7 +23,7 @@ function HeroSection() {
               v1.1.0-beta.1
             </span>
             <span className="rounded-full border border-amber-400/20 bg-amber-400/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-amber-300">
-              Windows x64 · Beta testing
+              Windows beta · Android alpha
             </span>
           </div>
 
@@ -63,7 +64,7 @@ function HeroSection() {
               className="aspect-video w-full rounded-2xl object-cover object-top"
             />
           </div>
-          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
             {highlights.map(({ icon: Icon, label, value }) => (
               <div key={label} className="rounded-xl border border-slate-800 bg-slate-900/65 p-3">
                 <div className="flex items-center gap-2 text-cyan-300">

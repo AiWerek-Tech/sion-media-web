@@ -142,7 +142,7 @@ src/
 
 ### Desktop App (SION Media - Electron)
 - **Update Metadata**: Fetches version info from `public/latest-version.json`
-- **Installer Downloads**: Links to the Windows x64 beta installers for SION Media Desktop and SION Link Desktop
+- **Installer Downloads**: Windows x64 beta installers plus SION Link Mobile Android alpha status
 - **Public Statistics**: Updates usage metrics in Firestore
 - **Independent Operation**: Separate project from website, operates standalone
 - **Multi-Hymnal Support**: Built on SQLite database with 525 Lagu Sion default
@@ -243,7 +243,7 @@ Key components:
 The separate Electron desktop application (`D:\my_dev\SION-Media`) integrates with this website:
 
 - **Checks for Updates**: Fetches `public/latest-version.json` for latest version info
-- **Downloads Installers**: Links to GitHub Releases for SION Media Desktop and SION Link Desktop on Windows x64
+- **Downloads Installers**: GitHub Releases for desktop apps and transparent Android alpha distribution status
 - **Reports Statistics**: Sends usage data to Firebase (managed by this website)
 - **Reads Documentation**: Can pull guides and changelog from website APIs
 

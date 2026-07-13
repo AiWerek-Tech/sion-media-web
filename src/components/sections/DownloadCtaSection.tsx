@@ -25,7 +25,7 @@ function DownloadCtaSection() {
         </h2>
         
         <p className="mt-3 max-w-2xl text-sm text-slate-400">
-          Uji SION Media Desktop dan SION Link Desktop bersama tim Anda. Versi ini masih beta dan ditujukan untuk validasi lapangan sebelum rilis stabil.
+          Uji SION Media Desktop, SION Link Desktop, dan companion Android native bersama tim Anda. Seluruhnya masih dalam jalur beta/alpha sebelum rilis stabil.
         </p>
  
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
@@ -49,7 +49,7 @@ function DownloadCtaSection() {
         </div>
         
         <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-slate-600">
-          Windows 10/11 x64 · SION Media + SION Link · v1.1.0-beta.1
+          Windows 10/11 x64 · Android 7+ · Desktop beta + Mobile alpha
         </p>
       </div>
     </motion.section>

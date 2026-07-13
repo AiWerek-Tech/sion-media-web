@@ -29,7 +29,15 @@ const faqItems = [
   },
   {
     question: 'Bagaimana perangkat menemukan server SION Link?',
-    answer: 'SION Link Desktop memindai LAN/Wi-Fi secara otomatis dan memverifikasi identitas server. Pengguna biasanya hanya perlu memilih server dan memasukkan kode role.',
+    answer: 'SION Link Desktop memindai LAN/Wi-Fi secara otomatis. Pada SION Link Mobile, scan QR role adalah cara utama; IP, port 41732, dan kode akses tersedia sebagai fallback manual.',
+  },
+  {
+    question: 'Apakah SION Link Mobile sudah tersedia di Play Store?',
+    answer: 'Belum. Versi 0.1.0-alpha.1 masih berupa APK internal testing dengan debug signing. Distribusi publik dilakukan setelah pengujian perangkat fisik, hardening keamanan, dan release signing selesai.',
+  },
+  {
+    question: 'Apa saja role pada SION Link Mobile?',
+    answer: 'Pemateri mendapat kontrol Previous/Next, Operator mendapat kontrol produksi, sedangkan Live Viewer dan Stage Display bersifat read-only. Role ditentukan otomatis oleh kode dari SION Media.',
   },
 ]
 

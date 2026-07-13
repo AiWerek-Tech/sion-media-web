@@ -28,6 +28,13 @@ export const features = [
     iconName: 'Settings'
   },
   {
+    title: 'SION Link Mobile Native',
+    description:
+      'Companion Android native dengan onboarding, QR pairing, input manual, SecureStore, reconnect, dan UI khusus setiap role.',
+    tag: 'Android Alpha',
+    iconName: 'Smartphone'
+  },
+  {
     title: 'PowerPoint + Speaker Notes',
     description:
       'Impor PPTX sambil mempertahankan judul dan catatan pemateri. Mendukung PowerPoint, WPS Presentation, dan LibreOffice.',
