@@ -15,7 +15,7 @@ const useCases = [
   },
   {
     title: 'Livestream Ministry',
-    desc: 'Tim streaming dapat menerima Program Output 1080p beserta audio langsung di OBS melalui SRT pada jaringan lokal.',
+    desc: 'Tim streaming dapat menerima Program Output di OBS atau mengirim OBS Live H.264/AAC ke seluruh SION Link melalui gateway lokal.',
     icon: Share2,
   },
   {

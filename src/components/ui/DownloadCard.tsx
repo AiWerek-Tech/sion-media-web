@@ -103,7 +103,7 @@ function DownloadCard({ data }: DownloadCardProps) {
             <h3 className="text-sm font-bold uppercase tracking-widest">Kompatibilitas</h3>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-slate-400 group-hover:text-slate-300">
-            Beta ini ditujukan untuk Windows 10/11 x64. SION Media dan SION Link Desktop perlu berada pada jaringan LAN/Wi-Fi yang sama untuk fitur remote.
+            Beta ini ditujukan untuk Windows 10/11 x64. Untuk remote, Stage, dan OBS Live, SION Media, OBS, serta perangkat SION Link harus berada pada jaringan LAN/Wi-Fi yang sama.
           </p>
 
         </div>

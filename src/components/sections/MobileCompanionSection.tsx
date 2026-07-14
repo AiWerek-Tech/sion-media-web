@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const capabilities = [
   { icon: QrCode, title: 'QR pairing', text: 'Scan kode role dari SION Media; role dipilih server secara otomatis.' },
-  { icon: Radio, title: 'Empat role native', text: 'Presenter, Operator, Live Viewer, dan Stage Display dalam UI mobile khusus.' },
+  { icon: Radio, title: 'Slide & OBS Live', text: 'Semua role melihat visual slide; stream OBS diputar native lengkap dengan audio.' },
   { icon: LockKeyhole, title: 'Local & secure', text: 'SecureStore, validasi payload, command gating, dan operasi offline melalui LAN.' }
 ]
 
@@ -14,11 +14,11 @@ export default function MobileCompanionSection() {
       <div className="grid items-center gap-10 lg:grid-cols-[1fr_.82fr]">
         <div>
           <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">New · Android native</span>
+            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">Baru · Android native</span>
             <span className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-amber-300">0.1.0-alpha.1 · Internal testing</span>
           </div>
           <h2 className="mt-5 max-w-2xl text-3xl font-black leading-tight tracking-[-.035em] text-white sm:text-4xl">SION Link sekarang hadir sebagai <span className="text-emerald-300">aplikasi Android native.</span></h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400">Hubungkan pemateri, operator tambahan, viewer, dan tim panggung tanpa membawa layar kerja desktop. QR menjadi metode utama; input IP dan kode tetap tersedia sebagai fallback.</p>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400">Hubungkan pemateri, operator tambahan, viewer, dan tim panggung tanpa membawa layar kerja desktop. Semua role menampilkan visual slide, OBS Live berpindah otomatis, QR menjadi metode utama, dan input manual tetap tersedia sebagai fallback.</p>
           <div className="mt-7 grid gap-3 sm:grid-cols-3">
             {capabilities.map(({ icon: Icon, title, text }) => <div key={title} className="rounded-2xl border border-slate-800 bg-slate-950/55 p-4"><Icon size={19} className="text-emerald-300"/><h3 className="mt-3 text-sm font-bold text-white">{title}</h3><p className="mt-1.5 text-[11px] leading-5 text-slate-500">{text}</p></div>)}
           </div>
@@ -33,7 +33,7 @@ export default function MobileCompanionSection() {
           <p className="mt-2 text-[10px] leading-4 text-slate-500">Pilih salah satu metode koneksi.</p>
           <div className="mt-5 rounded-2xl bg-cyan-400 p-4 text-slate-950"><div className="flex items-center gap-3"><div className="rounded-xl bg-slate-950 p-2 text-cyan-300"><QrCode size={22}/></div><div><div className="text-xs font-black">Scan QR koneksi</div><div className="mt-1 text-[8px] font-semibold text-cyan-950">Metode tercepat</div></div></div></div>
           <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-4"><div className="flex items-center gap-3"><div className="rounded-xl bg-blue-500/10 p-2 text-blue-300"><Wifi size={20}/></div><div><div className="text-xs font-bold text-white">Input manual</div><div className="mt-1 text-[8px] text-slate-500">IP · Port · Kode role</div></div></div></div>
-          <div className="mt-5 text-center text-[7px] font-bold uppercase tracking-[.15em] text-slate-600">Android 7+ · ARM64 / ARMv7</div>
+          <div className="mt-5 text-center text-[7px] font-bold uppercase tracking-[.15em] text-slate-600">Android 7+ · ARM64 / ARMv7 · expo-video</div>
         </motion.div>
       </div>
     </section>

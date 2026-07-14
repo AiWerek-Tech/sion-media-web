@@ -8,28 +8,40 @@ import type { ChangelogEntry } from '../types'
 export const changelogEntries: ChangelogEntry[] = [
   {
     version: 'SION Link Mobile 0.1.0-alpha.1',
-    date: '2026-07-13',
-    type: 'Android Internal Testing · Native Mobile Foundation',
+    date: '2026-07-14',
+    type: 'Android Internal Testing · Native Live Update',
     notes: [
       'Aplikasi Android native berbasis React Native dan Expo Development Build, bukan wrapper WebView.',
-      'Empat pengalaman role native: Pemateri, Operator, Live Viewer, dan Stage Display dengan command gating yang kompatibel dengan server SION Media.',
+      'Semua role kini menampilkan visual slide aktif; Pemateri dan Operator tetap memiliki kontrol sesuai izin, sedangkan Viewer dan Stage bersifat read-only.',
+      'Pemutar expo-video native menerima OBS Live H.264/AAC melalui LL-HLS, melakukan reconnect, dan kembali otomatis ke Program Output saat publisher OBS berhenti.',
+      'Pemateri, Operator, dan Stage memperoleh panel status OBS tanpa kehilangan notes, next cue, timer, maupun kontrol utamanya.',
       'QR pairing sebagai metode utama serta input IP, port, dan kode role sebagai fallback manual yang dipisahkan dengan jelas.',
       'Animated splash screen, onboarding instalasi pertama, bantuan koneksi, saved-server reconnect card, dan branding resmi SION Media.',
       'SecureStore untuk pairing, validasi payload Zod, REST timeout, SSE snapshot real-time, reconnect state, serta Viewer/Stage keep-awake.',
-      'APK internal testing mendukung Android 7+, ARM64 dan ARMv7; distribusi publik masih menunggu validasi perangkat fisik dan release signing.'
+      'APK internal testing mendukung Android 7+, ARM64 dan ARMv7 serta sudah diverifikasi dengan signature APK v2.'
     ]
   },
   {
     version: '1.1.0-beta.1',
-    date: '2026-07-13',
-    type: 'Beta Testing · Connected Production Release',
+    date: '2026-07-14',
+    type: 'Beta Testing · Connected Production & OBS Live',
     notes: [
-      'SION Link Desktop: auto-discovery LAN/Wi-Fi, smart paste link, reconnect, riwayat perangkat, dan akses role Pemateri, Operator, Live Viewer, serta Stage.',
-      'OBS Network Output berbasis SRT: Program Output 1080p dan audio dapat diterima OBS Studio di PC lain tanpa plugin khusus.',
-      'PowerPoint Package Import: judul dan Speaker Notes dipertahankan dengan provider PowerPoint, WPS Presentation, serta LibreOffice.',
-      'PowerPoint Presentation Bridge: slide aktif dan notes dari PC pemateri dapat dikirim ke Live SION Media menggunakan kode Operator.',
-      'Stage Display profesional: current/next cue, notes, chord, heartbeat, timer, status runtime, auto-fit, dan monitor terpisah.',
-      'SION Link dan Pengaturan Sistem mendapat perombakan UI/UX responsif, onboarding pemula, koneksi otomatis, serta recovery yang lebih jelas.',
+      'OBS Live Input: OBS mengirim video H.264 dan audio AAC melalui SRT ke SION Media, kemudian SION Media mendistribusikannya ke SION Link Desktop dan Mobile.',
+      'MediaMTX 1.17.0 menyediakan LL-HLS untuk playback kompatibel beserta audio dan WebRTC/WHEP untuk integrasi lanjutan berlatensi rendah.',
+      'Viewer memprioritaskan publisher OBS yang aktif dan kembali otomatis ke Program Output SION Media ketika stream berhenti atau terputus.',
+      'FFmpeg 8.1.2 dan MediaMTX 1.17.0 dibundel ke installer SION Media sehingga konfigurasi pengguna baru tidak memerlukan instalasi manual.',
+      'OBS Network Output tetap tersedia sebagai jalur terpisah untuk mengirim Program Output 1080p beserta audio dari SION Media ke OBS tanpa plugin.',
+      'Kode Pemateri, Operator, Viewer, dan Stage serta port server dibuat persisten sampai di-reset manual oleh operator.',
+      'Tombol ON SION Link tersedia langsung pada title bar Projection Mode untuk aktivasi server tanpa berpindah halaman.',
+      'Akses media gambar melalui LAN diperbaiki agar panel, preview, live viewer, dan perangkat lain menggunakan sumber yang dapat dijangkau jaringan.',
+      'Pergantian gambar, video, atau PDF dari Preview ke Program dapat dilakukan langsung saat media lain masih live tanpa Clear terlebih dahulu.',
+      'Output media live tidak lagi menampilkan watermark SION PRESENTER, sementara thumbnail gambar memakai path dan encoding Windows yang lebih portabel.',
+      'Pemenggalan lirik mengikuti tanda titik koma sehingga satu kalimat nyanyian tidak terbagi di antara dua slide.',
+      'Playlist mendapat ruang antarelemen yang lebih baik, modal edit berlapis benar, dan aksi Ganti Lagu/Item langsung tanpa menghapus slot.',
+      'Navigasi slide mengikuti slide yang benar-benar live, memakai V/C untuk struktur lagu dan nomor 1, 2, 3 untuk halaman PDF/PPTX dengan scroll horizontal.',
+      'PowerPoint Package Import mempertahankan Speaker Notes dengan fallback PowerPoint, WPS Presentation, LibreOffice, PDF, dan gambar; Presentation Bridge serta pesan errornya diperjelas.',
+      'SION Link Desktop mendapat layout native full-width, koneksi otomatis, slide visual pada semua role, OBS Live, dan recovery yang lebih jelas.',
+      'Stage Display disempurnakan dengan current/next cue, notes, chord, heartbeat, timer, status LIVE/FREEZE/BLACK, auto-fit, dan routing monitor terpisah.',
       'Keamanan diperketat melalui sender policy per-window, validasi payload, pembatasan origin, endpoint discovery terverifikasi, dan import transaksional.'
     ]
   },

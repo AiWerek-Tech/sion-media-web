@@ -21,7 +21,7 @@ const screenshotCards = [
   },
   {
     id: 'broadcast',
-    title: 'OBS Network Output',
+    title: 'OBS & SRT Terintegrasi',
     image: 'screenshots/broadcast.png',
     description: 'Konsep dashboard produksi untuk roadmap streaming. Modul desktop saat ini masih ditandai beta agar ekspektasi pengguna tetap akurat.',
     icon: Zap,

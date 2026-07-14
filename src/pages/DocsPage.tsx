@@ -3,13 +3,14 @@ import Navbar from '../components/layout/Navbar'
 import SectionTitle from '../components/common/SectionTitle'
 import { docsSections } from '../data/docsSections'
 import { motion } from 'framer-motion'
-import { BookOpen, ChevronRight, CheckCircle, Monitor, Database, Zap, ShieldCheck } from 'lucide-react'
+import { BookOpen, ChevronRight, CheckCircle, Monitor, Database, Zap, ShieldCheck, Radio } from 'lucide-react'
 
 function DocsPage() {
   const getIcon = (title: string) => {
     if (title.includes('Download')) return ShieldCheck
     if (title.includes('Instalasi')) return Database
     if (title.includes('Mode')) return Monitor
+    if (title.includes('OBS')) return Radio
     if (title.includes('Workflow')) return Zap
     return BookOpen
   }
@@ -29,11 +30,12 @@ function DocsPage() {
             <CheckCircle className="text-cyan-400" />
             Langkah Cepat Memulai
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               { step: '01', title: 'Unduh & Install', desc: 'Dapatkan installer SION Media Desktop dari halaman unduhan.' },
               { step: '02', title: 'Siapkan Playlist', desc: 'Gunakan Library Mode untuk menyusun lagu ibadah.' },
               { step: '03', title: 'Mulai Proyeksi', desc: 'Tekan SPACE untuk menayangkan lirik ke audience.' },
+              { step: '04', title: 'Hubungkan Perangkat', desc: 'Aktifkan SION Link, lalu scan QR atau gunakan auto-discovery LAN.' },
             ].map((item) => (
               <div key={item.step} className="relative rounded-2xl bg-slate-950 p-6 border border-slate-800">
                 <span className="absolute -top-3 -left-3 flex h-8 w-8 items-center justify-center rounded-lg brand-gradient text-[10px] font-bold text-slate-950">

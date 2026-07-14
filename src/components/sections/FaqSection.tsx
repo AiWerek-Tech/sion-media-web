@@ -21,15 +21,31 @@ const faqItems = [
   },
   {
     question: 'Apakah PowerPoint dan Speaker Notes didukung?',
-    answer: 'Ya. PPTX dapat diimpor bersama judul dan Speaker Notes. Konversi otomatis menggunakan PowerPoint, WPS Presentation, atau LibreOffice yang tersedia.',
+    answer: 'Ya. PPTX dapat diimpor bersama judul dan Speaker Notes. Konversi otomatis memilih PowerPoint, WPS Presentation, atau LibreOffice yang tersedia, dengan PDF/gambar sebagai fallback materi.',
   },
   {
     question: 'Apakah perlu plugin khusus untuk OBS Studio?',
-    answer: 'Tidak. Aktifkan OBS Network Output di SION Media, lalu masukkan URL SRT sebagai Media Source di OBS pada komputer lain.',
+    answer: 'Tidak. SRT didukung langsung. Untuk SION Media → OBS, gunakan OBS Network Output dan Media Source. Untuk OBS → SION Link, gunakan OBS Live Input dan Service: Custom pada pengaturan Stream OBS.',
+  },
+  {
+    question: 'Apa perbedaan OBS Network Output dan OBS Live Input?',
+    answer: 'Network Output mengirim layar Program SION Media ke OBS. OBS Live Input melakukan arah sebaliknya: menerima H.264/AAC dari OBS, lalu membagikannya ke SION Link Desktop dan Mobile.',
+  },
+  {
+    question: 'Apakah audio OBS ikut terdengar di SION Link?',
+    answer: 'Ya. OBS mengirim audio AAC 48 kHz bersama video H.264. SION Link memakai LL-HLS sebagai jalur default yang kompatibel untuk video dan audio, dengan reconnect otomatis.',
+  },
+  {
+    question: 'Apakah pengguna perlu memilih ffmpeg.exe?',
+    answer: 'Tidak pada installer terbaru. FFmpeg 8.1.2 dan MediaMTX 1.17.0 sudah dibundel serta dideteksi otomatis oleh SION Media.',
   },
   {
     question: 'Bagaimana perangkat menemukan server SION Link?',
-    answer: 'SION Link Desktop memindai LAN/Wi-Fi secara otomatis. Pada SION Link Mobile, scan QR role adalah cara utama; IP, port 41732, dan kode akses tersedia sebagai fallback manual.',
+    answer: 'SION Link Desktop memindai LAN/Wi-Fi secara otomatis. Pada SION Link Mobile, scan QR role adalah cara utama; IP, port yang ditampilkan aplikasi, dan kode akses tersedia sebagai fallback manual.',
+  },
+  {
+    question: 'Apakah kode SION Link berubah setelah listrik mati?',
+    answer: 'Tidak. Port dan kode Pemateri, Operator, Viewer, serta Stage disimpan persisten. Kode hanya berubah jika operator memilih reset manual.',
   },
   {
     question: 'Apakah SION Link Mobile sudah tersedia di Play Store?',
@@ -37,7 +53,19 @@ const faqItems = [
   },
   {
     question: 'Apa saja role pada SION Link Mobile?',
-    answer: 'Pemateri mendapat kontrol Previous/Next, Operator mendapat kontrol produksi, sedangkan Live Viewer dan Stage Display bersifat read-only. Role ditentukan otomatis oleh kode dari SION Media.',
+    answer: 'Pemateri mendapat kontrol Previous/Next, Operator mendapat kontrol produksi, sedangkan Live Viewer dan Stage Display bersifat read-only. Semua role menampilkan visual slide dan status OBS Live sesuai konteksnya.',
+  },
+  {
+    question: 'Apakah media harus di-Clear sebelum mengganti file lain?',
+    answer: 'Tidak. Pilih gambar, video, atau PDF berikutnya ke Preview, lalu tekan Tayangkan atau Space. Clear hanya diperlukan jika operator memang ingin mengosongkan output.',
+  },
+  {
+    question: 'Mengapa watermark SION PRESENTER tidak terlihat saat media live?',
+    answer: 'Itu perilaku yang benar. Watermark hanya menandai layar idle; gambar, video, dan PDF live selalu ditampilkan bersih tanpa watermark.',
+  },
+  {
+    question: 'Bagaimana mencegah satu kalimat lirik terpotong ke slide berikutnya?',
+    answer: 'Tambahkan tanda titik koma (;) setelah setiap kalimat yang harus dinyanyikan sebagai satu baris utuh. Mesin slide hanya memotong di antara batas tersebut.',
   },
 ]
 

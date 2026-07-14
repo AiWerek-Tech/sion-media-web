@@ -28,9 +28,9 @@ const steps = [
     bg: 'bg-violet-400/10'
   },
   {
-    mode: 'OBS Network Output',
-    title: '4. Kirim ke Broadcast',
-    desc: 'Program Output 1080p dan audio dikirim melalui SRT ke OBS Studio di komputer produksi lain tanpa plugin khusus.',
+    mode: 'OBS · SRT Dua Arah',
+    title: '4. Hubungkan Broadcast',
+    desc: 'Kirim Program Output 1080p ke OBS, atau terima OBS Live H.264/AAC dan distribusikan otomatis ke seluruh SION Link.',
     icon: ShieldCheck,
     color: 'text-amber-400',
     bg: 'bg-amber-400/10'

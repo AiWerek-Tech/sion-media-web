@@ -17,7 +17,7 @@ function AboutPage() {
     {
       icon: Rocket,
       title: 'Misi Multi-Platform',
-      desc: 'Menghadirkan aplikasi desktop Windows yang fokus, cepat, dan dapat diandalkan untuk kebutuhan operator serta pelayan gereja.',
+      desc: 'Menghadirkan SION Media Windows serta SION Link Desktop dan Android yang fokus, cepat, dan dapat diandalkan untuk setiap role pelayanan.',
       color: 'text-emerald-400',
       bg: 'bg-emerald-400/10'
     },
@@ -38,7 +38,7 @@ function AboutPage() {
     {
       icon: Share2,
       title: 'Ekosistem Terhubung',
-      desc: 'Integrasi mulus antara aplikasi desktop, portal web untuk rilis terbaru, dan cloud statistik publik untuk visibilitas komunitas.',
+      desc: 'Integrasi lokal antara operator, pemateri, panggung, viewer, PowerPoint, dan OBS, ditambah portal web untuk dokumentasi serta rilis terbaru.',
       color: 'text-rose-400',
       bg: 'bg-rose-400/10'
     },

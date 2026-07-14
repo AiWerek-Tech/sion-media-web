@@ -3,11 +3,11 @@ import SectionTitle from '../common/SectionTitle'
 const roadmapItems = [
   {
     milestone: 'Validasi beta lapangan',
-    detail: 'Uji alur operator, pemateri, Stage Display, PPTX, dan OBS pada beragam jaringan serta perangkat gereja.',
+    detail: 'Uji alur operator, pemateri, Stage Display, PPTX, media LAN, dan OBS Live pada beragam jaringan serta perangkat gereja.',
   },
   {
     milestone: 'Keandalan koneksi',
-    detail: 'Perkuat auto-discovery, pemulihan koneksi, diagnostik jaringan, dan preset SRT yang ramah pemula.',
+    detail: 'Perkuat auto-discovery, fallback live, pemulihan koneksi, diagnostik jaringan, dan preset SRT yang ramah pemula.',
   },
   {
     milestone: 'Distribusi tepercaya',

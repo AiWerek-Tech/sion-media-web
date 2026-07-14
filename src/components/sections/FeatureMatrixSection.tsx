@@ -5,13 +5,17 @@ import { Check, Minus } from 'lucide-react'
 const capabilities = [
   { feature: 'Multi-Monitor Routing', sion: true, others: 'Varied' },
   { feature: 'OBS SRT 1080p + Audio', sion: true, others: 'Varied' },
+  { feature: 'OBS Live Input ke Desktop/Mobile', sion: true, others: 'Varied' },
   { feature: 'Projection Cue/Take Workflow', sion: true, others: 'Varied' },
+  { feature: 'Hot Swap Media Tanpa Clear', sion: true, others: 'Varied' },
+  { feature: 'Pemisahan Lirik Semantik (;)', sion: true, others: 'Varied' },
   { feature: 'Stage Display Sync', sion: true, others: 'Varied' },
   { feature: 'Offline Bible Search', sion: true, others: 'Yes' },
   { feature: 'Multi-Hymnal Database', sion: true, others: 'Manual' },
   { feature: 'Fuzzy FTS5 Search', sion: true, others: 'No' },
   { feature: 'Crash Auto-Recovery', sion: true, others: 'No' },
   { feature: 'SION Link Auto-Discovery', sion: true, others: 'Varied' },
+  { feature: 'Kode Role & Port Persisten', sion: true, others: 'Varied' },
   { feature: 'PPTX Speaker Notes', sion: true, others: 'Varied' },
   { feature: '100% Free & Open Source', sion: true, others: 'No' },
 ]

@@ -12,7 +12,7 @@ const requirements = [
     os: 'Jaringan lokal',
     icon: Network,
     min: 'Wi-Fi/LAN satu jaringan',
-    rec: 'LAN gigabit untuk SRT 1080p',
+    rec: 'LAN gigabit untuk SRT/OBS Live 1080p',
   },
   {
     os: 'Bahan presentasi',
@@ -78,7 +78,7 @@ export function RequirementsSection() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-white">Release Stability: SION Media Beta Candidate</h3>
             <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-              v1.1.0-beta.1 mencakup perubahan besar pada SION Link, Stage Display, impor presentasi, dan output OBS. Gunakan pada kegiatan uji coba dengan salinan cadangan materi sebelum rilis stabil 1.0.0.
+              v1.1.0-beta.1 mencakup perubahan besar pada SION Link, Stage Display, impor presentasi, OBS Network Output, dan OBS Live Input. Gunakan pada kegiatan uji coba dengan salinan cadangan materi sebelum rilis stabil 1.0.0.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4">

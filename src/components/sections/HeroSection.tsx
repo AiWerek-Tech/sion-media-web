@@ -4,7 +4,7 @@ import { ArrowRight, Download, MonitorUp, Radio, Smartphone, Wifi } from 'lucide
 
 const highlights = [
   { icon: Wifi, label: 'SION Link', value: 'Auto-discovery LAN' },
-  { icon: Radio, label: 'OBS Output', value: 'SRT + audio' },
+  { icon: Radio, label: 'OBS dua arah', value: 'SRT + H.264/AAC' },
   { icon: MonitorUp, label: 'Stage', value: 'Notes & next cue' },
   { icon: Smartphone, label: 'Mobile', value: 'Android native alpha' }
 ]
@@ -35,8 +35,8 @@ function HeroSection() {
           </h1>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
-            Siapkan lagu, Alkitab, PDF, atau PowerPoint; tayangkan dengan workflow Preview–Take;
-            kontrol melalui SION Link; lalu kirim Program Output dan audio ke OBS melalui SRT.
+            Siapkan lagu, Alkitab, PDF, gambar, atau PowerPoint; tayangkan dengan workflow Preview–Take;
+            kontrol melalui SION Link; lalu kirim Program Output ke OBS atau terima OBS Live di semua viewer melalui SRT.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
