@@ -64,14 +64,24 @@ function DownloadPage() {
             </div>
             <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.0.0 · Windows 10/11 x64 · 89.64 MB</div>
           </article>
-          <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.05] p-6">
-            <div className="flex items-center justify-between gap-3">
-              <div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">Android companion</div>
-              <span className="rounded-full bg-amber-400/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-amber-300">Internal alpha</span>
+          <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.05] p-6 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between gap-3">
+                <div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">Android companion</div>
+                <span className="rounded-full bg-amber-400/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-amber-300">Internal alpha</span>
+              </div>
+              <h2 className="mt-2 text-xl font-bold text-white">SION Link Mobile</h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">Aplikasi Android native untuk QR pairing, Presenter, Operator, Live Viewer, Stage Display, slide visual, dan OBS Live dengan audio. Belum didistribusikan melalui Play Store.</p>
+              <a 
+                href="https://github.com/AiWerek-Tech/sion-link-mobile/releases" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition"
+              >
+                Unduh Rilis GitHub <ExternalLink size={12} />
+              </a>
             </div>
-            <h2 className="mt-2 text-xl font-bold text-white">SION Link Mobile</h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">Aplikasi Android native untuk QR pairing, Presenter, Operator, Live Viewer, Stage Display, slide visual, dan OBS Live dengan audio. Belum didistribusikan melalui Play Store.</p>
-            <div className="mt-5 border-t border-emerald-400/10 pt-4 text-xs leading-relaxed text-slate-500">0.1.0-alpha.1 · Android 7+ · ARM64/ARMv7 · 101.03 MB · APK v2 verified</div>
+            <div className="mt-5 border-t border-emerald-400/10 pt-4 text-xs leading-relaxed text-slate-500">v0.1.0-alpha.1 · Android 7+ · ARM64/ARMv7 · 101.03 MB · APK v2 verified</div>
           </article>
         </section>
 
