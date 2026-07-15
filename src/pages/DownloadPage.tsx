@@ -8,6 +8,7 @@ import EmptyState from '../components/ui/EmptyState'
 import { RequirementsSection } from '../components/ui/RequirementsSection'
 import { fetchLatestVersion } from '../services/updateService'
 import type { LatestVersionData } from '../types'
+import { ExternalLink } from 'lucide-react'
 
 function DownloadPage() {
   const [latestVersion, setLatestVersion] = useState<LatestVersionData | null>(null)
@@ -47,11 +48,21 @@ function DownloadPage() {
             <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC operator: library, projection, Stage Display, PowerPoint, OBS Network Output, dan OBS Live Input. FFmpeg 8.1.2 serta MediaMTX 1.17.0 sudah termasuk.</p>
             <div className="mt-5 border-t border-cyan-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.1.0-beta.1 · Windows 10/11 x64 · 232.14 MB</div>
           </article>
-          <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.05] p-6">
-            <div className="text-[10px] font-black uppercase tracking-[.16em] text-indigo-300">Companion jaringan</div>
-            <h2 className="mt-2 text-xl font-bold text-white">SION Link Desktop</h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC pemateri atau operator tambahan: auto-discovery, role access, slide visual, OBS Live, Live Viewer, Stage, dan PowerPoint Bridge.</p>
-            <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.1.0-beta.1 · Windows 10/11 x64 · 89.64 MB</div>
+          <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.05] p-6 flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-black uppercase tracking-[.16em] text-indigo-300">Companion jaringan</div>
+              <h2 className="mt-2 text-xl font-bold text-white">SION Link Desktop</h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC pemateri atau operator tambahan: auto-discovery, role access (Operator, Live Viewer, Pemateri, Stage Display, Live OBS), slide visual, dan PowerPoint Bridge.</p>
+              <a 
+                href="https://github.com/AiWerek-Tech/sion-link-desktop/releases" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition"
+              >
+                Unduh Rilis GitHub <ExternalLink size={12} />
+              </a>
+            </div>
+            <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.0.0 · Windows 10/11 x64 · 89.64 MB</div>
           </article>
           <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.05] p-6">
             <div className="flex items-center justify-between gap-3">

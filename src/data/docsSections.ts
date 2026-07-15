@@ -4,9 +4,9 @@ export const docsSections = [
     description: 'Pilih aplikasi yang sesuai dengan perangkat dan peran pengguna.',
     items: [
       { title: 'SION Media Desktop', detail: 'Aplikasi utama untuk PC operator. Rilis uji saat ini v1.1.0-beta.1 untuk Windows 10/11 x64.' },
-      { title: 'SION Link Desktop', detail: 'Companion Windows v1.1.0-beta.1 untuk PC pemateri, operator tambahan, Live Viewer, Stage Display, PowerPoint Bridge, dan OBS Live.' },
+      { title: 'SION Link Desktop', detail: 'Companion Windows v1.0.0 (Stabil) untuk PC pemateri, operator tambahan, Live Viewer, Stage Display, PowerPoint Bridge, dan Live OBS.' },
       { title: 'SION Link Mobile', detail: 'Aplikasi Android native 0.1.0-alpha.1 untuk Pemateri, Operator, Live Viewer, dan Stage Display. Distribusi masih internal testing.' },
-      { title: 'Status Prarilis', detail: 'Seluruh paket masih beta/alpha, belum merupakan rilis stabil 1.0. Windows SmartScreen dapat meminta konfirmasi karena installer belum memiliki code signing publik.' },
+      { title: 'Status Prarilis', detail: 'SION Link Desktop kini telah dirilis stabil v1.0.0. Paket lain masih berada di tahap beta/alpha. Windows SmartScreen dapat meminta konfirmasi karena installer belum memiliki code signing publik.' },
     ],
   },
   {

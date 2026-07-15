@@ -7,6 +7,19 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: 'SION Link Desktop 1.0.0',
+    date: '2026-07-15',
+    type: 'Official Release · Stable Production Version',
+    notes: [
+      'Rilis stabil pertama companion desktop native SION Link Desktop.',
+      'Auto-discovery server SION Media di jaringan lokal (WiFi/LAN) secara otomatis tanpa port manual.',
+      'PowerPoint Live Bridge menyinkronkan slide aktif, judul slide, notes, dan pratinjau slide berikutnya secara real-time langsung ke operator via PowerShell.',
+      'Smart Paste & URL parsing mem-parsing IP, port, dan kode akses dari clipboard link SION.',
+      'Akses workspace native khusus untuk Operator (kontrol penuh & PPT bridge), Pemateri (navigasi slide sederhana), Stage Display (Speaker Notes & cue), Live Viewer (clean projection), dan Live OBS (transparent overlay).',
+      'Proteksi navigasi origin, pemblokir pop-up otomatis, validasi konfigurasi, dan pemulihan sesi koneksi otomatis saat terputus.'
+    ]
+  },
+  {
     version: 'SION Link Mobile 0.1.0-alpha.1',
     date: '2026-07-14',
     type: 'Android Internal Testing · Native Live Update',
