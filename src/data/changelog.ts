@@ -12,11 +12,12 @@ export const changelogEntries: ChangelogEntry[] = [
     type: 'Official Release · Stable Production Version',
     notes: [
       'Rilis stabil pertama companion desktop native SION Link Desktop.',
-      'Auto-discovery server SION Media di jaringan lokal (WiFi/LAN) secara otomatis tanpa port manual.',
+      'PowerPoint Bridge Tahap 2: Kontrol navigasi dua arah (operator SION Media dapat memindahkan slide PowerPoint pemateri dari jauh) dan kompresi JPEG cerdas (ukuran slide turun 85% untuk transfer instan).',
+      'Auto-Start PowerPoint Bridge: Jembatan PowerPoint otomatis aktif di latar belakang saat client terhubung dengan kode akses Pemateri.',
+      'Auto-Scan & Auto-Populate Jaringan: Pencarian otomatis server langsung mempopulasi kolom IP/Port jika belum diedit, dan scan jaringan otomatis saat tab Cari Server dibuka.',
+      'Tips & Panduan UI: Menambahkan teks petunjuk pintasan keyboard (ESC atau Ctrl+Shift+D) untuk memutuskan koneksi dan kembali ke layar utama secara mudah.',
       'PowerPoint Live Bridge menyinkronkan slide aktif, judul slide, notes, dan pratinjau slide berikutnya secara real-time langsung ke operator via PowerShell.',
-      'Smart Paste & URL parsing mem-parsing IP, port, dan kode akses dari clipboard link SION.',
-      'Akses workspace native khusus untuk Operator (kontrol penuh & PPT bridge), Pemateri (navigasi slide sederhana), Stage Display (Speaker Notes & cue), Live Viewer (clean projection), dan Live OBS (transparent overlay).',
-      'Proteksi navigasi origin, pemblokir pop-up otomatis, validasi konfigurasi, dan pemulihan sesi koneksi otomatis saat terputus.'
+      'Akses workspace native khusus untuk Operator (kontrol penuh & PPT bridge), Pemateri (navigasi slide sederhana), Stage Display (Speaker Notes & cue), Live Viewer (clean projection), dan Live OBS (transparent overlay).'
     ]
   },
   {
