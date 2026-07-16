@@ -1,15 +1,23 @@
 {
-  "version": "1.0.0-beta.2",
-  "releaseDate": "2026-07-02",
+  "version": "1.1.0-beta.1",
+  "releaseDate": "2026-07-15",
   "mandatory": false,
-  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases/tag/v1.0.0-beta.2",
+  "downloadUrl": "https://github.com/AiWerek-Tech/SION-Media/releases",
   "notes": [
-    "Sistem Bible Content Pack dengan database modular SQLite",
-    "Penyertaan default Alkitab Terjemahan Baru (TB)",
-    "Penyertaan database default berisi 525 lagu lengkap",
-    "Mixed Rundown & Playlist (campuran lagu & Alkitab)",
-    "Dynamic Registry Auto-Update untuk pembaruan path Alkitab otomatis",
-    "Integrasi halaman panduan Windows SmartScreen di dalam installer",
-    "Desain ulang Splash Screen, Welcome Screen, dan Projection Panel"
+    "PowerPoint Bridge Tahap 2: Kontrol navigasi dua arah dari jauh (operator dapat Next/Prev slide pemateri) dan kompresi JPEG cerdas (ukuran slide turun 85% untuk transfer instan)",
+    "Auto-Start PowerPoint Bridge: PowerPoint Bridge otomatis aktif di latar belakang saat login sebagai Pemateri (presenter)",
+    "Pembersihan Sampah Visual: Pembersihan direktori slide secara menyeluruh pada saat server dimulai (startup) dan ketika client terputus",
+    "OBS Live Input menerima H.264/AAC melalui SRT dan meneruskannya ke SION Link Desktop/Mobile dengan audio",
+    "FFmpeg 8.1.2 dan MediaMTX 1.17.0 disertakan di installer SION Media; pengguna tidak perlu memasang komponen manual",
+    "Viewer SION Link otomatis memprioritaskan siaran OBS dan kembali ke Program Output ketika OBS berhenti",
+    "SION Link Desktop dan Mobile menampilkan slide visual pada semua role, reconnect otomatis, serta UI native yang diperbarui",
+    "Kode akses role dan port SION Link persisten hingga operator melakukan reset manual",
+    "Media live dapat diganti langsung dari Preview tanpa Clear dan tampil bersih tanpa watermark SION PRESENTER",
+    "Thumbnail gambar dan URL path Windows diperbaiki agar gambar tampil konsisten pada PC lain, Preview, dan Program",
+    "Tombol ON SION Link tersedia di title bar Projection Mode untuk aktivasi cepat",
+    "Lirik memakai tanda titik koma sebagai batas semantik agar satu kalimat nyanyian tidak terpotong ke slide berikutnya",
+    "Media gambar dapat diakses perangkat LAN, playlist mendukung ganti item langsung, dan navigasi slide mengikuti tayangan live",
+    "PowerPoint Bridge, Speaker Notes, konversi PDF/gambar, dan Stage Display disempurnakan",
+    "OBS Network Output tetap tersedia untuk mengirim Program Output 1080p beserta audio dari SION Media ke OBS"
   ]
 }
