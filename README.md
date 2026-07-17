@@ -5,11 +5,11 @@ Official website for the SION Media desktop application. This repository hosts t
 ## Current product snapshot
 
 - SION Media Desktop `1.1.0-beta.1` for Windows testing.
-- SION Link Desktop `1.1.0-beta.1` with auto-discovery, persistent role access, PowerPoint Bridge, Stage Display, and OBS Live playback.
+- SION Link Desktop `1.0.0` with auto-discovery, persistent role access, Presentation Bridge status center, bundled SION PowerPoint Agent, Stage Display, and OBS Live playback.
 - SION Link Mobile `0.1.0-alpha.1` as a native Android app with QR/manual pairing, native video playback, slide visuals for every role, and reconnect handling.
 - Two distinct SRT workflows: SION Media Program Output to OBS, and OBS Live Input through SION Media to SION Link Desktop/Mobile.
 - FFmpeg 8.1.2 and MediaMTX 1.17.0 are bundled in the latest SION Media test installer.
-- Projection testing fixes include direct media-to-media Take, watermark-free live media, portable Windows image paths, quick SION Link activation, and semicolon-safe lyric pagination.
+- Latest beta hardening includes the C#/.NET SION PowerPoint Agent, binary frame transport, memory-first frame handling, no repeated TAKE, multi-device ownership, polished Bridge UI, and refreshed Windows installers.
 - This branch remains pre-stable; field testing and backups are recommended before the stable 1.0 milestone.
 
 ## 🚀 Quick Start

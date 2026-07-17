@@ -7,16 +7,29 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    version: 'Presentation Bridge Beta Hardening',
+    date: '2026-07-17',
+    type: 'Bridge Runtime · UI Polish · Windows Installers',
+    notes: [
+      'SION Presentation Bridge kini memakai SION PowerPoint Agent berbasis C#/.NET sebagai engine utama Windows, dengan COM PowerPoint persistent dan deteksi event-driven.',
+      'Frame PowerPoint dikirim melalui transport binary dan memory-first pipeline; Base64 dan disk write tidak lagi menjadi jalur utama frame live.',
+      'SION Link Desktop mendapat PowerPoint Bridge status center baru: connection journey, current presentation card, recovery card, dan Advanced Diagnostics.',
+      'SION Media Desktop mendapat panel operator baru untuk approval, multi-device ownership, current/next monitor, mode Manual/Follow Preview/Follow Live, dan diagnostics copy/export.',
+      '500-command soak, real PowerPoint Slide Show, stale frame 0, command failure 0, repeated TAKE 0, dan projection image predecode/atomic swap telah divalidasi.',
+      'Installer Windows terbaru berhasil dibangun: SION Media 1.1.0-beta.1 dan SION Link Desktop 1.0.0 dengan PowerPoint Agent self-contained dibundel di dalam SION Link.'
+    ]
+  },
+  {
     version: 'SION Link Desktop 1.0.0',
     date: '2026-07-15',
     type: 'Official Release · Stable Production Version',
     notes: [
       'Rilis stabil pertama companion desktop native SION Link Desktop.',
-      'PowerPoint Bridge Tahap 2: Kontrol navigasi dua arah (operator SION Media dapat memindahkan slide PowerPoint pemateri dari jauh) dan kompresi JPEG cerdas (ukuran slide turun 85% untuk transfer instan).',
+      'PowerPoint Bridge Tahap 2: Kontrol navigasi dua arah (operator SION Media dapat memindahkan slide PowerPoint pemateri dari jauh) dan kompresi JPEG cerdas.',
       'Auto-Start PowerPoint Bridge: Jembatan PowerPoint otomatis aktif di latar belakang saat client terhubung dengan kode akses Pemateri.',
       'Auto-Scan & Auto-Populate Jaringan: Pencarian otomatis server langsung mempopulasi kolom IP/Port jika belum diedit, dan scan jaringan otomatis saat tab Cari Server dibuka.',
       'Tips & Panduan UI: Menambahkan teks petunjuk pintasan keyboard (ESC atau Ctrl+Shift+D) untuk memutuskan koneksi dan kembali ke layar utama secara mudah.',
-      'PowerPoint Live Bridge menyinkronkan slide aktif, judul slide, notes, dan pratinjau slide berikutnya secara real-time langsung ke operator via PowerShell.',
+      'PowerPoint Live Bridge menyinkronkan slide aktif, judul slide, notes, dan pratinjau slide berikutnya secara real-time; jalur PowerShell lama kini hanya fallback kompatibilitas.',
       'Akses workspace native khusus untuk Operator (kontrol penuh & PPT bridge), Pemateri (navigasi slide sederhana), Stage Display (Speaker Notes & cue), Live Viewer (clean projection), dan Live OBS (transparent overlay).'
     ]
   },

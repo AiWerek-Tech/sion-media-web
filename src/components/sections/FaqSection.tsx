@@ -21,7 +21,11 @@ const faqItems = [
   },
   {
     question: 'Apakah PowerPoint dan Speaker Notes didukung?',
-    answer: 'Ya. PPTX dapat diimpor bersama judul dan Speaker Notes. Konversi otomatis memilih PowerPoint, WPS Presentation, atau LibreOffice yang tersedia, dengan PDF/gambar sebagai fallback materi.',
+    answer: 'Ya. PPTX dapat diimpor bersama judul dan Speaker Notes, atau dijalankan live melalui Presentation Bridge. Di Windows, Bridge memakai SION PowerPoint Agent C#/.NET dengan koneksi PowerPoint persistent; PowerShell hanya fallback kompatibilitas.',
+  },
+  {
+    question: 'Apa bedanya Presentation Bridge baru dengan Bridge lama?',
+    answer: 'Bridge baru event-driven, mengirim frame sebagai binary, menyimpan frame di memory-first pipeline, menolak frame stale, dan menjaga Program tetap live tanpa TAKE berulang. Operator tetap memilih perangkat aktif dan mode Manual, Follow Preview, atau Follow Live.',
   },
   {
     question: 'Apakah perlu plugin khusus untuk OBS Studio?',

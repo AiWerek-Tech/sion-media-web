@@ -44,7 +44,7 @@ export const features = [
   {
     title: 'SION Link Desktop',
     description:
-      'Companion native full-width dengan auto-discovery untuk Pemateri, Operator, Live Viewer, Stage Display, OBS Live, dan PowerPoint Bridge.',
+      'Companion native full-width dengan auto-discovery, Bridge status center, OBS Live, dan SION PowerPoint Agent self-contained untuk presentasi real-time.',
     tag: 'Remote LAN',
     iconName: 'Settings'
   },
@@ -56,9 +56,9 @@ export const features = [
     iconName: 'Smartphone'
   },
   {
-    title: 'PowerPoint + Speaker Notes',
+    title: 'Presentation Bridge Real-Time',
     description:
-      'Impor PPTX sambil mempertahankan judul dan catatan pemateri. Konversi otomatis memilih PowerPoint, WPS Presentation, LibreOffice, PDF, atau gambar.',
+      'PowerPoint tetap berjalan di laptop pemateri, sementara SION Media menerima state, notes, current/next frame binary, dan update live tanpa repeated TAKE.',
     tag: 'Presentasi',
     iconName: 'Book'
   },

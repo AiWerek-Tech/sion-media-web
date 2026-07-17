@@ -4,7 +4,7 @@ export const docsSections = [
     description: 'Pilih aplikasi yang sesuai dengan perangkat dan peran pengguna.',
     items: [
       { title: 'SION Media Desktop', detail: 'Aplikasi utama untuk PC operator. Rilis uji saat ini v1.1.0-beta.1 untuk Windows 10/11 x64.' },
-      { title: 'SION Link Desktop', detail: 'Companion Windows v1.0.0 (Stabil) untuk PC pemateri, operator tambahan, Live Viewer, Stage Display, PowerPoint Bridge, dan Live OBS.' },
+      { title: 'SION Link Desktop', detail: 'Companion Windows v1.0.0 (Stabil) untuk PC pemateri, operator tambahan, Live Viewer, Stage Display, Presentation Bridge, dan Live OBS. Paket terbaru membundel SION PowerPoint Agent untuk Windows.' },
       { title: 'SION Link Mobile', detail: 'Aplikasi Android native 0.1.0-alpha.1 untuk Pemateri, Operator, Live Viewer, dan Stage Display. Distribusi masih internal testing.' },
       { title: 'Status Prarilis', detail: 'SION Link Desktop kini telah dirilis stabil v1.0.0. Paket lain masih berada di tahap beta/alpha. Windows SmartScreen dapat meminta konfirmasi karena installer belum memiliki code signing publik.' },
     ],
@@ -37,7 +37,9 @@ export const docsSections = [
     items: [
       { title: 'Impor PPTX', detail: 'SION Media mempertahankan judul dan Speaker Notes, lalu memilih konverter yang tersedia: PowerPoint, WPS Presentation, atau LibreOffice.' },
       { title: 'Fallback PDF/Gambar', detail: 'Jika provider Office yang sesuai tidak tersedia, materi dapat dikonversi atau dimasukkan sebagai PDF maupun rangkaian gambar agar visual tetap konsisten.' },
-      { title: 'PowerPoint Bridge', detail: 'Gunakan SION Link Desktop di PC pemateri ketika PowerPoint harus tetap dikendalikan dari sana. Bridge mengirim slide aktif dan notes ke SION Media melalui kode Operator.' },
+      { title: 'Presentation Bridge', detail: 'Gunakan SION Link Desktop di PC pemateri ketika PowerPoint harus tetap dikendalikan dari sana. SION PowerPoint Agent menjaga koneksi PowerPoint persistent, mendeteksi event slide, lalu mengirim state, notes, dan frame binary ke SION Media.' },
+      { title: 'Mode Operator', detail: 'Di SION Media tersedia Manual, Follow Preview, dan Follow Live. Setelah TAKE pertama, Follow Live memperbarui Program secara real-time tanpa menjalankan TAKE berulang.' },
+      { title: 'Multi-device Safety', detail: 'Jika dua pemateri terhubung, operator memilih perangkat aktif. Perangkat lain tidak otomatis mengambil alih Program tanpa keputusan operator.' },
       { title: 'Pilih Metode', detail: 'Pakai impor untuk rundown yang dikendalikan operator. Pakai Bridge untuk animasi, presenter view, dan kendali asli PowerPoint dari komputer pemateri.' },
     ],
   },
@@ -69,6 +71,7 @@ export const docsSections = [
     description: 'Jawaban singkat untuk operasional dan pengujian lapangan.',
     items: [
       { title: 'Apakah butuh internet?', detail: 'Tidak untuk presentasi, SION Link, PowerPoint Bridge, atau SRT dalam LAN. Internet hanya diperlukan untuk website, update, dan layanan online.' },
+      { title: 'Apakah Bridge masih memakai PowerShell?', detail: 'Tidak sebagai jalur utama. Windows memakai SION PowerPoint Agent berbasis C#/.NET dengan koneksi PowerPoint persistent. Legacy PowerShell hanya fallback kompatibilitas dan lebih lambat.' },
       { title: 'Apakah kode berubah saat listrik mati?', detail: 'Tidak. Kode setiap role dan port disimpan persisten. Kode hanya berubah ketika operator menekan reset manual.' },
       { title: 'Apakah perlu plugin OBS?', detail: 'Tidak. OBS dan SION Media menggunakan protokol SRT standar. Network Output dan OBS Live Input adalah dua arah kerja berbeda yang dapat dipilih sesuai kebutuhan.' },
       { title: 'Android minimum?', detail: 'SION Link Mobile alpha mendukung Android 7.0 ke atas dan paket ARM64/ARMv7.' },
