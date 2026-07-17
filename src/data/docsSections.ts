@@ -118,6 +118,13 @@ export const docsSections: DocSection[] = [
         badge: 'Konfigurasi',
         detail: 'Di panel SION Media Desktop, operator dapat memilih tiga mode sinkronisasi:\n1. **Manual**: Transisi slide di komputer pemateri tidak mengubah layar utama jemaat secara otomatis; operator harus menekan `Space` (Take) terlebih dahulu.\n2. **Follow Preview**: Slide baru dari pemateri secara otomatis masuk ke monitor Preview operator.\n3. **Follow Live (Rekomendasi)**: Slide baru dari pemateri langsung tayang ke Program Output proyeksi jemaat secara real-time tanpa perlu intervensi manual operator.',
         warnings: 'Pastikan status Microsoft Office PowerPoint di PC pemateri telah menjalankan Slide Show (F5) agar Agent dapat membaca event slide secara aktif.'
+      },
+      {
+        id: 'bridge-phase2-features',
+        title: 'Fitur PowerPoint Bridge Tahap 2',
+        badge: 'Pembaruan v1.1',
+        detail: 'Pembaruan PowerPoint Bridge Tahap 2 menghadirkan peningkatan performa dan kontrol yang jauh lebih andal:\n- **Kontrol Navigasi Dua Arah**: Operator SION Media kini dapat memindahkan slide PowerPoint di PC pemateri secara remote langsung dari panel operator.\n- **Kompresi JPEG Cerdas**: Slide PowerPoint dikompresi menggunakan format JPEG cerdas di Agent, menurunkan ukuran file gambar hingga 85% untuk transfer instan tanpa latensi melalui Wi-Fi.\n- **Auto-Start PowerPoint Bridge**: PowerPoint Bridge otomatis berjalan di latar belakang saat client terhubung menggunakan kode akses Pemateri.\n- **Auto-Clean Direktori Slide**: Aplikasi otomatis menghapus file sisa gambar slide PowerPoint lama saat server dimulai (startup) untuk menghemat ruang penyimpanan.',
+        tips: 'Gunakan tombol navigasi remote di panel PowerPoint SION Media Desktop untuk memindahkan slide maju/mundur ketika pemateri meminta bantuan transisi.'
       }
     ]
   },
