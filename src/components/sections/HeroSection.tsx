@@ -20,7 +20,7 @@ function HeroSection() {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-cyan-300">
-              v1.1.0-beta.1
+              v1.1.0-beta.2
             </span>
             <span className="rounded-full border border-amber-400/20 bg-amber-400/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-amber-300">
               Windows beta · Android alpha

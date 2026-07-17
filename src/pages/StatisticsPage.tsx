@@ -43,7 +43,7 @@ function StatisticsPage() {
               <StatsCard label="Total Churches" value={stats.totalChurches ?? 0} iconName="church" />
               <StatsCard label="Total Users" value={stats.totalUsers ?? 0} iconName="users" />
               <StatsCard label="Active Orgs" value={stats.activeOrganizations ?? 0} iconName="building" />
-              <StatsCard label="Latest Version" value={stats.latestVersion ?? 'v1.1.0-beta.1'} iconName="cpu" />
+              <StatsCard label="Latest Version" value={stats.latestVersion ?? 'v1.1.0-beta.2'} iconName="cpu" />
             </div>
 
             <div className="mt-24">

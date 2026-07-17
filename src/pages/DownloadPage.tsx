@@ -46,7 +46,7 @@ function DownloadPage() {
             <div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300">Aplikasi utama</div>
             <h2 className="mt-2 text-xl font-bold text-white">SION Media Desktop</h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC operator: library, projection, Stage Display, Presentation Bridge, OBS Network Output, dan OBS Live Input. FFmpeg 8.1.2 serta MediaMTX 1.17.0 sudah termasuk.</p>
-            <div className="mt-5 border-t border-cyan-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.1.0-beta.1 · Windows 10/11 x64 · 232.06 MB</div>
+            <div className="mt-5 border-t border-cyan-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.1.0-beta.2 · Windows 10/11 x64 · 232.06 MB</div>
           </article>
           <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.05] p-6 flex flex-col justify-between">
             <div>
@@ -62,7 +62,7 @@ function DownloadPage() {
                 Unduh Rilis GitHub <ExternalLink size={12} />
               </a>
             </div>
-            <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.0.0 · Windows 10/11 x64 · 117.41 MB installer · Agent bundled</div>
+            <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v0.5.0-beta.1 · Windows 10/11 x64 · 117.41 MB installer · Agent bundled</div>
           </article>
           <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.05] p-6 flex flex-col justify-between">
             <div>

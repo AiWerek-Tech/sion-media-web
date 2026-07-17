@@ -7,7 +7,7 @@ import type { ChangelogEntry } from '../types'
  */
 export const changelogEntries: ChangelogEntry[] = [
   {
-    version: 'Presentation Bridge Beta Hardening',
+    version: '1.1.0-beta.2',
     date: '2026-07-17',
     type: 'Bridge Runtime · UI Polish · Windows Installers',
     notes: [
@@ -16,11 +16,11 @@ export const changelogEntries: ChangelogEntry[] = [
       'SION Link Desktop mendapat PowerPoint Bridge status center baru: connection journey, current presentation card, recovery card, dan Advanced Diagnostics.',
       'SION Media Desktop mendapat panel operator baru untuk approval, multi-device ownership, current/next monitor, mode Manual/Follow Preview/Follow Live, dan diagnostics copy/export.',
       '500-command soak, real PowerPoint Slide Show, stale frame 0, command failure 0, repeated TAKE 0, dan projection image predecode/atomic swap telah divalidasi.',
-      'Installer Windows terbaru berhasil dibangun: SION Media 1.1.0-beta.1 dan SION Link Desktop 1.0.0 dengan PowerPoint Agent self-contained dibundel di dalam SION Link.'
+      'Installer Windows terbaru berhasil dibangun: SION Media 1.1.0-beta.2 dan SION Link Desktop 0.5.0-beta.1 dengan PowerPoint Agent self-contained dibundel di dalam SION Link.'
     ]
   },
   {
-    version: 'SION Link Desktop 1.0.0',
+    version: 'SION Link Desktop 0.5.0-beta.1',
     date: '2026-07-15',
     type: 'Official Release · Stable Production Version',
     notes: [

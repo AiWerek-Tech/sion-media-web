@@ -1,7 +1,7 @@
 {
   "name": "sion-media-web",
   "private": true,
-  "version": "1.1.0-beta.1",
+  "version": "1.1.0-beta.2",
   "homepage": "https://aiwerek-tech.github.io/sion-media-web",
   "type": "module",
   "scripts": {

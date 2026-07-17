@@ -196,7 +196,7 @@ function DocsPage() {
               <div className="p-4 rounded-3xl bg-slate-900/20 border border-slate-900/50 text-center">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-slate-500">Status Dokumentasi</span>
                 <div className="mt-1 flex items-center justify-center gap-2 text-xs font-bold text-slate-300">
-                  <span>Ecosystem v1.1.0-beta.1</span>
+                  <span>Ecosystem v1.1.0-beta.2</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 </div>
               </div>
