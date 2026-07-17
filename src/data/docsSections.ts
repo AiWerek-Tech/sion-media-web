@@ -1,97 +1,188 @@
-export const docsSections = [
+export interface DocItem {
+  id: string;
+  title: string;
+  detail: string;
+  screenshot?: string;
+  badge?: string;
+  tips?: string;
+  warnings?: string;
+}
+
+export interface DocSection {
+  id: string;
+  title: string;
+  description: string;
+  items: DocItem[];
+}
+
+export const docsSections: DocSection[] = [
   {
-    title: 'A. Panduan Unduhan',
-    description: 'Pilih aplikasi yang sesuai dengan perangkat dan peran pengguna.',
+    id: 'pengenalan',
+    title: 'A. Pengenalan Ekosistem',
+    description: 'Pahami gambaran besar arsitektur ekosistem SION Media dan bagaimana setiap komponen berinteraksi.',
     items: [
-      { title: 'SION Media Desktop', detail: 'Aplikasi utama untuk PC operator. Rilis uji saat ini v1.1.0-beta.1 untuk Windows 10/11 x64.' },
-      { title: 'SION Link Desktop', detail: 'Companion Windows v1.0.0 (Stabil) untuk PC pemateri, operator tambahan, Live Viewer, Stage Display, Presentation Bridge, dan Live OBS. Paket terbaru membundel SION PowerPoint Agent untuk Windows.' },
-      { title: 'SION Link Mobile', detail: 'Aplikasi Android native 0.1.0-alpha.1 untuk Pemateri, Operator, Live Viewer, dan Stage Display. Distribusi masih internal testing.' },
-      { title: 'Status Prarilis', detail: 'SION Link Desktop kini telah dirilis stabil v1.0.0. Paket lain masih berada di tahap beta/alpha. Windows SmartScreen dapat meminta konfirmasi karena installer belum memiliki code signing publik.' },
-    ],
+      {
+        id: 'gambaran-ekosistem',
+        title: 'Gambaran Ekosistem SION Media',
+        badge: 'Arsitektur',
+        detail: 'SION Media adalah ekosistem media ibadah profesional yang terdiri dari tiga pilar utama:\n1. **SION Media Desktop (Electron/React)**: Aplikasi pengendali utama di PC operator untuk memproses lagu, Alkitab, media, dan melakukan proyeksi visual.\n2. **SION Link Desktop (Windows Native C#)**: Aplikasi pendukung untuk PC pemateri atau layar panggung, membundel SION PowerPoint Agent untuk menjembatani Slide Show secara persisten.\n3. **SION Link Mobile (Android Native)**: Aplikasi mobile sebagai remote control pemateri, layar monitor panggung (Stage Display) nirkabel, dan viewer siaran langsung.',
+        screenshot: '/screenshots/analytics-dashboard.png',
+        tips: 'SION Media dirancang dengan prinsip desentralisasi; setiap komponen berkomunikasi secara aman melalui jaringan LAN tanpa ketergantungan pada koneksi internet luar.'
+      },
+      {
+        id: 'syarat-sistem',
+        title: 'Persyaratan Sistem & Jaringan',
+        badge: 'Jaringan',
+        detail: 'Untuk performa optimal dan konektivitas mulus:\n- **SION Media Desktop**: Windows 10/11 x64, RAM minimal 8GB, SSD, kartu grafis dengan output ganda (HDMI/DisplayPort).\n- **SION Link Mobile**: Android 7.0 (Nougat) atau lebih baru.\n- **Koneksi LAN/Wi-Fi**: Semua perangkat (PC Operator, PC Pemateri, HP Android) wajib berada di segmen jaringan lokal yang sama. Protokol *mDNS / Auto-Discovery* digunakan agar perangkat saling mendeteksi secara otomatis.',
+        warnings: 'Pastikan Windows Firewall tidak memblokir port internal SION. Pilih "Allow Access" pada jaringan Private saat pertama kali meluncurkan aplikasi.'
+      }
+    ]
   },
   {
-    title: 'B. Instalasi & Koneksi Pertama',
-    description: 'Alur awal yang dibuat otomatis dan tetap memiliki fallback manual.',
+    id: 'desktop-library',
+    title: 'B. SION Media: Library & Playlist',
+    description: 'Kelola basis data lagu ibadah Anda, impor file eksternal, dan susun rundown ibadah secara rapi.',
     items: [
-      { title: 'Instal SION Media', detail: 'Jalankan setup Windows. FFmpeg 8.1.2 dan MediaMTX 1.17.0 sudah disertakan; tidak perlu mengunduh ffmpeg.exe atau server media secara manual.' },
-      { title: 'Aktifkan SION Link', detail: 'Buka Pengaturan Sistem → SION Link lalu aktifkan server. Port dan seluruh kode role tersimpan permanen hingga operator memilih reset manual.' },
-      { title: 'Hubungkan Desktop', detail: 'SION Link Desktop mencari server di LAN/Wi-Fi secara otomatis. Smart paste dan input IP/port tetap tersedia jika discovery dibatasi jaringan.' },
-      { title: 'Hubungkan Android', detail: 'Scan QR role sebagai cara utama. Kartu input manual IP, port, dan kode merupakan metode kedua yang terpisah.' },
-      { title: 'Syarat Jaringan', detail: 'Semua perangkat harus berada pada LAN/Wi-Fi yang sama. Saat Windows Firewall bertanya, pilih Allow access untuk Private networks.' },
-    ],
+      {
+        id: 'library-mode',
+        title: 'Library Mode: Manajemen Lagu',
+        badge: 'Layar Utama',
+        detail: 'Library Mode adalah menu utama untuk mengelola database nyanyian gereja. Di sini Anda dapat melakukan pencarian cepat menggunakan mesin indeks FTS5 SQLite, membuat kategori buku lagu baru (misal: Kidung Jemaat, NKB, Lagu Kontemporer), serta mengimpor data lagu secara massal dari format Excel atau JSON.',
+        screenshot: '/screenshots/library.png',
+        tips: 'Gunakan filter kategori di bilah samping kiri untuk membatasi pencarian pada buku nyanyian tertentu saat ibadah sedang berjalan cepat.'
+      },
+      {
+        id: 'song-editor',
+        title: 'Song Editor & Aturan Penulisan Lirik',
+        badge: 'Menu Editor',
+        detail: 'Song Editor memungkinkan pengubahan detail lagu, pengaturan struktur lagu (Verse, Chorus, Bridge, Tag), dan penulisan lirik. Mesin proyeksi slide SION menggunakan aturan khusus untuk baris lirik:\n- **Batas Baris Nyanyian**: Gunakan tanda titik koma (;) pada akhir kalimat untuk menandakan satu baris utuh slide.\n- **Slide Generator**: Kalimat panjang sebelum tanda titik koma (;) tidak akan dipotong paksa ke slide berikutnya melainkan dibungkus (wrap) secara visual pada slide yang sama untuk menjaga keutuhan arti kalimat nyanyian.',
+        screenshot: '/screenshots/editor.png',
+        tips: 'Contoh format lirik yang baik:\n`Kasih Tuhan tidak berkesudahan;` (baris 1)\n`Rahmat-Nya selalu baru setiap pagi;` (baris 2)'
+      },
+      {
+        id: 'playlist-management',
+        title: 'Playlist & Rundown Acara',
+        badge: 'Rundown',
+        detail: 'Playlist Panel di sebelah kanan layar digunakan untuk menyusun urutan ibadah (Lagu Pembuka, Firman Tuhan, Persembahan, dll):\n- **Drag and Drop**: Geser slot item untuk mengubah urutan liturgi secara instan.\n- **Ganti Item Tanpa Hapus**: Jika ada perubahan mendadak, klik kanan slot playlist dan pilih "Ganti Item". Ini akan mengganti konten visual slot tersebut tanpa merusak urutan rundown yang sudah dibuat.\n- **Persistensi State**: Rundown otomatis tersimpan ke SQLite local WAL journal, menjaga data tetap aman jika PC operator mati mendadak.',
+        screenshot: '/screenshots/song-management.png',
+        warnings: 'Jangan memindahkan file gambar atau video sumber setelah dimasukkan ke panel Media agar URL lokal di database tetap dapat membacanya.'
+      }
+    ]
   },
   {
-    title: 'C. Alur Kerja Operator',
-    description: 'Siapkan konten, preview, tayangkan, dan hubungkan seluruh layar pelayanan.',
+    id: 'desktop-projection',
+    title: 'C. SION Media: Proyeksi & Layar',
+    description: 'Kuasai alur penayangan live ke jemaat, panggung pemusik, dan monitor panggung.',
     items: [
-      { title: 'Persiapan Playlist', detail: 'Susun lagu, Alkitab, PDF, gambar, video, dan presentasi. Gunakan Ganti Lagu/Item untuk mengubah isi sebuah slot tanpa menghapus urutannya.' },
-      { title: 'Preview → Take', detail: 'Pilih konten di Preview, periksa tampilannya, lalu kirim ke Program/Live. Layar jemaat tidak menampilkan area kerja operator.' },
-      { title: 'Navigasi Slide', detail: 'Tombol slide mengikuti tayangan live: V/C untuk struktur lagu dan 1, 2, 3 untuk halaman PDF atau materi presentasi. Daftar panjang dapat digulir horizontal.' },
-      { title: 'Media melalui LAN', detail: 'Gambar dan materi menggunakan URL server yang dapat dijangkau perangkat lain, sehingga panel, preview, Live Viewer, dan Stage menampilkan visual yang sama.' },
-      { title: 'Stage Display', detail: 'Pilih monitor panggung dan tampilkan current/next cue, notes, chord, timer, heartbeat, serta status LIVE, FREEZE, atau BLACK.' },
-    ],
+      {
+        id: 'projection-mode',
+        title: 'Alur Kerja Preview → Take',
+        badge: 'Layar Proyeksi',
+        detail: 'Mengadopsi workflow standar broadcast console:\n1. **Preview**: Klik slide lirik/media di panel tengah untuk menampilkannya di layar monitor operator (belum tayang ke jemaat).\n2. **Take (Tombol SPACE)**: Tekan tombol Spacebar untuk mengirim preview ke Program Output (Layar Proyeksi Jemaat).\n3. **Isolasi Penuh**: Layar jemaat dijamin bersih dan bebas dari kursor mouse, notifikasi sistem, atau panel kerja operator.',
+        screenshot: '/screenshots/projection-mode.png',
+        tips: 'Gunakan pintasan keyboard untuk mempercepat transisi:\n- `Space`: Jalankan Take (Preview → Program)\n- `Panah Kanan / Kiri`: Slide berikutnya / sebelumnya secara live'
+      },
+      {
+        id: 'fsm-projection-engine',
+        title: 'Kontrol Keamanan Proyeksi (FSM)',
+        badge: 'Hotkeys',
+        detail: 'Mesin proyeksi SION berbasis Finite State Machine (FSM) untuk memastikan transisi layar yang bersih dan aman:\n- **B (Black)**: Mematikan proyeksi and menampilkan layar hitam solid ke jemaat.\n- **F (Freeze)**: Membekukan slide visual yang sedang tampil di layar jemaat (operator bebas memuat item lain di operator monitor).\n- **Escape / C (Clear)**: Menghapus teks lirik yang sedang tayang secara perlahan (fade-out) tetapi mempertahankan latar belakang media.\n- **L (Logo)**: Menampilkan slide logo standby gereja di layar proyeksi.\n- **Ctrl+Alt+R (Panic Recovery)**: Memuat ulang paksa (hard reload) render proyeksi jika terjadi desinkronisasi grafis.',
+        screenshot: '/screenshots/projection.png',
+        warnings: 'Mode Freeze membekukan output hardware HDMI/DisplayPort. Gunakan ini jika Anda harus melakukan penyuntingan data lagu darurat saat ibadah berlangsung.'
+      },
+      {
+        id: 'stage-display',
+        title: 'Stage Display (Monitor Panggung)',
+        badge: 'Panggung',
+        detail: 'Stage Display menyajikan informasi khusus bagi pemusik dan pengkhotbah di atas panggung:\n- Rujukan baris lirik yang sedang live (Current Cue) dan baris lirik berikutnya (Next Cue).\n- Penghitung waktu mundur (Timer) dan jam pelayanan saat ini.\n- Catatan khotbah (Speaker Notes) dan chord kunci nada musik.\n- Dilengkapi heartbeat diagnostics untuk memastikan konektivitas layar panggung aktif.',
+        screenshot: '/screenshots/bible.png',
+        tips: 'Monitor panggung dapat disalurkan secara fisik menggunakan kabel HDMI sekunder, atau secara nirkabel melalui SION Link Mobile/Desktop WHEP viewer.'
+      }
+    ]
   },
   {
-    title: 'D. PowerPoint & Speaker Notes',
-    description: 'Gunakan impor materi atau Bridge sesuai kebutuhan pengendali presentasi.',
+    id: 'powerpoint-bridge',
+    title: 'D. PowerPoint Presentation Bridge',
+    description: 'Integrasikan slide presentasi PowerPoint asli dengan kontrol real-time.',
     items: [
-      { title: 'Impor PPTX', detail: 'SION Media mempertahankan judul dan Speaker Notes, lalu memilih konverter yang tersedia: PowerPoint, WPS Presentation, atau LibreOffice.' },
-      { title: 'Fallback PDF/Gambar', detail: 'Jika provider Office yang sesuai tidak tersedia, materi dapat dikonversi atau dimasukkan sebagai PDF maupun rangkaian gambar agar visual tetap konsisten.' },
-      { title: 'Presentation Bridge', detail: 'Gunakan SION Link Desktop di PC pemateri ketika PowerPoint harus tetap dikendalikan dari sana. SION PowerPoint Agent menjaga koneksi PowerPoint persistent, mendeteksi event slide, lalu mengirim state, notes, dan frame binary ke SION Media.' },
-      { title: 'Mode Operator', detail: 'Di SION Media tersedia Manual, Follow Preview, dan Follow Live. Setelah TAKE pertama, Follow Live memperbarui Program secara real-time tanpa menjalankan TAKE berulang.' },
-      { title: 'Multi-device Safety', detail: 'Jika dua pemateri terhubung, operator memilih perangkat aktif. Perangkat lain tidak otomatis mengambil alih Program tanpa keputusan operator.' },
-      { title: 'Pilih Metode', detail: 'Pakai impor untuk rundown yang dikendalikan operator. Pakai Bridge untuk animasi, presenter view, dan kendali asli PowerPoint dari komputer pemateri.' },
-    ],
+      {
+        id: 'bridge-overview',
+        title: 'Konsep Presentation Bridge',
+        badge: 'Bridge',
+        detail: 'Bila pemateri ingin mengoperasikan animasi slide dan notes presentasinya langsung dari PC mimbar, gunakan **SION Link Desktop** di PC pemateri. PowerPoint Bridge bekerja menggunakan:\n- **SION PowerPoint Agent (C#/.NET)**: Berjalan di latar belakang Windows pemateri untuk mengikat COM object PowerPoint secara persisten.\n- **Koneksi IPC**: Mengirimkan data transisi slide, Speaker Notes, dan frame visual presentasi melalui named pipe Windows ke SION Link, yang kemudian menyalurkannya ke SION Media Desktop melalui jaringan Wi-Fi/LAN.',
+        tips: 'Metode Bridge sangat direkomendasikan jika presentasi memiliki banyak efek transisi animasi kompleks yang tidak didukung oleh format konverter PDF statis.'
+      },
+      {
+        id: 'operator-modes',
+        title: 'Mode Sinkronisasi Operator',
+        badge: 'Konfigurasi',
+        detail: 'Di panel SION Media Desktop, operator dapat memilih tiga mode sinkronisasi:\n1. **Manual**: Transisi slide di komputer pemateri tidak mengubah layar utama jemaat secara otomatis; operator harus menekan `Space` (Take) terlebih dahulu.\n2. **Follow Preview**: Slide baru dari pemateri secara otomatis masuk ke monitor Preview operator.\n3. **Follow Live (Rekomendasi)**: Slide baru dari pemateri langsung tayang ke Program Output proyeksi jemaat secara real-time tanpa perlu intervensi manual operator.',
+        warnings: 'Pastikan status Microsoft Office PowerPoint di PC pemateri telah menjalankan Slide Show (F5) agar Agent dapat membaca event slide secara aktif.'
+      }
+    ]
   },
   {
-    title: 'E. OBS Network Output',
-    description: 'Kirim Program Output SION Media menuju OBS Studio di komputer lain.',
+    id: 'mobile-app',
+    title: 'E. SION Link Mobile (Android)',
+    description: 'Manfaatkan perangkat Android sebagai remote kontrol portabel dan layar monitor.',
     items: [
-      { title: 'Arah SION Media → OBS', detail: 'Buka Pengaturan Sistem → SION Link → OBS / SRT → Network Output, lalu aktifkan output. Salin URL SRT yang ditampilkan.' },
-      { title: 'Tambahkan di OBS', detail: 'Pada OBS penerima, tambahkan Media Source, nonaktifkan Local File, lalu tempel URL SRT. Video Program 1080p dan audio dikirim tanpa plugin khusus.' },
-      { title: 'Diagnostik', detail: 'Panel status menampilkan encoder, frame terkirim, drop, resolusi, port, dan error. Installer terbaru sudah membawa FFmpeg yang kompatibel dengan SRT dan H.264.' },
-    ],
+      {
+        id: 'connection',
+        title: 'Pemasangan & Pemindaian QR Code',
+        badge: 'Konektivitas',
+        detail: 'Untuk menghubungkan aplikasi Android SION Link Mobile ke server utama:\n1. Buka halaman **Pengaturan Sistem → SION Link** di SION Media Desktop.\n2. Klik aktifkan server SION Link (indikator menyala hijau).\n3. Buka SION Link Mobile di HP Android, arahkan kamera ke QR Code di layar PC untuk memindai akses secara instan.\n- *Koneksi Manual*: Jika kamera bermasalah, Anda dapat memasukkan alamat IP, Port, dan kode otorisasi role secara manual.',
+        tips: 'Aktivasi server SION Link juga dapat dilakukan secara cepat langsung melalui tombol pintas "ON SION Link" pada bilah judul (title bar) utama.'
+      },
+      {
+        id: 'roles',
+        title: 'Peran & Mode Operasional Mobile',
+        badge: 'Role',
+        detail: 'Android Client mendukung empat mode peran (role) yang dapat dipilih setelah pemindaian:\n- **Presenter Remote**: Remote slide presentasi (Next/Prev slide) dan penampil Speaker Notes bagi pengkhotbah di podium.\n- **Operator Remote**: Mengendalikan playlist lagu, lirik, dan tombol FSM (Black/Clear) dari kejauhan.\n- **Stage Display**: Menjadikan tablet Android sebagai monitor panggung nirkabel bagi pemusik.\n- **Live Viewer**: Menonton tayangan program langsung (video + audio) secara real-time.',
+        warnings: 'Aplikasi SION Link Mobile memerlukan izin kamera untuk fitur pemindaian QR Code pertama kali.'
+      }
+    ]
   },
   {
-    title: 'F. OBS Live Input untuk SION Link',
-    description: 'Terima live OBS dan tampilkan otomatis pada SION Link Desktop maupun Mobile.',
+    id: 'obs-integration',
+    title: 'F. Integrasi Video & OBS Studio',
+    description: 'Hubungkan program siaran visual SION Media dengan OBS Studio melalui protokol SRT.',
     items: [
-      { title: 'Arah OBS → SION Media → SION Link', detail: 'Fitur ini berbeda dari Network Output. OBS menjadi publisher SRT, SION Media menjadi gateway lokal, dan SION Link menjadi viewer.' },
-      { title: 'Aktifkan Gateway', detail: 'Buka Pengaturan Sistem → SION Link → OBS / SRT → OBS Live Input. Aktifkan layanan dan salin URL Publisher OBS yang dibuat otomatis.' },
-      { title: 'Atur OBS Publisher', detail: 'Di OBS buka Settings → Stream, pilih Service: Custom, tempel URL pada Server, kosongkan Stream Key, lalu gunakan video H.264 dan audio AAC 48 kHz.' },
-      { title: 'Mulai Siaran', detail: 'Tekan Start Streaming di OBS. Status SION Media berubah dari Menunggu menjadi Live setelah publisher terdeteksi.' },
-      { title: 'Playback Otomatis', detail: 'SION Link memprioritaskan OBS Live ketika aktif. Jika OBS berhenti, viewer kembali ke Program Output SION Media tanpa perlu pairing ulang.' },
-      { title: 'Audio & Latensi', detail: 'Desktop dan Android memakai LL-HLS sebagai jalur default yang andal untuk AAC. Endpoint WebRTC/WHEP juga tersedia untuk kebutuhan lanjutan berlatensi lebih rendah.' },
-      { title: 'Port Default', detail: 'SRT 8890, HLS 8888, WebRTC 8889, WebRTC UDP 8189, dan API 9997. Gunakan port bawaan kecuali terjadi konflik.' },
-      { title: 'Jika Belum Tampil', detail: 'Pastikan semua perangkat satu jaringan, izinkan Private networks pada Windows Firewall, periksa status publisher, lalu coba Stop/Start Streaming di OBS.' },
-    ],
+      {
+        id: 'obs-network-output',
+        title: 'OBS Network Output (SRT Stream)',
+        badge: 'Siaran Keluar',
+        detail: 'Mengirimkan hasil proyeksi SION Media (lyrics overlay + background) sebagai input sumber video di OBS Studio PC lain:\n1. Di SION Media Desktop, aktifkan **OBS / SRT Network Output** di menu Pengaturan.\n2. Salin alamat SRT (misalnya: `srt://192.168.1.100:8890?mode=listener`).\n3. Di OBS Studio penerima, tambahkan source **Media Source**, matikan pilihan "Local File", dan tempel alamat SRT tersebut ke kolom Input.',
+        screenshot: '/screenshots/broadcast.png',
+        tips: 'Gunakan encoding H.264 dengan bitrate 4500kbps untuk transmisi video program 1080p60fps local LAN yang sangat lancar tanpa latensi.'
+      },
+      {
+        id: 'obs-live-input',
+        title: 'OBS Live Input ke SION Link',
+        badge: 'Siaran Masuk',
+        detail: 'Menampilkan feed kamera live dari OBS Studio langsung ke layar penonton di SION Link Desktop & Mobile:\n1. Aktifkan **OBS Live Input Gateway** di pengaturan SION Media.\n2. Salin alamat Publisher yang disediakan (misal: `srt://192.168.1.100:8891?mode=caller`).\n3. Buka OBS Studio pengirim, masuk ke **Settings → Stream**, pilih **Custom**, tempel alamat tersebut di kolom Server, lalu klik Start Streaming di OBS.\n- Alur ini menggunakan protokol LL-HLS untuk distribusi rendah latensi ke seluruh perangkat SION Link.',
+        warnings: 'Jika siaran OBS dihentikan, perangkat penonton SION Link akan otomatis dialihkan kembali menampilkan visual Program Output SION Media secara aman.'
+      }
+    ]
   },
   {
-    title: 'G. Pertanyaan Umum',
-    description: 'Jawaban singkat untuk operasional dan pengujian lapangan.',
+    id: 'troubleshooting',
+    title: 'G. Troubleshooting & FAQ',
+    description: 'Pecahkan masalah umum yang sering dihadapi operator di lapangan dengan cepat.',
     items: [
-      { title: 'Apakah butuh internet?', detail: 'Tidak untuk presentasi, SION Link, PowerPoint Bridge, atau SRT dalam LAN. Internet hanya diperlukan untuk website, update, dan layanan online.' },
-      { title: 'Apakah Bridge masih memakai PowerShell?', detail: 'Tidak sebagai jalur utama. Windows memakai SION PowerPoint Agent berbasis C#/.NET dengan koneksi PowerPoint persistent. Legacy PowerShell hanya fallback kompatibilitas dan lebih lambat.' },
-      { title: 'Apakah kode berubah saat listrik mati?', detail: 'Tidak. Kode setiap role dan port disimpan persisten. Kode hanya berubah ketika operator menekan reset manual.' },
-      { title: 'Apakah perlu plugin OBS?', detail: 'Tidak. OBS dan SION Media menggunakan protokol SRT standar. Network Output dan OBS Live Input adalah dua arah kerja berbeda yang dapat dipilih sesuai kebutuhan.' },
-      { title: 'Android minimum?', detail: 'SION Link Mobile alpha mendukung Android 7.0 ke atas dan paket ARM64/ARMv7.' },
-      { title: 'Apakah versi ini stabil 1.0?', detail: 'Belum. Versi Windows masih beta dan Android masih alpha agar temuan pengujian lapangan dapat diperbaiki sebelum rilis stabil.' },
-    ],
-  },
-  {
-    title: 'H. Media Live, SION Link & Lirik',
-    description: 'Panduan perubahan terbaru berdasarkan pengujian operator di lapangan.',
-    items: [
-      { title: 'Ganti Media Tanpa Clear', detail: 'Saat gambar, video, atau PDF sedang live, pilih media berikutnya di panel Media hingga tampil di Preview. Tombol Tayangkan tetap aktif; tekan tombol tersebut atau Space untuk mengganti Program langsung tanpa mengosongkan layar terlebih dahulu.' },
-      { title: 'Preview Dianggap Sama', detail: 'Tombol Tayangkan hanya nonaktif jika Preview benar-benar sama dengan Program, termasuk file dan konfigurasi latarnya. Dua file media berbeda tidak lagi dianggap sebagai satu cue kosong yang sama.' },
-      { title: 'Output Media Bersih', detail: 'Gambar, video, dan PDF live ditampilkan tanpa watermark teks SION PRESENTER. Watermark hanya digunakan sebagai identitas pada keadaan idle ketika belum ada konten visual yang ditayangkan.' },
-      { title: 'Thumbnail Gambar Windows', detail: 'Panel Media memakai thumbnail hasil impor dan URL lokal yang aman untuk spasi, karakter Indonesia/Unicode, tanda #, %, dan ?. Perbaikan ini menjaga gambar tetap muncul pada panel, Preview, dan Program setelah aplikasi dipasang di PC lain.' },
-      { title: 'Jika Gambar Belum Tampil', detail: 'Hapus referensi gambar yang gagal dari panel Media, tambahkan kembali file melalui tombol Tambah, lalu pastikan file sumber masih dapat dibaca. Gunakan PNG, JPG/JPEG, WebP, atau GIF dan hindari memindahkan file eksternal setelah ditambahkan.' },
-      { title: 'Aktifkan SION Link dari Projector', detail: 'Pada title bar Projection Mode, tekan ON SION Link. Setelah server aktif, label berubah menjadi SION Link ON dan indikator menyala. Operator tidak perlu berpindah ke halaman Pengaturan untuk aktivasi cepat.' },
-      { title: 'Bagikan Akses SION Link', detail: 'Setelah aktif, buka Pengaturan Sistem → SION Link bila perlu melihat QR, alamat jaringan, kode role, perangkat terhubung, atau pengaturan keamanan. Tombol title bar hanya digunakan untuk aktivasi cepat.' },
-      { title: 'Batas Baris Lirik', detail: 'Tanda titik koma (;) adalah batas satu baris nyanyian. Mesin slide tidak memindahkan separuh kalimat sebelum tanda ; ke slide berikutnya, meskipun kalimat tersebut panjang dan membungkus menjadi beberapa baris visual.' },
-      { title: 'Cara Menulis Lirik', detail: 'Pisahkan setiap kalimat yang harus dinyanyikan sebagai satu kesatuan dengan tanda ;. Contoh: Kasih Tuhan tidak berkesudahan; Rahmat-Nya selalu baru; Setiap pagi. Pemisahan slide hanya dilakukan di antara unit tersebut.' },
-      { title: 'Koreksi Lirik Lama', detail: 'Jika lagu lama masih terpotong kurang tepat, buka Song Editor dan tambahkan tanda ; pada akhir setiap kalimat nyanyian yang utuh. Simpan lagu lalu muat ulang ke Preview agar susunan slide dibuat kembali.' },
-    ],
-  },
-]
+      {
+        id: 'network-trouble',
+        title: 'Jaringan Terputus / Perangkat Tidak Terdeteksi',
+        badge: 'Troubleshoot',
+        detail: 'Jika perangkat SION Link tidak dapat terhubung ke SION Media Desktop:\n1. **Periksa Jaringan**: Pastikan semua perangkat berada pada jaringan Wi-Fi/LAN yang sama (bukan Wi-Fi tamu/guest network yang membatasi komunikasi antar client).\n2. **Uji Ping**: Uji koneksi IP server dari perangkat client.\n3. **Windows Firewall**: Periksa Windows Defender Firewall, pastikan port masuk (Inbound Rules) untuk SION Media tidak terblokir.\n- *Default Port*: SRT 8890, HLS 8888, WebRTC 8889, API 9997.',
+        tips: 'Hindari penggunaan Wi-Fi publik gereja yang mengaktifkan fitur "Access Point Isolation" (AP Isolation), karena fitur tersebut memblokir komunikasi lokal antar perangkat.'
+      },
+      {
+        id: 'powerpoint-trouble',
+        title: 'SION PowerPoint Agent Gagal Terhubung',
+        badge: 'Troubleshoot',
+        detail: 'Jika kontrol PowerPoint dari mimbar tidak terdeteksi:\n- Pastikan Microsoft PowerPoint telah diluncurkan dan slide presentasi dalam keadaan aktif (Slide Show berjalan).\n- Jika Agent tidak terdeteksi oleh SION Link, buka folder `sion-link-desktop` di PowerShell dan jalankan perintah `npm run agent:publish` untuk merakit ulang biner agent.\n- **Office 32-bit**: Agent mendukung Late Binding COM untuk x86, namun performa terbaik dicapai pada arsitektur Office x64.',
+        warnings: 'Jika terjadi kegagalan Agent kritis di mimbar, Anda dapat mengaktifkan "Legacy PowerShell Compatibility Mode" di SION Link sebagai cadangan darurat.'
+      }
+    ]
+  }
+];
