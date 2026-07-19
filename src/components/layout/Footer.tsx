@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Code, Heart, Monitor, Network, Smartphone } from 'lucide-react'
+import { Code, Heart, Monitor, Network, Smartphone, ExternalLink } from 'lucide-react'
 import { FirebaseStatus } from '../ui/FirebaseStatus'
 import LogoTransparent from '../../assets/logo-transparent.svg?react'
 
@@ -21,6 +21,16 @@ function Footer() {
               Ekosistem presentasi ibadah yang menghubungkan persiapan lagu, proyeksi live,
               Stage Display, kendali pemateri, output OBS, dan companion Android dalam satu workflow lokal.
             </p>
+            <div className="mt-4">
+              <a
+                href="https://chat.whatsapp.com/KvbT1xpGIUPDlyaDW0M5BR"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition"
+              >
+                Gabung WA Group Tester <ExternalLink size={12} />
+              </a>
+            </div>
             <div className="mt-4 flex gap-2">
               {[
                 { icon: Monitor, label: 'Windows x64' },

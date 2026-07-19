@@ -96,7 +96,7 @@ function DownloadCtaSection() {
         </div>
 
         <p className="mt-8 text-[10px] font-bold uppercase tracking-widest text-slate-600">
-          Windows 10/11 x64 · Android 7+ · 100% Offline-First LAN Ecosystem
+          Windows 10/11 x64 · Android 7+ · Linux & macOS hadir di versi stabil
         </p>
       </div>
     </motion.section>

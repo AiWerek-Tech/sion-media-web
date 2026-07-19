@@ -8,7 +8,7 @@ import EmptyState from '../components/ui/EmptyState'
 import { RequirementsSection } from '../components/ui/RequirementsSection'
 import { fetchLatestVersion } from '../services/updateService'
 import type { LatestVersionData } from '../types'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, MessageCircle } from 'lucide-react'
 
 function DownloadPage() {
   const [latestVersion, setLatestVersion] = useState<LatestVersionData | null>(null)
@@ -38,52 +38,83 @@ function DownloadPage() {
         )}
 
         {status === 'success' && latestVersion && (
-          <DownloadCard data={latestVersion} />
-        )}
+          <div className="mt-8 grid gap-8 lg:grid-cols-3">
+            {/* Left: Main Application Card */}
+            <div className="lg:col-span-2">
+              <DownloadCard data={latestVersion} />
+            </div>
 
-        <section className="mt-8 grid gap-5 md:grid-cols-3">
-          <article className="rounded-3xl border border-cyan-400/20 bg-cyan-400/[0.05] p-6">
-            <div className="text-[10px] font-black uppercase tracking-[.16em] text-cyan-300">Aplikasi utama</div>
-            <h2 className="mt-2 text-xl font-bold text-white">SION Media Desktop</h2>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC operator: library, projection, Stage Display, Presentation Bridge, OBS Network Output, dan OBS Live Input. FFmpeg 8.1.2 serta MediaMTX 1.17.0 sudah termasuk.</p>
-            <div className="mt-5 border-t border-cyan-400/10 pt-4 text-xs leading-relaxed text-slate-500">v1.1.0-beta.2 · Windows 10/11 x64 · 232.06 MB</div>
-          </article>
-          <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.05] p-6 flex flex-col justify-between">
-            <div>
-              <div className="text-[10px] font-black uppercase tracking-[.16em] text-indigo-300">Companion jaringan</div>
-              <h2 className="mt-2 text-xl font-bold text-white">SION Link Desktop</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">Untuk PC pemateri atau operator tambahan: auto-discovery, role access, slide visual, Live OBS, dan PowerPoint Bridge modern dengan SION PowerPoint Agent yang sudah dibundel.</p>
-              <a 
-                href="https://github.com/AiWerek-Tech/sion-link-desktop/releases" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition"
-              >
-                Unduh Rilis GitHub <ExternalLink size={12} />
-              </a>
+            {/* Right: Companion apps & community */}
+            <div className="space-y-6">
+              {/* SION Link Desktop */}
+              <article className="rounded-3xl border border-indigo-400/20 bg-indigo-400/[0.04] p-6 flex flex-col justify-between h-[210px] shadow-sm">
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-[.16em] text-indigo-300">Companion jaringan</div>
+                  <h2 className="mt-2 text-lg font-bold text-white">SION Link Desktop</h2>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-400">Untuk PC pemateri atau operator tambahan: auto-discovery, slide visual, Live OBS, dan PowerPoint Bridge modern.</p>
+                </div>
+                <div>
+                  <div className="mt-3 border-t border-indigo-400/10 pt-3 flex items-center justify-between">
+                    <span className="text-[10px] text-slate-500 font-mono">v0.5.0-beta.1</span>
+                    <a 
+                      href="https://github.com/AiWerek-Tech/sion-link-desktop/releases" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="inline-flex items-center gap-1 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition"
+                    >
+                      GitHub Releases <ExternalLink size={10} />
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              {/* SION Link Mobile */}
+              <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.04] p-6 flex flex-col justify-between h-[210px] shadow-sm">
+                <div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">Android companion</div>
+                    <span className="rounded bg-amber-400/10 px-2 py-0.5 text-[8px] font-black uppercase tracking-wider text-amber-300">alpha</span>
+                  </div>
+                  <h2 className="mt-2 text-lg font-bold text-white">SION Link Mobile</h2>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-400">Aplikasi Android untuk QR pairing, Presenter, Operator, Live Viewer, dan Stage Display nirkabel.</p>
+                </div>
+                <div>
+                  <div className="mt-3 border-t border-emerald-400/10 pt-3 flex items-center justify-between">
+                    <span className="text-[10px] text-slate-500 font-mono">v0.1.0-alpha.1</span>
+                    <a 
+                      href="https://github.com/AiWerek-Tech/sion-link-mobile/releases" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition"
+                    >
+                      GitHub Releases <ExternalLink size={10} />
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              {/* WhatsApp Tester Group */}
+              <article className="rounded-3xl border border-emerald-500/20 bg-emerald-500/[0.03] p-6 flex flex-col justify-between h-[210px] shadow-sm">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <MessageCircle size={14} className="text-emerald-400" />
+                    <div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-400">Komunitas Tester</div>
+                  </div>
+                  <h2 className="mt-2 text-lg font-bold text-white">WhatsApp Tester Group</h2>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-400">Dapatkan update rilis beta instan, diskusikan bug / jaringan lokal langsung dengan pengembang.</p>
+                </div>
+                <a
+                  href="https://chat.whatsapp.com/KvbT1xpGIUPDlyaDW0M5BR"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center rounded-2xl bg-emerald-500 hover:bg-emerald-400 py-3 text-xs font-bold text-slate-950 transition hover:scale-105 active:scale-95"
+                >
+                  Gabung WhatsApp Group
+                </a>
+              </article>
             </div>
-            <div className="mt-5 border-t border-indigo-400/10 pt-4 text-xs leading-relaxed text-slate-500">v0.5.0-beta.1 · Windows 10/11 x64 · 117.41 MB installer · Agent bundled</div>
-          </article>
-          <article className="rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.05] p-6 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between gap-3">
-                <div className="text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">Android companion</div>
-                <span className="rounded-full bg-amber-400/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-wider text-amber-300">Internal alpha</span>
-              </div>
-              <h2 className="mt-2 text-xl font-bold text-white">SION Link Mobile</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">Aplikasi Android native untuk QR pairing, Presenter, Operator, Live Viewer, Stage Display, slide visual, dan OBS Live dengan audio. Belum didistribusikan melalui Play Store.</p>
-              <a 
-                href="https://github.com/AiWerek-Tech/sion-link-mobile/releases" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition"
-              >
-                Unduh Rilis GitHub <ExternalLink size={12} />
-              </a>
-            </div>
-            <div className="mt-5 border-t border-emerald-400/10 pt-4 text-xs leading-relaxed text-slate-500">v0.1.0-alpha.1 · Android 7+ · ARM64/ARMv7 · 101.03 MB · APK v2 verified</div>
-          </article>
-        </section>
+          </div>
+        )}
 
         <section className="mt-8 rounded-3xl border border-violet-400/15 bg-violet-400/[0.04] p-6 sm:p-8">
           <div className="text-[10px] font-black uppercase tracking-[.16em] text-violet-300">Catatan paket OBS</div>

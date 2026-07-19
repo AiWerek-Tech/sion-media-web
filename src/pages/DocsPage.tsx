@@ -7,7 +7,8 @@ import type { DocSection } from '../data/docsSections'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   BookOpen, Search, AlertCircle, Info, X, Menu, 
-  Monitor, Database, Radio, Laptop, Smartphone, HelpCircle
+  Monitor, Database, Radio, Laptop, Smartphone, HelpCircle,
+  Play, Keyboard, Image
 } from 'lucide-react'
 
 function DocsPage() {
@@ -20,10 +21,13 @@ function DocsPage() {
     switch (id) {
       case 'pengenalan': return BookOpen
       case 'desktop-library': return Database
+      case 'desktop-playlist': return Play
       case 'desktop-projection': return Monitor
+      case 'desktop-atmosphere': return Image
       case 'powerpoint-bridge': return Laptop
       case 'mobile-app': return Smartphone
       case 'obs-integration': return Radio
+      case 'keyboard-shortcuts': return Keyboard
       case 'troubleshooting': return HelpCircle
       default: return BookOpen
     }
@@ -50,7 +54,36 @@ function DocsPage() {
     }).filter((s): s is DocSection => s !== null)
   }, [searchQuery])
 
+  // Helper to parse basic formatting like **bold** and `code`
+  const renderFormattedText = (text: string) => {
+    if (!text) return ''
+    const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g)
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <strong key={index} className="font-extrabold text-slate-200">
+            {part.slice(2, -2)}
+          </strong>
+        )
+      }
+      if (part.startsWith('`') && part.endsWith('`')) {
+        return (
+          <code key={index} className="bg-slate-900 border border-slate-800/80 px-1.5 py-0.5 rounded font-mono text-[11px] text-cyan-400">
+            {part.slice(1, -1)}
+          </code>
+        )
+      }
+      return part
+    })
+  }
 
+  // Helper to dynamically prefix asset path with Vite base path
+  const getAssetUrl = (path: string | undefined) => {
+    if (!path) return ''
+    const base = import.meta.env.BASE_URL || '/'
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path
+    return base.endsWith('/') ? `${base}${cleanPath}` : `${base}/${cleanPath}`
+  }
 
   const handleSectionClick = (id: string) => {
     setActiveSectionId(id)
@@ -138,7 +171,7 @@ function DocsPage() {
 
           {/* DESKTOP STICKY SIDEBAR */}
           <aside className="hidden lg:block w-72 shrink-0">
-            <div className="sticky top-24 space-y-6">
+            <div className="sticky top-24 space-y-6 max-h-[calc(100vh-7rem)] overflow-y-auto scrollbar-thin pr-1">
               
               {/* Interactive Search Bar */}
               <div className="relative">
@@ -261,11 +294,13 @@ function DocsPage() {
                           <div className="text-slate-400 text-sm leading-relaxed space-y-3 font-normal">
                             {item.detail.split('\n').map((para, pIdx) => {
                               // Render numbered lists beautifully
-                              if (para.startsWith('1. ') || para.startsWith('2. ') || para.startsWith('3. ') || para.startsWith('4. ')) {
+                              const listMatch = para.match(/^(\d+\.\s)/)
+                              if (listMatch) {
+                                const prefix = listMatch[1]
                                 return (
                                   <div key={pIdx} className="flex gap-2 pl-2">
-                                    <span className="text-cyan-400 font-bold">{para.substring(0, 3)}</span>
-                                    <span>{para.substring(3)}</span>
+                                    <span className="text-cyan-400 font-bold">{prefix}</span>
+                                    <span>{renderFormattedText(para.substring(prefix.length))}</span>
                                   </div>
                                 )
                               }
@@ -274,11 +309,11 @@ function DocsPage() {
                                 return (
                                   <div key={pIdx} className="flex gap-2 pl-4 items-start">
                                     <span className="text-cyan-400 text-base leading-none select-none">•</span>
-                                    <span>{para.substring(2)}</span>
+                                    <span>{renderFormattedText(para.substring(2))}</span>
                                   </div>
                                 )
                               }
-                              return <p key={pIdx}>{para}</p>
+                              return <p key={pIdx}>{renderFormattedText(para)}</p>
                             })}
                           </div>
 
@@ -286,9 +321,11 @@ function DocsPage() {
                           {item.tips && (
                             <div className="mt-4 p-4 rounded-2xl border-l-4 border-cyan-500/40 bg-cyan-500/5 flex items-start gap-3.5">
                               <Info className="text-cyan-400 shrink-0 mt-0.5" size={16} />
-                              <div className="text-xs leading-relaxed text-slate-300">
+                              <div className="text-xs leading-relaxed text-slate-300 space-y-1">
                                 <span className="font-bold text-cyan-400 uppercase text-[9px] tracking-widest block mb-1">💡 Tip Praktis</span>
-                                {item.tips}
+                                {item.tips.split('\n').map((line, lIdx) => (
+                                  <span key={lIdx} className="block">{renderFormattedText(line)}</span>
+                                ))}
                               </div>
                             </div>
                           )}
@@ -296,9 +333,11 @@ function DocsPage() {
                           {item.warnings && (
                             <div className="mt-4 p-4 rounded-2xl border-l-4 border-amber-500/40 bg-amber-500/5 flex items-start gap-3.5">
                               <AlertCircle className="text-amber-400 shrink-0 mt-0.5" size={16} />
-                              <div className="text-xs leading-relaxed text-slate-300">
+                              <div className="text-xs leading-relaxed text-slate-300 space-y-1">
                                 <span className="font-bold text-amber-400 uppercase text-[9px] tracking-widest block mb-1">⚠️ Perhatian Penting</span>
-                                {item.warnings}
+                                {item.warnings.split('\n').map((line, lIdx) => (
+                                  <span key={lIdx} className="block">{renderFormattedText(line)}</span>
+                                ))}
                               </div>
                             </div>
                           )}
@@ -310,11 +349,11 @@ function DocsPage() {
                                 <span>Preview Tampilan Menu:</span>
                               </p>
                               <div 
-                                onClick={() => setLightboxImage(item.screenshot || null)}
+                                onClick={() => setLightboxImage(getAssetUrl(item.screenshot))}
                                 className="relative rounded-2xl overflow-hidden border border-slate-900 bg-slate-950/50 cursor-zoom-in group/img shadow-md max-w-xl hover:border-slate-800 transition-all"
                               >
                                 <img 
-                                  src={item.screenshot} 
+                                  src={getAssetUrl(item.screenshot)} 
                                   alt={item.title} 
                                   className="w-full object-cover max-h-56 group-hover/img:scale-[1.02] transition-transform duration-500 opacity-80 group-hover/img:opacity-100"
                                 />

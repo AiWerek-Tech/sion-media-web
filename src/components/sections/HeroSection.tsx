@@ -23,7 +23,7 @@ function HeroSection() {
               v1.1.0-beta.2
             </span>
             <span className="rounded-full border border-amber-400/20 bg-amber-400/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[.14em] text-amber-300">
-              Windows beta · Android alpha
+              Windows beta · Android alpha · Linux & macOS Mendatang
             </span>
           </div>
 
@@ -37,6 +37,10 @@ function HeroSection() {
           <p className="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base">
             Siapkan lagu, Alkitab, PDF, gambar, atau PowerPoint; tayangkan dengan workflow Preview–Take;
             kontrol melalui SION Link; lalu kirim Program Output ke OBS atau terima OBS Live di semua viewer melalui SRT.
+          </p>
+          <p className="mt-2 text-xs text-slate-500 flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-slate-600 animate-pulse" />
+            Dukungan Linux & macOS dalam tahap pengembangan dan akan dirilis pada versi stabil.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
